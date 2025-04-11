@@ -1,4 +1,5 @@
 // Theme Switching
+//hello
 document.addEventListener('DOMContentLoaded', function() {
     // Set initial theme based on user preference
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
