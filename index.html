@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   StoryVerse | Interactive Stories
+  </title>
+  <link href="styles.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="dark-mode">
+  <div class="theme-toggle">
+   <button id="theme-switch">
+    <i class="fas fa-moon">
+    </i>
+   </button>
+  </div>
+  <header>
+   <div class="logo-container">
+    <div class="logo">
+     <svg class="logo-svg" viewbox="0 0 200 60">
+      <path d="M20,10 Q40,5 60,10 T100,10 T140,10 T180,10 Q190,30 180,50 T140,50 T100,50 T60,50 Q40,55 20,50 Q10,30 20,10" fill="none" stroke="currentColor" stroke-width="2">
+      </path>
+      <text fill="currentColor" font-size="22" font-weight="bold" x="38" y="36">
+       StoryVerse
+      </text>
+      <circle class="star star1" cx="30" cy="30" fill="currentColor" r="3">
+      </circle>
+      <circle class="star star2" cx="170" cy="20" fill="currentColor" r="2">
+      </circle>
+      <circle class="star star3" cx="150" cy="40" fill="currentColor" r="2">
+      </circle>
+      <circle class="star star4" cx="80" cy="15" fill="currentColor" r="1.5">
+      </circle>
+      <circle class="star star5" cx="120" cy="45" fill="currentColor" r="1.5">
+      </circle>
+     </svg>
+    </div>
+   </div>
+   <nav>
+    <ul>
+     <li>
+      <a class="active" href="#">
+       Home
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       Categories
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       New Releases
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       My Stories
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div class="user-controls">
+    <button class="btn btn-primary" id="loginBtn">
+     Sign In
+    </button>
+   </div>
+  </header>
+  <section class="hero">
+   <div class="hero-content">
+    <h1>
+     Choose Your Own Adventure
+    </h1>
+    <span class="material-symbols-outlined">
+     person
+    </span>
+    <p>
+     Immerse yourself in interactive stories where your choices shape the narrative.
+    </p>
+    <button class="btn btn-primary cta-button">
+     Start Reading
+    </button>
+   </div>
+  </section>
+  <main>
+   <section class="featured-stories">
+    <div class="section-header">
+     <h2>
+      Featured Stories
+     </h2>
+     <a class="see-all" href="#">
+      See All
+     </a>
+    </div>
+    <div class="story-grid">
+     <div class="story-card">
+      <div class="story-image">
+       <img alt="Space Explorer" src="/api/placeholder/340/200"/>
+       <div class="story-badge">
+        New
+       </div>
+      </div>
+      <div class="story-info">
+       <h3>
+        Space Explorer
+       </h3>
+       <p>
+        Navigate the unknown cosmos and discover alien civilizations.
+       </p>
+       <div class="story-meta">
+        <span>
+         <i class="fas fa-star">
+         </i>
+         4.8
+        </span>
+        <span>
+         <i class="fas fa-book-open">
+         </i>
+         Sci-Fi
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="story-card">
+      <div class="story-image">
+       <img alt="Midnight Chronicles" src="/api/placeholder/340/200"/>
+      </div>
+      <div class="story-info">
+       <h3>
+        Midnight Chronicles
+       </h3>
+       <p>
+        Supernatural mysteries await in this thrilling adventure.
+       </p>
+       <div class="story-meta">
+        <span>
+         <i class="fas fa-star">
+         </i>
+         4.6
+        </span>
+        <span>
+         <i class="fas fa-book-open">
+         </i>
+         Mystery
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="story-card">
+      <div class="story-image">
+       <img alt="Digital Dreamscape" src="/api/placeholder/340/200"/>
+      </div>
+      <div class="story-info">
+       <h3>
+        Digital Dreamscape
+       </h3>
+       <p>
+        Enter a virtual world where reality and fantasy blur.
+       </p>
+       <div class="story-meta">
+        <span>
+         <i class="fas fa-star">
+         </i>
+         4.9
+        </span>
+        <span>
+         <i class="fas fa-book-open">
+         </i>
+         Cyberpunk
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="story-card">
+      <div class="story-image">
+       <img alt="Last Kingdom" src="/api/placeholder/340/200"/>
+      </div>
+      <div class="story-info">
+       <h3>
+        Last Kingdom
+       </h3>
+       <p>
+        A medieval fantasy where your choices determine the fate of kingdoms.
+       </p>
+       <div class="story-meta">
+        <span>
+         <i class="fas fa-star">
+         </i>
+         4.7
+        </span>
+        <span>
+         <i class="fas fa-book-open">
+         </i>
+         Fantasy
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="trending-now">
+    <div class="section-header">
+     <h2>
+      Trending Now
+     </h2>
+     <a class="see-all" href="#">
+      See All
+     </a>
+    </div>
+    <div class="story-slider">
+     <div class="story-card">
+      <div class="story-image">
+       <img alt="Ocean Depths" src="/api/placeholder/340/200"/>
+      </div>
+      <div class="story-info">
+       <h3>
+        Ocean Depths
+       </h3>
+       <p>
+        Explore underwater civilizations and ancient secrets.
+       </p>
+       <div class="story-meta">
+        <span>
+         <i class="fas fa-star">
+         </i>
+         4.5
+        </span>
+        <span>
+         <i class="fas fa-book-open">
+         </i>
+         Adventure
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="story-card">
+      <div class="story-image">
+       <img alt="Ghost Town" src="images/stories/ghost-town/ghost-town-cover.png"/>
+       <div class="story-badge hot">
+        Hot
+       </div>
+      </div>
+      <div class="story-info">
+       <h3>
+        Ghost Town
+       </h3>
+       <p>
+        Unravel the mysteries of an abandoned city with a dark past.
+       </p>
+       <div class="story-meta">
+        <span>
+         <i class="fas fa-star">
+         </i>
+         4.8
+        </span>
+        <span>
+         <i class="fas fa-book-open">
+         </i>
+         Horror
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="story-card">
+      <div class="story-image">
+       <img alt="Time Travelers" src="/api/placeholder/340/200"/>
+      </div>
+      <div class="story-info">
+       <h3>
+        Time Travelers
+       </h3>
+       <p>
+        Journey through different eras and change the course of history.
+       </p>
+       <div class="story-meta">
+        <span>
+         <i class="fas fa-star">
+         </i>
+         4.7
+        </span>
+        <span>
+         <i class="fas fa-book-open">
+         </i>
+         Sci-Fi
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="categories">
+    <div class="section-header">
+     <h2>
+      Browse Categories
+     </h2>
+    </div>
+    <div class="category-grid">
+     <a class="category-card" href="#">
+      <i class="fas fa-rocket">
+      </i>
+      <h3>
+       Sci-Fi
+      </h3>
+     </a>
+     <a class="category-card" href="#">
+      <i class="fas fa-ghost">
+      </i>
+      <h3>
+       Horror
+      </h3>
+     </a>
+     <a class="category-card" href="#">
+      <i class="fas fa-dragon">
+      </i>
+      <h3>
+       Fantasy
+      </h3>
+     </a>
+     <a class="category-card" href="#">
+      <i class="fas fa-heart">
+      </i>
+      <h3>
+       Romance
+      </h3>
+     </a>
+     <a class="category-card" href="#">
+      <i class="fas fa-mask">
+      </i>
+      <h3>
+       Mystery
+      </h3>
+     </a>
+     <a class="category-card" href="#">
+      <i class="fas fa-compass">
+      </i>
+      <h3>
+       Adventure
+      </h3>
+     </a>
+    </div>
+   </section>
+  </main>
+  <div class="modal" id="loginModal">
+   <div class="modal-content">
+    <span class="close">
+     &times;
+    </span>
+    <div class="auth-container">
+     <div class="auth-header">
+      <div class="auth-logo">
+       <svg class="logo-svg small" viewbox="0 0 200 60">
+        <path d="M20,10 Q40,5 60,10 T100,10 T140,10 T180,10 Q190,30 180,50 T140,50 T100,50 T60,50 Q40,55 20,50 Q10,30 20,10" fill="none" stroke="currentColor" stroke-width="2">
+        </path>
+        <text fill="currentColor" font-size="22" font-weight="bold" x="38" y="36">
+         StoryVerse
+        </text>
+        <circle class="star star1" cx="30" cy="30" fill="currentColor" r="3">
+        </circle>
+        <circle class="star star2" cx="170" cy="20" fill="currentColor" r="2">
+        </circle>
+        <circle class="star star3" cx="150" cy="40" fill="currentColor" r="2">
+        </circle>
+        <circle class="star star4" cx="80" cy="15" fill="currentColor" r="1.5">
+        </circle>
+        <circle class="star star5" cx="120" cy="45" fill="currentColor" r="1.5">
+        </circle>
+       </svg>
+      </div>
+      <h2>
+       Welcome Back
+      </h2>
+      <p>
+       Sign in to continue your journey
+      </p>
+     </div>
+     <div class="auth-tabs">
+      <button class="auth-tab active" data-tab="login">
+       Sign In
+      </button>
+      <button class="auth-tab" data-tab="signup">
+       Sign Up
+      </button>
+     </div>
+     <div class="auth-form active" id="login-form">
+      <div class="form-group">
+       <label for="email">
+        Email
+       </label>
+       <input id="email" placeholder="your@email.com" type="email"/>
+      </div>
+      <div class="form-group">
+       <label for="password">
+        Password
+       </label>
+       <input id="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" type="password"/>
+      </div>
+      <div class="form-action">
+       <button class="btn btn-primary btn-block">
+        Sign In
+       </button>
+      </div>
+      <div class="form-footer">
+       <a href="#">
+        Forgot password?
+       </a>
+      </div>
+     </div>
+     <div class="auth-form" id="signup-form">
+      <div class="form-group">
+       <label for="new-name">
+        Name
+       </label>
+       <input id="new-name" placeholder="Your name" type="text"/>
+      </div>
+      <div class="form-group">
+       <label for="new-email">
+        Email
+       </label>
+       <input id="new-email" placeholder="your@email.com" type="email"/>
+      </div>
+      <div class="form-group">
+       <label for="new-password">
+        Password
+       </label>
+       <input id="new-password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" type="password"/>
+      </div>
+      <div class="form-action">
+       <button class="btn btn-primary btn-block">
+        Create Account
+       </button>
+      </div>
+      <div class="form-footer">
+       <p>
+        By signing up, you agree to our
+        <a href="#">
+         Terms
+        </a>
+        and
+        <a href="#">
+         Privacy Policy
+        </a>
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <footer>
+   <div class="footer-content">
+    <div class="footer-logo">
+     <svg class="logo-svg small" viewbox="0 0 200 60">
+      <path d="M20,10 Q40,5 60,10 T100,10 T140,10 T180,10 Q190,30 180,50 T140,50 T100,50 T60,50 Q40,55 20,50 Q10,30 20,10" fill="none" stroke="currentColor" stroke-width="2">
+      </path>
+      <text fill="currentColor" font-size="22" font-weight="bold" x="38" y="36">
+       StoryVerse
+      </text>
+      <circle class="star star1" cx="30" cy="30" fill="currentColor" r="3">
+      </circle>
+      <circle class="star star2" cx="170" cy="20" fill="currentColor" r="2">
+      </circle>
+      <circle class="star star3" cx="150" cy="40" fill="currentColor" r="2">
+      </circle>
+      <circle class="star star4" cx="80" cy="15" fill="currentColor" r="1.5">
+      </circle>
+      <circle class="star star5" cx="120" cy="45" fill="currentColor" r="1.5">
+      </circle>
+     </svg>
+    </div>
+    <div class="footer-links">
+     <div class="footer-section">
+      <h3>
+       StoryVerse
+      </h3>
+      <ul>
+       <li>
+        <a href="#">
+         About Us
+        </a>
+       </li>
+       <li>
+        <a href="#">
+         Careers
+        </a>
+       </li>
+       <li>
+        <a href="#">
+         Contact
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="footer-section">
+      <h3>
+       Browse
+      </h3>
+      <ul>
+       <li>
+        <a href="#">
+         Categories
+        </a>
+       </li>
+       <li>
+        <a href="#">
+         Top Stories
+        </a>
+       </li>
+       <li>
+        <a href="#">
+         New Releases
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="footer-section">
+      <h3>
+       Support
+      </h3>
+      <ul>
+       <li>
+        <a href="#">
+         Help Center
+        </a>
+       </li>
+       <li>
+        <a href="#">
+         Terms of Service
+        </a>
+       </li>
+       <li>
+        <a href="#">
+         Privacy Policy
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="footer-section">
+      <h3>
+       Connect
+      </h3>
+      <div class="social-links">
+       <a href="#">
+        <i class="fab fa-instagram">
+        </i>
+       </a>
+       <a href="#">
+        <i class="fab fa-tiktok">
+        </i>
+       </a>
+       <a href="#">
+        <i class="fab fa-twitter">
+        </i>
+       </a>
+       <a href="#">
+        <i class="fab fa-discord">
+        </i>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="footer-bottom">
+    <p>
+     &copy; 2025 StoryVerse. All rights reserved.
+    </p>
+   </div>
+  </footer>
+  <script src="script.js">
+  </script>
+  <script src="image-loader.js">
+  </script>
+  <script src="enhanced-story-viewer.fixed.js"></script>
+  <script>
+    const storyId = 'ghost-town'; // or 'space-explorer', etc.
+    const viewer = new EnhancedStoryViewer(storyId);
+    viewer.loadStory();
+  </script>
+  
+  <script src="script.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Explorer | StoryVerse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-mode story-page">
+    <div class="theme-toggle">
+        <button id="theme-switch"><i class="fas fa-moon"></i></button>
+    </div>
+    
+    <header class="story-header">
+        <div class="logo-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 200 60" class="logo-svg">
+                    <path d="M20,10 Q40,5 60,10 T100,10 T140,10 T180,10 Q190,30 180,50 T140,50 T100,50 T60,50 Q40,55 20,50 Q10,30 20,10" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <text x="38" y="36" fill="currentColor" font-size="22" font-weight="bold">StoryVerse</text>
+                    <circle cx="30" cy="30" r="3" fill="currentColor" class="star star1"/>
+                    <circle cx="170" cy="20" r="2" fill="currentColor" class="star star2"/>
+                    <circle cx="150" cy="40" r="2" fill="currentColor" class="star star3"/>
+                    <circle cx="80" cy="15" r="1.5" fill="currentColor" class="star star4"/>
+                    <circle cx="120" cy="45" r="1.5" fill="currentColor" class="star star5"/>
+                </svg>
+            </a>
+        </div>
+        <div class="story-nav">
+            <button class="btn btn-icon" id="backBtn"><i class="fas fa-arrow-left"></i></button>
+            <div class="story-title">Space Explorer</div>
+            <div class="story-controls">
+                <button class="btn btn-icon" id="bookmarkBtn"><i class="far fa-bookmark"></i></button>
+                <button class="btn btn-icon" id="shareBtn"><i class="fas fa-share-alt"></i></button>
+                <button class="btn btn-icon" id="settingsBtn"><i class="fas fa-cog"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="story-container">
+        <div class="progress-bar">
+            <div class="progress" style="width: 25%"></div>
+        </div>
+        
+        <div class="story-content">
+            <div class="story-chapter" id="chapter-1">
+                <div class="chapter-image">
+                    <img src="/api/placeholder/800/400" alt="Space Explorer Chapter 1">
+                </div>
+                <h2 class="chapter-title">Chapter 1: The Discovery</h2>
+                <div class="chapter-text">
+                    <p>The abandoned space station loomed ahead, its angular silhouette stark against the backdrop of swirling cosmic dust. Captain Alex Zhang checked the radiation monitors one last time before giving the nod to his second-in-command.</p>
+                    
+                    <p>"All readings normal," Lieutenant Kai reported, her eyes flicking between holographic displays. "But there's something weird about the energy signature. It's... pulsing."</p>
+                    
+                    <p>Alex frowned. This wasn't in the mission briefing. The derelict station—Outpost Epsilon—had been abandoned for decades after the Resource Wars. It should be dead, powerless. Yet here it was, somehow active.</p>
+                    
+                    <p>"Could be automated systems," he suggested, though he didn't believe it himself. "Or scavengers."</p>
+                    
+                    <p>Kai shook her head. "No registered salvage operations in this sector. And this signal..." She manipulated the display, zooming in on a waveform pattern. "I've never seen anything like it."</p>
+                    
+                    <p>The ship's AI chimed in, its voice calm and measured. "Analysis indicates the energy signature contains embedded data patterns consistent with communication attempts."</p>
+                    
+                    <p>A chill ran down Alex's spine. "Communication? From whom?"</p>
+                    
+                    <p>"Unknown," the AI replied. "Pattern does not match any known human or allied species transmission protocols."</p>
+                    
+                    <p>The crew fell silent. First contact wasn't part of their mission parameters. They were here to salvage technology, not make history—or possibly get themselves killed by an unknown entity.</p>
+                    
+                    <p>Alex studied the station through the viewscreen. Their mission was clear: dock, retrieve valuable tech, and return to Earth. Simple. Safe. Profitable.</p>
+                    
+                    <p>But that was before they detected signs of intelligent activity.</p>
+                    
+                    <p>"Captain," Kai said quietly. "We need to make a decision."</p>
+                </div>
+                
+                <div class="story-choices">
+                    <h3>What will you do?</h3>
+                    <div class="choice-options">
+                        <button class="choice-btn" data-next="chapter-2a">
+                            Dock at the station and investigate the signal
+                        </button>
+                        <button class="choice-btn" data-next="chapter-2b">
+                            Keep your distance and attempt to communicate first
+                        </button>
+                        <button class="choice-btn" data-next="chapter-2c">
+                            Report back to Earth Command before proceeding
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hidden chapters that will be revealed based on choices -->
+            <div class="story-chapter hidden" id="chapter-2a">
+                <!-- Content for choice 1 -->
+            </div>
+            
+            <div class="story-chapter hidden" id="chapter-2b">
+                <!-- Content for choice 2 -->
+            </div>
+            
+            <div class="story-chapter hidden" id="chapter-2c">
+                <!-- Content for choice 3 -->
+            </div>
+        </div>
+    </main>
+    
+    <div class="story-stats">
+        <div class="stat-item">
+            <i class="fas fa-book-open"></i>
+            <span>Chapter 1/12</span>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-clock"></i>
+            <span>5 min read</span>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-route"></i>
+            <span>3 paths available</span>
+        </div>
+    </div>
+    <script src="enhanced-story-viewer.js"></script>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const viewer = new EnhancedStoryViewer('space-explorer');
+            viewer.loadStory();
+        });
+    </script>
+    
+</body>
+</html>
