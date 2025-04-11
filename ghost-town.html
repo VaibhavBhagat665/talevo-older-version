@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ghost Town | StoryVerse</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="dark-mode story-page">
+  <div class="theme-toggle">
+    <button id="theme-switch"><i class="fas fa-moon"></i></button>
+  </div>
+
+  <header class="story-header">
+    <div class="logo-container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 200 60" class="logo-svg">
+          <path d="M20,10 Q40,5 60,10 T100,10 T140,10 T180,10 Q190,30 180,50 T140,50 T100,50 T60,50 Q40,55 20,50 Q10,30 20,10"
+                fill="none" stroke="currentColor" stroke-width="2"/>
+          <text x="38" y="36" fill="currentColor" font-size="22" font-weight="bold">StoryVerse</text>
+          <circle cx="30" cy="30" r="3" fill="currentColor" class="star star1"/>
+          <circle cx="170" cy="20" r="2" fill="currentColor" class="star star2"/>
+          <circle cx="150" cy="40" r="2" fill="currentColor" class="star star3"/>
+          <circle cx="80" cy="15" r="1.5" fill="currentColor" class="star star4"/>
+          <circle cx="120" cy="45" r="1.5" fill="currentColor" class="star star5"/>
+        </svg>
+      </a>
+    </div>
+    <div class="story-nav">
+      <button class="btn btn-icon" id="backBtn"><i class="fas fa-arrow-left"></i></button>
+      <div class="story-title">Ghost Town</div>
+      <div class="story-controls">
+        <button class="btn btn-icon" id="bookmarkBtn"><i class="far fa-bookmark"></i></button>
+        <button class="btn btn-icon" id="shareBtn"><i class="fas fa-share-alt"></i></button>
+        <button class="btn btn-icon" id="settingsBtn"><i class="fas fa-cog"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="story-container">
+    <div class="progress-bar">
+      <div class="progress" style="width: 10%"></div>
+    </div>
+
+    <div class="story-content">
+      <div class="story-chapter" id="chapter-1">
+        <div class="chapter-image">
+          <img src="images/stories/ghost-town/ghost-town-cover.png" alt="Ghost Town Chapter 1">
+        </div>
+        <h2 class="chapter-title">Chapter 1: Whispers in the Dust</h2>
+        <div class="chapter-text">
+          <p>The wind moaned through broken windows, carrying the scent of rust and old memories. You step onto the creaking wooden planks of Main Street, where every boarded-up building seems to watch your movements.</p>
+          <p>A newspaper flutters by — the headline barely legible: “Mayor Declares State of Emergency”. You shiver. The town was abandoned overnight... or so the legends claim.</p>
+          <p>A faint whisper echoes from the saloon. Did someone just call your name?</p>
+        </div>
+
+        <div class="story-choices">
+          <h3>What will you do?</h3>
+          <div class="choice-options">
+            <button class="choice-btn" data-next="chapter-2a">Enter the saloon cautiously</button>
+            <button class="choice-btn" data-next="chapter-2b">Check the town hall records</button>
+            <button class="choice-btn" data-next="chapter-2c">Leave before night falls</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-chapter hidden" id="chapter-2a">
+        <!-- Next chapter content -->
+      </div>
+      <div class="story-chapter hidden" id="chapter-2b">
+        <!-- Next chapter content -->
+      </div>
+      <div class="story-chapter hidden" id="chapter-2c">
+        <!-- Next chapter content -->
+      </div>
+    </div>
+  </main>
+
+  <div class="story-stats">
+    <div class="stat-item"><i class="fas fa-book-open"></i><span>Chapter 1/10</span></div>
+    <div class="stat-item"><i class="fas fa-clock"></i><span>3 min read</span></div>
+    <div class="stat-item"><i class="fas fa-route"></i><span>3 paths available</span></div>
+  </div>
+
+  <script src="enhanced-story-viewer.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const viewer = new EnhancedStoryViewer('ghost-town');
+      viewer.loadStory();
+    });
+  </script>
+</body>
+</html>

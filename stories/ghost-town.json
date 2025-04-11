@@ -1,0 +1,77 @@
+{
+  "title": "Ghost Town",
+  "startingChapterId": "1",
+  "totalChapters": 4,
+  "chapters": {
+    "1": {
+      "title": "Whispers in the Dust",
+      "image": "ghost-town-cover.png",
+      "text": [
+        "The wind moaned through broken windows, carrying the scent of rust and old memories.",
+        "A faint whisper echoes from the saloon. Did someone just call your name?"
+      ],
+      "choices": [
+        {
+          "text": "Enter the saloon cautiously",
+          "nextChapter": "2a"
+        },
+        {
+          "text": "Check the town hall records",
+          "nextChapter": "2b"
+        },
+        {
+          "text": "Leave before night falls",
+          "nextChapter": "2c"
+        }
+      ]
+    },
+    "2a": {
+      "title": "The Saloon Secret",
+      "image": "saloon.jpg",
+      "text": [
+        "You push open the creaky door and step inside. Dust dances in slants of dying sunlight.",
+        "A single piano key is pressed down... but no one's there."
+      ],
+      "choices": [
+        {
+          "text": "Investigate the piano",
+          "nextChapter": "3a"
+        },
+        {
+          "text": "Run outside",
+          "nextChapter": "3b"
+        }
+      ]
+    },
+    "2b": {
+      "title": "Forgotten Records",
+      "image": "town-hall.jpg",
+      "text": [
+        "Stacks of yellowing documents crumble under your touch.",
+        "One file marked 'Evacuation Order - Urgent' sends a chill through your bones."
+      ],
+      "choices": [
+        {
+          "text": "Read the document",
+          "nextChapter": "3c"
+        },
+        {
+          "text": "Leave immediately",
+          "nextChapter": "3b"
+        }
+      ]
+    },
+    "2c": {
+      "title": "Escape",
+      "image": "exit.jpg",
+      "text": [
+        "You turn back the way you came, but the road has vanished.",
+        "Only the wind answers your call."
+      ],
+      "ending": {
+        "type": "Mysterious",
+        "text": "Some doors shouldn't be opened. And some towns... never left."
+      }
+    }
+  }
+}
