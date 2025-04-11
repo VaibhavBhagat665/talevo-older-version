@@ -1,13 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghost Town | StoryVerse</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ghost Town | StoryVerse</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body class="dark-mode story-page">
+  <div class="theme-toggle">
+    <button id="theme-switch"><i class="fas fa-moon"></i></button>
+  </div>
+
+  <header class="story-header">
+    <div class="logo-container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 200 60" class="logo-svg">
+          <path d="M20,10 Q40,5 60,10 T100,10 T140,10 T180,10 Q190,30 180,50 T140,50 T100,50 T60,50 Q40,55 20,50 Q10,30 20,10"
+                fill="none" stroke="currentColor" stroke-width="2"/>
+          <text x="38" y="36" fill="currentColor" font-size="22" font-weight="bold">StoryVerse</text>
+          <circle cx="30" cy="30" r="3" fill="currentColor" class="star star1"/>
+          <circle cx="170" cy="20" r="2" fill="currentColor" class="star star2"/>
+          <circle cx="150" cy="40" r="2" fill="currentColor" class="star star3"/>
+          <circle cx="80" cy="15" r="1.5" fill="currentColor" class="star star4"/>
+          <circle cx="120" cy="45" r="1.5" fill="currentColor" class="star star5"/>
+        </svg>
+      </a>
+    </div>
+    <div class="story-nav">
+      <button class="btn btn-icon" id="backBtn"><i class="fas fa-arrow-left"></i></button>
+      <div class="story-title">Ghost Town</div>
+      <div class="story-controls">
+        <button class="btn btn-icon" id="bookmarkBtn"><i class="far fa-bookmark"></i></button>
+        <button class="btn btn-icon" id="shareBtn"><i class="fas fa-share-alt"></i></button>
+        <button class="btn btn-icon" id="settingsBtn"><i class="fas fa-cog"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="story-container">
+    <div class="progress-bar">
+      <div class="progress" style="width: 10%"></div>
+    </div>
+
+    <div class="story-content">
+      <div class="story-chapter" id="chapter-1">
+        <div class="chapter-image">
+          <img src="images/stories/ghost-town/ghost-town-cover.png" alt="Ghost Town Chapter 1">
+        </div>
+        <h2 class="chapter-title">Chapter 1: Whispers in the Dust</h2>
+        <div class="chapter-text">
+          <p>The wind moaned through broken windows, carrying the scent of rust and old memories. You step onto the creaking wooden planks of Main Street, where every boarded-up building seems to watch your movements.</p>
+          <p>A newspaper flutters by — the headline barely legible: "Mayor Declares State of Emergency". You shiver. The town was abandoned overnight... or so the legends claim.</p>
+          <p>A faint whisper echoes from the saloon. Did someone just call your name?</p>
+        </div>
+
+        <div class="story-choices">
+          <h3>What will you do?</h3>
+          <div class="choice-options">
+            <button class="choice-btn" data-next="chapter-2a">Enter the saloon cautiously</button>
+            <button class="choice-btn" data-next="chapter-2b">Check the town hall records</button>
+            <button class="choice-btn" data-next="chapter-2c">Leave before night falls</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-chapter hidden" id="chapter-2a">
+        <div class="chapter-image">
+          <img src="/api/placeholder/400/250" alt="Inside the Saloon">
+        </div>
+        <h2 class="chapter-title">Chapter 2: The Crooked Ace</h2>
+        <div class="chapter-text">
+          <p>The saloon door creaks open at your touch, swinging on rusted hinges. Dust motes dance in the thin beams of light cutting through boarded windows. The place is frozen in time—glasses still on tables, chairs askew as if patrons left in a hurry.</p>
+          
+          <p>That whisper comes again, clearer now. "<em>Finally... someone came back...</em>"</p>
+          
+          <p>You spin around, but see no one. The bar stands empty, bottles still lined up, labels faded by time. A tarnished mirror hangs behind it, reflecting the deserted room and your anxious face.</p>
+          
+          <p>As you approach the bar, your foot kicks something that skitters across the wooden floor. A playing card. You bend to pick it up—the ace of spades, yellowed with age, one corner singed as if burned.</p>
+          
+          <p>The moment your fingers touch the card, the temperature plummets. Your breath mists in front of you.</p>
+          
+          <p>"<em>You found my lucky card,</em>" the voice says, now right beside your ear. "<em>I've been looking for that since the night they came.</em>"</p>
+          
+          <p>In the mirror, you catch a glimpse of someone standing behind you—a man in old-fashioned clothes, his form transparent enough to see the bar through his chest. But when you turn, there's no one there.</p>
+        </div>
+
+        <div class="story-choices">
+          <h3>What will you do?</h3>
+          <div class="choice-options">
+            <button class="choice-btn" data-next="chapter-3a">Ask who "they" are</button>
+            <button class="choice-btn" data-next="chapter-3b">Drop the card and back away</button>
+            <button class="choice-btn" data-next="chapter-3c">Look for more clues in the saloon</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-chapter hidden" id="chapter-2b">
+        <div class="chapter-image">
+          <img src="/api/placeholder/400/250" alt="Town Hall">
+        </div>
+        <h2 class="chapter-title">Chapter 2: Public Records</h2>
+        <div class="chapter-text">
+          <p>The town hall stands at the end of Main Street—an imposing structure of weathered stone with columns flanking the entrance. Unlike the other buildings, its doors are locked tight.</p>
+          
+          <p>You peer through dusty windows, seeing desks and filing cabinets inside. This place might hold answers about what happened here.</p>
+          
+          <p>After circling the building, you find a small window at ground level that's been broken. It's a tight squeeze, but you manage to slip through, landing in what appears to be the basement archive.</p>
+          
+          <p>Rows of filing cabinets and shelves filled with record books surround you. The air is stale and heavy with dust. Your flashlight beam cuts through the darkness, illuminating decades of the town's history.</p>
+          
+          <p>You notice that the most recent records are scattered across the floor, as if someone had been frantically searching through them before leaving. Among the mess, a leather-bound journal catches your eye, "Mayor's Personal Records" embossed on the cover.</p>
+          
+          <p>Opening it to the final entry, dated thirty years ago, you read:</p>
+          
+          <p>"<em>They found it in the mine. God help us all. The evacuation order is given, but it may be too late. They're changing. The mist rises tonight. I've sealed the mine entrance, but I fear it won't hold. If anyone finds this, DO NOT—</em>"</p>
+          
+          <p>The entry ends abruptly, a dark stain obscuring the final words.</p>
+        </div>
+
+        <div class="story-choices">
+          <h3>What will you do?</h3>
+          <div class="choice-options">
+            <button class="choice-btn" data-next="chapter-3d">Look for information about the mine</button>
+            <button class="choice-btn" data-next="chapter-3e">Search for evacuation records</button>
+            <button class="choice-btn" data-next="chapter-3f">Leave the town hall immediately</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-chapter hidden" id="chapter-2c">
+        <div class="chapter-image">
+          <img src="/api/placeholder/400/250" alt="Sunset Over Ghost Town">
+        </div>
+        <h2 class="chapter-title">Chapter 2: Nightfall Approaches</h2>
+        <div class="chapter-text">
+          <p>The sun hangs low on the horizon, painting the abandoned town in hues of amber and shadow. Your instincts scream that this is no place to be after dark. You turn back toward your parked car at the edge of town.</p>
+          
+          <p>As you walk down Main Street, the wind picks up, howling through the empty buildings. You quicken your pace, unable to shake the feeling of being watched from every vacant window.</p>
+          
+          <p>Halfway to your car, you notice something troubling. A thick mist is rolling in from the hills beyond town, unnatural in its movement—almost purposeful. It's flowing between buildings, curling around corners, advancing steadily toward you.</p>
+          
+          <p>You break into a jog, then a run. The mist seems to accelerate in response.</p>
+          
+          <p>The temperature drops sharply. Your breath comes in visible puffs now. Through the gathering mist, you spot your car—still a hundred yards away.</p>
+          
+          <p>A sound rises from the direction of town—voices calling out names, pleading, whispering. The cacophony grows louder as the mist thickens around you.</p>
+          
+          <p>Your car is close now, but the fog is faster, swirling around your legs as you run. In the mist, you begin to see faces forming and dissolving—expressions of terror frozen on features that twist and change.</p>
+          
+          <p>Just as you reach for your car door, a figure steps out of the mist directly in your path—a woman in dated clothes, her eyes hollow and dark.</p>
+          
+          <p>"You can't leave," she says, her voice echoing strangely. "No one leaves. Not anymore."</p>
+        </div>
+
+        <div class="story-choices">
+          <h3>What will you
         <div class="story-chapter hidden" id="chapter-2c">
         <div class="chapter-image">
           <img src="/api/placeholder/400/250" alt="Sunset Over Ghost Town">
