@@ -6,6 +6,32 @@
     <title>Ghost Town | StoryVerse</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+.story-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.story-controls button {
+  padding: 10px 20px;
+  border: none;
+  background: #1e293b;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.story-controls button:hover {
+  background: #3b82f6;
+  transform: translateY(-2px);
+}
+</style>
+
 </head>
 <body class="dark-mode story-page">
   <header>
@@ -1268,21 +1294,81 @@
         </div>
       </div>
     </div>
-     <div class="story-controls" style="
-          position: fixed;
-          bottom: 20px;
-          left: 50%;
-          transform: translateX(-50%);
-          background: #222;
-          padding: 10px 20px;
-          border-radius: 12px;
-          box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-          z-index: 1000;
-        ">
-          <button id="prevBtn">Previous</button>
-          <button id="nextBtn">Next</button>
-          <button id="mapBtn">Map</button>
-        </div>
+    <div class="story-controls">
+  <button id="prevBtn">Previous</button>
+  <button id="nextBtn">Next</button>
+  <button id="mapBtn">Story Map</button>
+</div>
+<!-- Story Map Modal -->
+<div id="storyMapModal" class="story-map-modal hidden">
+  <div class="story-map-content">
+    <h2>🗺️ Story Map</h2>
+    <ul>
+      <li><a href="#chapter-1">Chapter 1: The Arrival</a></li>
+      <li><a href="#chapter-2">Chapter 2: Shadows Stir</a></li>
+      <li><a href="#chapter-3">Chapter 3: Echoes</a></li>
+      <li><a href="#chapter-4h">Chapter 4: The Hidden Path</a></li>
+      <li><a href="#ending-1a">Ending: The Awakening</a></li>
+      <li><a href="#ending-2f">Ending: The Forever Fog</a></li>
+      <li><a href="#ending-5m">Ending: Breaking Free</a></li>
+      <li><a href="#ending-6">Ending: Sullivan’s Last Game</a></li>
+    </ul>
+    <button onclick="closeMap()" style="margin-top: 20px;">Close Map</button>
+  </div>
+</div>
+
+<style>
+.story-map-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.story-map-content {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.story-map-content h2 {
+  margin-bottom: 20px;
+}
+
+.story-map-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.story-map-content li {
+  margin: 10px 0;
+}
+
+.story-map-content a {
+  color: #3b82f6;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.story-map-content a:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+</style>
+
 <script src="script.js"></script>
 <script src="enhanced-story-viewer.js"></script>
       <script>
