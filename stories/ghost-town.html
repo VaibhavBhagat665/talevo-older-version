@@ -1285,6 +1285,12 @@
         </div>
 <script src="script.js"></script>
 <script src="enhanced-story-viewer.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const viewer = new EnhancedStoryViewer('ghost-town');
+            viewer.loadStory();
+        });
+    </script>
 </body>
 </html>
 
