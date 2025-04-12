@@ -34,14 +34,36 @@
 
 </head>
 <body class="dark-mode story-page">
-  <header>
-    <div class="container">
-      <h1>Ghost Town</h1>
-      <div class="theme-toggle">
-        <i class="fas fa-moon"></i>
-      </div>
-    </div>
-  </header>
+   <header class="story-header">
+        <div class="logo-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 200 60" class="logo-svg">
+                    <path d="M20,10 Q40,5 60,10 T100,10 T140,10 T180,10 Q190,30 180,50 T140,50 T100,50 T60,50 Q40,55 20,50 Q10,30 20,10" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <text x="38" y="36" fill="currentColor" font-size="22" font-weight="bold">StoryVerse</text>
+                    <circle cx="30" cy="30" r="3" fill="currentColor" class="star star1"/>
+                    <circle cx="170" cy="20" r="2" fill="currentColor" class="star star2"/>
+                    <circle cx="150" cy="40" r="2" fill="currentColor" class="star star3"/>
+                    <circle cx="80" cy="15" r="1.5" fill="currentColor" class="star star4"/>
+                    <circle cx="120" cy="45" r="1.5" fill="currentColor" class="star star5"/>
+                </svg>
+            </a>
+        </div>
+        <div class="story-nav">
+            <button class="btn btn-icon" id="backBtn"><i class="fas fa-arrow-left"></i></button>
+            <div class="story-title">Ghost Town</div>
+            <div class="theme-toggle">
+              <button id="theme-switch">
+                <i class="fas fa-moon"></i>
+              </button>
+            </div>
+
+            <div class="story-controls">
+                <button class="btn btn-icon" id="bookmarkBtn"><i class="far fa-bookmark"></i></button>
+                <button class="btn btn-icon" id="shareBtn"><i class="fas fa-share-alt"></i></button>
+                <button class="btn btn-icon" id="settingsBtn"><i class="fas fa-cog"></i></button>
+            </div>
+        </div>
+    </header>
 
   <main class="container">
     <div class="story-container">
