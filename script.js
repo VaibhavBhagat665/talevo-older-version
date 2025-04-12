@@ -133,11 +133,14 @@ function initStoryInteractions() {
     // Set up "Start Reading" button
     const startReadingBtn = document.querySelector('.cta-button');
     if (startReadingBtn) {
-        startReadingBtn.addEventListener('click', function() {
-            // Default to the featured story
-            window.location.href = 'ghost-town.html';
+        startReadingBtn.addEventListener('click', function () {
+            const featuredSection = document.querySelector('.featured-stories');
+            if (featuredSection) {
+                featuredSection.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     }
+
 
     // Make story cards clickable
     const storyCards = document.querySelectorAll('.story-card');
@@ -148,7 +151,7 @@ function initStoryInteractions() {
             const storyId = storyTitle.toLowerCase().replace(/\s+/g, '-');
             
             // Navigate to the story page
-            window.location.href = `${storyId}.html`;
+            window.location.href = `stories/${storyId}.html`;
         });
     });
     
