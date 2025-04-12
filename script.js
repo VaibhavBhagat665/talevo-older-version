@@ -275,3 +275,57 @@ function showNotification(message) {
         }, 300);
     }, 3000);
 }
+// Story navigation: Next / Prev / Start Over / Map
+document.addEventListener('DOMContentLoaded', function () {
+    const chapters = Array.from(document.querySelectorAll('.story-chapter'));
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const mapBtn = document.getElementById('mapBtn');
+    const restartBtns = document.querySelectorAll('.restart-btn');
+
+    function getCurrentChapterIndex() {
+        return chapters.findIndex(ch => !ch.classList.contains('hidden'));
+    }
+
+    function showChapter(index) {
+        chapters.forEach(ch => ch.classList.add('hidden'));
+        chapters[index].classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            let index = getCurrentChapterIndex();
+            if (index < chapters.length - 1) {
+                showChapter(index + 1);
+            }
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            let index = getCurrentChapterIndex();
+            if (index > 0) {
+                showChapter(index - 1);
+            }
+        });
+    }
+
+    if (mapBtn) {
+        mapBtn.addEventListener('click', () => {
+            const mapChapter = document.getElementById('chapter-4h');
+            if (mapChapter) {
+                chapters.forEach(ch => ch.classList.add('hidden'));
+                mapChapter.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    }
+
+    restartBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            showChapter(0); // Go to chapter-1
+        });
+    });
+});
+
