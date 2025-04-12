@@ -332,3 +332,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Show/hide story map
+const mapBtn = document.getElementById('mapBtn');
+const storyMapModal = document.getElementById('storyMapModal');
+
+function closeMap() {
+    if (storyMapModal) {
+        storyMapModal.classList.add('hidden');
+    }
+}
+
+if (mapBtn && storyMapModal) {
+    mapBtn.addEventListener('click', () => {
+        storyMapModal.classList.remove('hidden');
+    });
+}
