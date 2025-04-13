@@ -29,9 +29,11 @@
 
 .ghost-theme .story-container {
   display: flex;
-  justify-content: center; /* horizontal */
-  align-items: center;     /* vertical */
-  height: 100vh; 
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  position: relative;
 }
 
 .ghost-theme .story-title {
@@ -63,24 +65,19 @@
   transform: translate(-50%, -50%); */
 /* } */
 .ghost-theme .story-chapter {
-  padding: 2rem;
-  width: 60%; /* Significantly reduced from 120% */
-  max-width: 600px; /* Smaller max-width */
+  /* Fixed dimensions instead of percentages */
+  width: 400px;
+  padding: 1.5rem;
+  
+  /* Remove absolute positioning completely */
+  position: static;
+  transform: none;
+  
+  /* Other styles */
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(4px);
   box-shadow: var(--glow);
   border-radius: 8px;
-  
-  /* Center positioning */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
-  /* Remove conflicting margins */
-  margin: 0;
-  
-  /* Other styles */
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   animation: fadeIn 1.2s ease-in-out;
 }
