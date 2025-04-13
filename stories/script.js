@@ -462,8 +462,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 let storyHistory = [];
 let currentChapter = document.querySelector('.story-chapter:not(.hidden)');
+let cameFromPrev = false; // Track if user clicked 'Prev'
 
-// CHOICE NAVIGATION
+// CHOICE CLICK
 document.querySelectorAll('.choice-btn').forEach(button => {
   button.addEventListener('click', () => {
     if (currentChapter) {
@@ -475,12 +476,13 @@ document.querySelectorAll('.choice-btn').forEach(button => {
       document.querySelectorAll('.story-chapter').forEach(c => c.classList.add('hidden'));
       next.classList.remove('hidden');
       currentChapter = next;
+      cameFromPrev = false;
       updateNavButtons();
     }
   });
 });
 
-// PREV LOGIC
+// PREV BUTTON
 document.getElementById('prev-btn')?.addEventListener('click', () => {
   const prevId = storyHistory.pop();
   const prev = document.getElementById(prevId);
@@ -488,11 +490,12 @@ document.getElementById('prev-btn')?.addEventListener('click', () => {
     document.querySelectorAll('.story-chapter').forEach(c => c.classList.add('hidden'));
     prev.classList.remove('hidden');
     currentChapter = prev;
+    cameFromPrev = true;
     updateNavButtons();
   }
 });
 
-// NEXT LOGIC (follows first available choice)
+// NEXT BUTTON (only after Prev clicked)
 document.getElementById('next-btn')?.addEventListener('click', () => {
   const firstChoice = currentChapter?.querySelector('.choice-btn');
   if (firstChoice) {
@@ -500,18 +503,14 @@ document.getElementById('next-btn')?.addEventListener('click', () => {
   }
 });
 
-// BUTTON VISIBILITY CONTROL
+// CONTROLS WHEN NAV BUTTONS SHOW
 function updateNavButtons() {
   const isFirst = currentChapter?.id === 'chapter-1';
   const isEnding = currentChapter?.classList.contains('story-ending');
 
-  document.getElementById('prev-btn')?.classList.toggle('hidden', isFirst);
-  document.getElementById('next-btn')?.classList.toggle('hidden', isEnding);
+  const showPrev = storyHistory.length > 0;
+  const showNext = cameFromPrev && !isEnding;
+
+  document.getElementById('prev-btn')?.classList.toggle('hidden', !showPrev);
+  document.getElementById('next-btn')?.classList.toggle('hidden', !showNext);
 }
-
-
-
-
-
-
-
