@@ -460,6 +460,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+window.addEventListener('load', () => {
+  document.querySelector('.ghost-theme').style.backgroundImage = "url('26922.webp')";
+});
+
 let storyHistory = [];
 let currentChapter = document.querySelector('.story-chapter:not(.hidden)');
 let cameFromPrev = false; // Track if user clicked 'Prev'
