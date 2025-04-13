@@ -460,5 +460,64 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+let storyHistory = [];
+let currentChapter = document.querySelector('.story-chapter:not(.hidden)');
+
+// CHOICE HANDLING
+document.querySelectorAll('.choice-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    if (currentChapter) {
+      storyHistory.push(currentChapter.id);
+    }
+    const nextId = button.getAttribute('data-next');
+    const next = document.getElementById(nextId);
+    if (next) {
+      document.querySelectorAll('.story-chapter').forEach(c => c.classList.add('hidden'));
+      next.classList.remove('hidden');
+      currentChapter = next;
+      updateNavButtons();
+    }
+  });
+});
+
+// PREV BUTTON
+document.getElementById('prev-btn')?.addEventListener('click', () => {
+  const prevId = storyHistory.pop();
+  const prev = document.getElementById(prevId);
+  if (prev) {
+    document.querySelectorAll('.story-chapter').forEach(c => c.classList.add('hidden'));
+    prev.classList.remove('hidden');
+    currentChapter = prev;
+    updateNavButtons();
+  }
+});
+
+// NEXT BUTTON (follows first available choice)
+document.getElementById('next-btn')?.addEventListener('click', () => {
+  const firstChoice = currentChapter?.querySelector('.choice-btn');
+  if (firstChoice) {
+    firstChoice.click();
+  }
+});
+
+// Update visibility logic
+function updateNavButtons() {
+  const isFirst = currentChapter?.id === 'chapter-1';
+  const isEnding = currentChapter?.classList.contains('story-ending');
+
+  document.getElementById('prev-btn')?.classList.toggle('hidden', isFirst);
+  document.getElementById('next-btn')?.classList.toggle('hidden', isEnding);
+}
+
+// GHOST TOWN MAP TOGGLE
+document.getElementById('map-btn')?.addEventListener('click', () => {
+  const map = document.querySelector('.story-map');
+  if (map) {
+    map.classList.toggle('hidden');
+    map.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+});
+
+
 
 
