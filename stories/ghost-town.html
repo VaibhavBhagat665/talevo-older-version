@@ -1460,66 +1460,65 @@
             const viewer = new EnhancedStoryViewer('ghost-town');
             viewer.loadStory();
             if (window.innerWidth <= 600) {
-    // Apply styles to story header
+    // Apply styles to story header - make it smaller for floating effect
     const storyHeader = document.querySelector('.story-header');
     if (storyHeader) {
-      storyHeader.style.width = '100%';
-      storyHeader.style.maxWidth = '100%';
-      storyHeader.style.margin = '0';
-      storyHeader.style.padding = '1rem 0';
-      storyHeader.style.borderRadius = '0';
+      storyHeader.style.width = '85%';  // Reduced from 100%
+      storyHeader.style.maxWidth = '85%'; // Reduced from 100%
+      storyHeader.style.margin = '0 auto'; // Center it
+      storyHeader.style.padding = '0.8rem'; // Reduced padding
+      storyHeader.style.borderRadius = '8px'; // Add some roundness
       storyHeader.style.display = 'flex';
       storyHeader.style.flexDirection = 'column';
       storyHeader.style.textAlign = 'center';
+      storyHeader.style.marginBottom = '1rem'; // Space below
+      storyHeader.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)'; // Subtle shadow for floating effect
     }
-    
+
     // Apply styles to story title
     const storyTitle = document.querySelector('.story-title');
     if (storyTitle) {
       storyTitle.style.width = '100%';
       storyTitle.style.textAlign = 'center';
-      storyTitle.style.fontSize = '1.4rem';
+      storyTitle.style.fontSize = '1.3rem'; // Slightly smaller
     }
-    
-    // Apply styles to story chapter
+
+    // Apply styles to story chapter - increase width
     const storyChapter = document.querySelector('.story-chapter');
     if (storyChapter) {
-      storyChapter.style.width = '100%';
-      storyChapter.style.maxWidth = '100%';
-      storyChapter.style.margin = '0';
+      storyChapter.style.width = '95%'; // Increased from original
+      storyChapter.style.maxWidth = '95%'; // Increased from original
+      storyChapter.style.margin = '0 auto'; // Center it
       storyChapter.style.padding = '1.5rem 1rem';
       storyChapter.style.borderRadius = '0';
       storyChapter.style.position = 'relative';
       storyChapter.style.left = '0';
       storyChapter.style.right = '0';
     }
-    
+
     // Apply styles to chapter title
     const chapterTitle = document.querySelector('.chapter-title');
     if (chapterTitle) {
-      chapterTitle.style.fontSize = '1.8rem';
+      chapterTitle.style.fontSize = '1.6rem'; // Slightly smaller
       chapterTitle.style.textAlign = 'center';
       chapterTitle.style.width = '100%';
     }
 
-    const storyCont = document.querySelector('.story-container');
-    if (storyCont) {
-      storyCont.style.width = '950%';
-      storyCont.style.textAlign = 'center';
-    }
-    
-    // Apply styles to chapter text and paragraphs
+    // Apply styles to chapter text and paragraphs - make it wider
     const chapterText = document.querySelector('.chapter-text');
     if (chapterText) {
-      chapterText.style.width = '100%';
+      chapterText.style.width = '100%'; // Full width of parent
       
       // Apply to all paragraphs in chapter text
       const paragraphs = chapterText.querySelectorAll('p');
       paragraphs.forEach(p => {
-        p.style.width = '100%';
+        p.style.width = '100%'; // Full width
+        p.style.maxWidth = 'none'; // Remove any max-width constraints
+        p.style.paddingLeft = '0'; // Remove any left padding
+        p.style.paddingRight = '0'; // Remove any right padding
       });
     }
-    
+
     // Apply styles to navigation buttons
     const navButtons = document.querySelector('.nav-buttons');
     if (navButtons) {
@@ -1530,10 +1529,10 @@
       // Style prev and next buttons
       const prevBtn = document.getElementById('prev-btn');
       const nextBtn = document.getElementById('next-btn');
-      
       if (prevBtn) prevBtn.style.width = '45%';
       if (nextBtn) nextBtn.style.width = '45%';
     }
+  }
         });
     </script>
     <footer style="font-size: 10px; color: #666; text-align: center; margin-top: 40px;">
