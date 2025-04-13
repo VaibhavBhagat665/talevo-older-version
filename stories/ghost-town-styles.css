@@ -18,6 +18,13 @@
   background-blend-mode: overlay;
   position: relative;
   overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Add this to ensure all elements use border-box sizing */
+.ghost-theme * {
+  box-sizing: border-box;
 }
 
 /* Ghost mist animation */
@@ -49,6 +56,8 @@
   animation: pulseGlow 4s ease-in-out infinite;
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: 100%;
 }
 
 @keyframes pulseGlow {
@@ -85,6 +94,7 @@
   align-items: center;
   box-shadow: var(--shadow);
   border-bottom: 1px solid #2a2a2e;
+  width: 100%;
 }
 
 .ghost-theme .story-title {
@@ -104,6 +114,7 @@
   box-shadow: var(--glow);
   border-radius: 8px;
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .ghost-theme .chapter-title {
@@ -138,6 +149,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 100%;
 }
 
 .ghost-theme .choice-btn {
@@ -150,6 +162,7 @@
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
   box-shadow: inset 0 0 0 rgba(0,0,0,0.2);
+  width: 100%;
 }
 
 .ghost-theme .choice-btn:hover {
@@ -171,6 +184,8 @@
   cursor: pointer;
   box-shadow: var(--shadow);
   transition: 0.3s ease;
+  width: 100%;
+  max-width: 100%;
 }
 
 .ghost-theme .restart-btn:hover {
@@ -202,7 +217,11 @@
 
 @media (max-width: 768px) {
   .ghost-theme .story-chapter {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
   }
 
   .ghost-theme .chapter-title {
@@ -210,7 +229,37 @@
   }
 
   .ghost-theme .story-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+  
+  .ghost-theme .story-header {
+    padding: 1rem;
+    width: 100%;
+  }
+  
+  .ghost-theme .story-map {
+    margin: 1rem 0;
+    width: 100%;
+    border-radius: 0;
+  }
+  
+  .ghost-theme .nav-buttons {
+    padding: 0;
+    width: 100%;
+  }
+  
+  .ghost-theme #prev-btn,
+  .ghost-theme #next-btn {
+    padding: 0.7rem 1rem;
+  }
+  
+  /* Remove side margins for full-width experience */
+  .ghost-theme .story-choices,
+  .ghost-theme .choice-options,
+  .ghost-theme .restart-btn {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -220,6 +269,7 @@
   margin: 2rem auto;
   max-width: 700px;
   padding: 0 1rem;
+  width: 100%;
 }
 
 .ghost-theme #prev-btn,
