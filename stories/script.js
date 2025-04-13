@@ -509,6 +509,7 @@ function updateNavButtons() {
   document.getElementById('next-btn')?.classList.toggle('hidden', isEnding);
 }
 
+
 // GHOST TOWN MAP TOGGLE
 document.getElementById('map-btn')?.addEventListener('click', () => {
   const map = document.querySelector('.story-map');
