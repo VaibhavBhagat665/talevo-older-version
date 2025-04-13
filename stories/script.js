@@ -460,12 +460,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-window.addEventListener('load', () => {
-  const ghostTheme = document.querySelector('.ghost-theme');
-  if (ghostTheme) {
-    ghostTheme.style.backgroundImage = "url('26922.webp')";
-  }
-});
+// window.addEventListener('load', () => {
+//   const ghostTheme = document.querySelector('.ghost-theme');
+//   if (ghostTheme) {
+//     ghostTheme.style.backgroundImage = "url('26922.webp')";
+//   }
+// });
 
 
 let storyHistory = [];
