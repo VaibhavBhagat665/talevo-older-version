@@ -27,6 +27,10 @@
   border-bottom: 1px solid #2a2a2e;
 }
 
+.ghost-theme .story-container {
+  align-itmes: center;
+}
+
 .ghost-theme .story-title {
   font-size: 1.8rem;
   font-weight: 700;
