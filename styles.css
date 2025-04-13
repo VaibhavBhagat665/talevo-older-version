@@ -61,7 +61,7 @@ body {
 .theme-toggle {
     position: fixed;
     top: 28px;
-    right: 130px;
+    right: 930px;
     z-index: 1000;
 }
 
