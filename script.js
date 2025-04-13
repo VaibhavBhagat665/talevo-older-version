@@ -387,22 +387,26 @@ document.addEventListener("DOMContentLoaded", function () {
     checkLoginStatus();
 
     // Sign Up
-    const signupButton = document.querySelector('#signup-form .btn');
-    if (signupButton) {
-        signupButton.addEventListener('click', function () {
-            const name = document.getElementById('new-name').value.trim();
-            const email = document.getElementById('new-email').value.trim();
-            const password = document.getElementById('new-password').value.trim();
+    const signupButton = document.getElementById("createAccountBtn");
 
-            if (!email || !password || !name) {
-                alert("Please fill out all fields.");
-                return;
-            }
+if (signupButton) {
+    signupButton.addEventListener("click", function () {
+        const name = document.getElementById("new-name").value.trim();
+        const email = document.getElementById("new-email").value.trim();
+        const password = document.getElementById("new-password").value.trim();
 
-            localStorage.setItem(`user_${email}`, JSON.stringify({ name, password }));
-            alert("Account created! Now sign in.");
-        });
+        if (!name || !email || !password) {
+            alert("Please fill out all fields.");
+            return;
+        }
+
+        // Save to localStorage
+        localStorage.setItem(`user_${email}`, JSON.stringify({ name, password }));
+        alert("Account created! You can now sign in.");
+    });
     }
+
+    
 
     // Sign In
     const signinButton = document.querySelector('#login-form .btn');
