@@ -1086,3 +1086,34 @@ opacity: 0.3;
     position: relative;
     z-index: 0;
 }
+
+.auth-form {
+  background: var(--dark-card);
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 2rem auto;
+  box-shadow: var(--shadow-md);
+}
+
+.auth-form input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--dark-border);
+  background: var(--dark-bg-secondary);
+  color: var(--dark-text);
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 10px;
+  background: var(--gradient-1);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+  cursor: pointer;
+}
