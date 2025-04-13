@@ -524,88 +524,88 @@ function updateNavButtons() {
 }
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  if (window.innerWidth <= 600) {
-    // ✨ Story Header - tighter, floating style
-    const storyHeader = document.querySelector('.story-header');
-    if (storyHeader) {
-      Object.assign(storyHeader.style, {
-        width: '85%',
-        maxWidth: '85%',
-        margin: '0 auto 1rem',
-        padding: '0.8rem',
-        borderRadius: '8px',
-        display: 'flex',
-        flexDirection: 'column',
-        textAlign: 'center',
-        boxShadow: '0 2px 5px rgba(0,0,0,0.1)'
-      });
-    }
+// document.addEventListener('DOMContentLoaded', function () {
+//   if (window.innerWidth <= 600) {
+//     // ✨ Story Header - tighter, floating style
+//     const storyHeader = document.querySelector('.story-header');
+//     if (storyHeader) {
+//       Object.assign(storyHeader.style, {
+//         width: '85%',
+//         maxWidth: '85%',
+//         margin: '0 auto 1rem',
+//         padding: '0.8rem',
+//         borderRadius: '8px',
+//         display: 'flex',
+//         flexDirection: 'column',
+//         textAlign: 'center',
+//         boxShadow: '0 2px 5px rgba(0,0,0,0.1)'
+//       });
+//     }
 
-    // 🧠 Story Title - cleaner and smaller
-    const storyTitle = document.querySelector('.story-title');
-    if (storyTitle) {
-      Object.assign(storyTitle.style, {
-        width: '100%',
-        fontSize: '1.3rem',
-        textAlign: 'center'
-      });
-    }
+//     // 🧠 Story Title - cleaner and smaller
+//     const storyTitle = document.querySelector('.story-title');
+//     if (storyTitle) {
+//       Object.assign(storyTitle.style, {
+//         width: '100%',
+//         fontSize: '1.3rem',
+//         textAlign: 'center'
+//       });
+//     }
 
-    // 📖 Story Chapter - almost full width
-    const storyChapter = document.querySelector('.story-chapter');
-    if (storyChapter) {
-      Object.assign(storyChapter.style, {
-        width: '95%',
-        maxWidth: '95%',
-        margin: '1rem auto',
-        padding: '1.5rem 1rem',
-        borderRadius: '0',
-        position: 'relative',
-        left: '0',
-        right: '0'
-      });
-    }
+//     // 📖 Story Chapter - almost full width
+//     const storyChapter = document.querySelector('.story-chapter');
+//     if (storyChapter) {
+//       Object.assign(storyChapter.style, {
+//         width: '95%',
+//         maxWidth: '95%',
+//         margin: '1rem auto',
+//         padding: '1.5rem 1rem',
+//         borderRadius: '0',
+//         position: 'relative',
+//         left: '0',
+//         right: '0'
+//       });
+//     }
 
-    // 📛 Chapter Title
-    const chapterTitle = document.querySelector('.chapter-title');
-    if (chapterTitle) {
-      Object.assign(chapterTitle.style, {
-        fontSize: '1.6rem',
-        textAlign: 'center',
-        width: '100%'
-      });
-    }
+//     // 📛 Chapter Title
+//     const chapterTitle = document.querySelector('.chapter-title');
+//     if (chapterTitle) {
+//       Object.assign(chapterTitle.style, {
+//         fontSize: '1.6rem',
+//         textAlign: 'center',
+//         width: '100%'
+//       });
+//     }
 
-    // 📄 Chapter Text Paragraphs
-    const chapterText = document.querySelector('.chapter-text');
-    if (chapterText) {
-      chapterText.style.width = '100%';
-      const paragraphs = chapterText.querySelectorAll('p');
-      paragraphs.forEach(p => {
-        Object.assign(p.style, {
-          width: '100%',
-          maxWidth: 'none',
-          paddingLeft: '0',
-          paddingRight: '0'
-        });
-      });
-    }
+//     // 📄 Chapter Text Paragraphs
+//     const chapterText = document.querySelector('.chapter-text');
+//     if (chapterText) {
+//       chapterText.style.width = '100%';
+//       const paragraphs = chapterText.querySelectorAll('p');
+//       paragraphs.forEach(p => {
+//         Object.assign(p.style, {
+//           width: '100%',
+//           maxWidth: 'none',
+//           paddingLeft: '0',
+//           paddingRight: '0'
+//         });
+//       });
+//     }
 
-    // 🔘 Navigation Buttons
-    const navButtons = document.querySelector('.nav-buttons');
-    if (navButtons) {
-      Object.assign(navButtons.style, {
-        width: '100%',
-        margin: '1rem 0',
-        padding: '0',
-        justifyContent: 'space-between'
-      });
+//     // 🔘 Navigation Buttons
+//     const navButtons = document.querySelector('.nav-buttons');
+//     if (navButtons) {
+//       Object.assign(navButtons.style, {
+//         width: '100%',
+//         margin: '1rem 0',
+//         padding: '0',
+//         justifyContent: 'space-between'
+//       });
 
-      const prevBtn = document.getElementById('prev-btn');
-      const nextBtn = document.getElementById('next-btn');
-      if (prevBtn) prevBtn.style.width = '45%';
-      if (nextBtn) nextBtn.style.width = '45%';
-    }
-  }
-});
+//       const prevBtn = document.getElementById('prev-btn');
+//       const nextBtn = document.getElementById('next-btn');
+//       if (prevBtn) prevBtn.style.width = '45%';
+//       if (nextBtn) nextBtn.style.width = '45%';
+//     }
+//   }
+// });
