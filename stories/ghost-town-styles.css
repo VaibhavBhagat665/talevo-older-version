@@ -16,15 +16,12 @@
   color: var(--text-color);
   background-image: url('/images/stories/ghost-town/26922.jpg');
   background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   overflow-x: hidden;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Add this to ensure all elements use border-box sizing */
-.ghost-theme * {
-  box-sizing: border-box;
+  min-height: 100vh;
 }
 
 /* Ghost mist animation */
@@ -45,76 +42,97 @@
   100% { background-position: -2000px 0; }
 }
 
-/* Story map specific spooky styling */
-.ghost-theme .story-map {
-  border: 2px dashed var(--accent-color);
-  padding: 1rem;
+.ghost-theme .story-chapter {
+  padding: 3rem 2rem;
   margin: 2rem auto;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
-  box-shadow: 0 0 15px rgba(108, 60, 255, 0.2);
-  animation: pulseGlow 4s ease-in-out infinite;
-  position: relative;
-  z-index: 1;
+  max-width: 800px;
   width: 100%;
-  max-width: 100%;
-}
-
-@keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 15px rgba(108, 60, 255, 0.2); }
-  50% { box-shadow: 0 0 25px rgba(108, 60, 255, 0.4); }
-}
-
-.ghost-theme .story-map h3 {
-  color: var(--accent-color);
-  text-align: center;
-  font-family: 'Unbounded', sans-serif;
-  margin-bottom: 1rem;
-  text-shadow: var(--shadow);
-}
-
-.ghost-theme .story-map img {
-  width: 100%;
-  max-width: 500px;
-  border: 2px solid var(--accent-color);
+  background: rgba(0, 0, 0, 0.85);
   border-radius: 8px;
-  filter: brightness(0.85) contrast(1.1);
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
-  display: block;
-  margin: auto;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  box-sizing: border-box;
 }
-
-/* Existing content retained below */
 
 .ghost-theme .story-header {
-  background-color: #1f1f23;
-  padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  box-shadow: var(--shadow);
-  border-bottom: 1px solid #2a2a2e;
-  width: 100%;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 0.5rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .ghost-theme .story-title {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
+  word-break: break-word;
+  max-width: 100%;
+  padding: 0 1rem;
+  color: var(--ghost-white);
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: var(--ghost-white);
   text-shadow: var(--shadow);
 }
 
-.ghost-theme .story-chapter {
-  padding: 3rem 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  animation: fadeIn 1.2s ease-in-out;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(4px);
-  box-shadow: var(--glow);
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  width: 100%;
+@media (max-width: 768px) {
+  .ghost-theme .story-header {
+    width: 85%;
+    max-width: 85%;
+    margin: 0 auto 1rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .ghost-theme .story-title {
+    font-size: 1.3rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .ghost-theme .story-chapter {
+    width: 95%;
+    max-width: 95%;
+    margin: 1rem auto;
+    padding: 1.5rem 1rem;
+    border-radius: 0;
+    position: relative;
+    left: 0;
+    right: 0;
+  }
+
+  .ghost-theme .chapter-title {
+    font-size: 1.6rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .ghost-theme .chapter-text p {
+    width: 100%;
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .ghost-theme .nav-buttons {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0;
+  }
+
+  .ghost-theme #prev-btn,
+  .ghost-theme #next-btn {
+    width: 45%;
+  }
+}
+
+body {
+  min-width: 320px;
 }
 
 .ghost-theme .chapter-title {
@@ -149,7 +167,6 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  width: 100%;
 }
 
 .ghost-theme .choice-btn {
@@ -162,7 +179,6 @@
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
   box-shadow: inset 0 0 0 rgba(0,0,0,0.2);
-  width: 100%;
 }
 
 .ghost-theme .choice-btn:hover {
@@ -184,8 +200,6 @@
   cursor: pointer;
   box-shadow: var(--shadow);
   transition: 0.3s ease;
-  width: 100%;
-  max-width: 100%;
 }
 
 .ghost-theme .restart-btn:hover {
@@ -215,61 +229,12 @@
   background: #1a1a1d;
 }
 
-@media (max-width: 768px) {
-  .ghost-theme .story-chapter {
-    padding: 1.5rem 1rem;
-    margin: 1rem 0;
-    width: 100%;
-    max-width: 100%;
-    border-radius: 0;
-  }
-
-  .ghost-theme .chapter-title {
-    font-size: 1.5rem;
-  }
-
-  .ghost-theme .story-title {
-    font-size: 1.4rem;
-  }
-  
-  .ghost-theme .story-header {
-    padding: 1rem;
-    width: 100%;
-  }
-  
-  .ghost-theme .story-map {
-    margin: 1rem 0;
-    width: 100%;
-    border-radius: 0;
-  }
-  
-  .ghost-theme .nav-buttons {
-    padding: 0;
-    width: 100%;
-  }
-  
-  .ghost-theme #prev-btn,
-  .ghost-theme #next-btn {
-    padding: 0.7rem 1rem;
-  }
-  
-  /* Remove side margins for full-width experience */
-  .ghost-theme .story-choices,
-  .ghost-theme .choice-options,
-  .ghost-theme .restart-btn {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
 .ghost-theme .nav-buttons {
   display: flex;
   justify-content: space-between;
   margin: 2rem auto;
   max-width: 700px;
   padding: 0 1rem;
-  width: 100%;
 }
 
 .ghost-theme #prev-btn,
