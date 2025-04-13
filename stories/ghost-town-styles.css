@@ -29,11 +29,9 @@
 
 .ghost-theme .story-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60vh;
-  width: 100%;
-  position: relative;
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertical */
+  height: 100vh; 
 }
 
 .ghost-theme .story-title {
@@ -46,8 +44,8 @@
   width: 100%;
 }
 
-/* .ghost-theme .story-chapter { */
-/*   padding: 3rem 2rem;
+.ghost-theme .story-chapter {
+  padding: 3rem 2rem;
   width: 120%;
   align-items: center;
   margin: 3rem auto;
@@ -62,27 +60,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); */
-/* } */
-.ghost-theme .story-chapter {
-  /* Control both width and height */
-  width: 800px;
-  max-height: 30vh; /* Limit vertical size */
-  overflow-y: auto; /* Add scrolling for overflow content */
-  
-  /* Center positioning with flex instead of absolute */
-  position: static;
-  transform: none;
-  margin: 0;
-  
-  /* Other styles */
-  padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(4px);
-  box-shadow: var(--glow);
-  border-radius: 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  animation: fadeIn 1.2s ease-in-out;
+  transform: translate(-50%, -50%);
 }
 
 .ghost-theme .chapter-title {
