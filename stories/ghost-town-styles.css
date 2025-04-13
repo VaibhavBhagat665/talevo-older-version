@@ -67,7 +67,7 @@
 .ghost-theme .story-chapter {
   /* Control both width and height */
   width: 800px;
-  max-height: 60vh; /* Limit vertical size */
+  max-height: 30vh; /* Limit vertical size */
   overflow-y: auto; /* Add scrolling for overflow content */
   
   /* Center positioning with flex instead of absolute */
