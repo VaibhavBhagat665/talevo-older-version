@@ -59,10 +59,10 @@ body {
 
 /* Theme Toggle */
 .theme-toggle {
-    position: fixed;
-    top: 30px;
-    right: 310px;
-    z-index: 1000;
+  position: fixed;
+  top: 30px;
+  right: 30px; /* much more responsive */
+  z-index: 1000;
 }
 
 #theme-switch {
