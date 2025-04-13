@@ -27,8 +27,10 @@
   border-bottom: 1px solid #2a2a2e;
 }
 
-.story-container {
-  align-itmes: center;
+.ghost-theme .story-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .ghost-theme .story-title {
