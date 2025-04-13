@@ -463,7 +463,7 @@ document.addEventListener("DOMContentLoaded", function() {
 window.addEventListener('load', () => {
   const ghostTheme = document.querySelector('.ghost-theme');
   if (ghostTheme) {
-    ghostTheme.style.backgroundImage = "url('/assets/images/your-local-haunted-bg.jpg')";
+    ghostTheme.style.backgroundImage = "url('26922.webp')";
   }
 });
 
