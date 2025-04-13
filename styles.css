@@ -57,20 +57,12 @@ body {
     color: var(--light-text);
 }
 
-.header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-}
-
+/* Theme Toggle */
 .theme-toggle {
-  background: transparent;
-  font-size: 1.25rem;
-  cursor: pointer;
+    top: 28px;
+    right: 130px;
+    z-index: 1000;
 }
-
 
 #theme-switch {
     background: transparent;
@@ -1128,5 +1120,3 @@ opacity: 0.3;
 .hidden {
   display: none;
 }
-
-
