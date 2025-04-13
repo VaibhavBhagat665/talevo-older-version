@@ -461,8 +461,12 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 window.addEventListener('load', () => {
-  document.querySelector('.ghost-theme').style.backgroundImage = "url('26922.webp')";
+  const ghostTheme = document.querySelector('.ghost-theme');
+  if (ghostTheme) {
+    ghostTheme.style.backgroundImage = "url('/assets/images/your-local-haunted-bg.jpg')";
+  }
 });
+
 
 let storyHistory = [];
 let currentChapter = document.querySelector('.story-chapter:not(.hidden)');
