@@ -332,22 +332,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Show/hide story map
-const mapBtn = document.getElementById('mapBtn');
-const storyMapModal = document.getElementById('storyMapModal');
-
-function closeMap() {
-    if (storyMapModal) {
-        storyMapModal.classList.add('hidden');
-    }
-}
-
-if (mapBtn && storyMapModal) {
-    mapBtn.addEventListener('click', () => {
-        storyMapModal.classList.remove('hidden');
-    });
-}
-
 function handleSignup() {
     const username = document.getElementById('signup-username').value;
     const password = document.getElementById('signup-password').value;
@@ -399,60 +383,141 @@ function checkLoginStatus() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
+    // Initialize application elements
+    initializeApp();
+    
+    // Check login status
     checkLoginStatus();
 
     // Sign Up
-    const signupButton = document.querySelector('#signup-form .btn');
-    if (signupButton) {
-        signupButton.addEventListener('click', function () {
-            const name = document.getElementById('new-name').value.trim();
-            const email = document.getElementById('new-email').value.trim();
-            const password = document.getElementById('new-password').value.trim();
+    const createAccountBtn = document.getElementById("createAccountBtn");
+    if (createAccountBtn) {
+        createAccountBtn.addEventListener("click", function() {
+            const name = document.getElementById("new-name").value.trim();
+            const email = document.getElementById("new-email").value.trim();
+            const password = document.getElementById("new-password").value.trim();
 
-            if (!email || !password || !name) {
-                alert("Please fill out all fields.");
+            if (!name || !email || !password) {
+                showNotification("Please fill out all fields.");
                 return;
             }
 
+            // Save to localStorage
             localStorage.setItem(`user_${email}`, JSON.stringify({ name, password }));
-            alert("Account created! Now sign in.");
+            showNotification("Account created! You can now sign in.");
+            
+            // Switch to login tab
+            const loginTab = document.querySelector('.auth-tab[data-tab="login"]');
+            if (loginTab) {
+                loginTab.click();
+            }
         });
     }
 
     // Sign In
-    const signinButton = document.querySelector('#login-form .btn');
-    if (signinButton) {
-        signinButton.addEventListener('click', function () {
-            const email = document.getElementById('email').value.trim();
-            const password = document.getElementById('password').value.trim();
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+        const signinButton = loginForm.querySelector('.btn');
+        if (signinButton) {
+            signinButton.addEventListener('click', function() {
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value.trim();
 
-            const userData = localStorage.getItem(`user_${email}`);
-            if (!userData) {
-                alert("No account found with this email.");
-                return;
-            }
+                if (!email || !password) {
+                    showNotification("Please enter both email and password.");
+                    return;
+                }
 
-            const parsed = JSON.parse(userData);
-            if (parsed.password === password) {
-                localStorage.setItem("loggedInUser", JSON.stringify({ name: parsed.name, email }));
-                alert(`Welcome back, ${parsed.name}!`);
-                document.getElementById('loginModal').style.display = 'none';
-                document.body.style.overflow = 'auto';
-                checkLoginStatus();
-            } else {
-                alert("Incorrect password.");
-            }
-        });
+                const userData = localStorage.getItem(`user_${email}`);
+                if (!userData) {
+                    showNotification("No account found with this email.");
+                    return;
+                }
+
+                const parsed = JSON.parse(userData);
+                if (parsed.password === password) {
+                    localStorage.setItem("loggedInUser", JSON.stringify({ name: parsed.name, email }));
+                    showNotification(`Welcome back, ${parsed.name}!`);
+                    document.getElementById('loginModal').style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    checkLoginStatus();
+                } else {
+                    showNotification("Incorrect password.");
+                }
+            });
+        }
     }
 
     // Logout
     const logoutBtn = document.getElementById("logoutBtn");
     if (logoutBtn) {
-        logoutBtn.addEventListener("click", () => {
+        logoutBtn.addEventListener("click", function() {
             localStorage.removeItem("loggedInUser");
-            alert("You have been signed out.");
+            showNotification("You have been signed out.");
             checkLoginStatus();
         });
     }
 });
+
+let storyHistory = [];
+let currentChapter = document.querySelector('.story-chapter:not(.hidden)');
+
+// CHOICE HANDLING
+document.querySelectorAll('.choice-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    if (currentChapter) {
+      storyHistory.push(currentChapter.id);
+    }
+    const nextId = button.getAttribute('data-next');
+    const next = document.getElementById(nextId);
+    if (next) {
+      document.querySelectorAll('.story-chapter').forEach(c => c.classList.add('hidden'));
+      next.classList.remove('hidden');
+      currentChapter = next;
+      updateNavButtons();
+    }
+  });
+});
+
+// PREV BUTTON
+document.getElementById('prev-btn')?.addEventListener('click', () => {
+  const prevId = storyHistory.pop();
+  const prev = document.getElementById(prevId);
+  if (prev) {
+    document.querySelectorAll('.story-chapter').forEach(c => c.classList.add('hidden'));
+    prev.classList.remove('hidden');
+    currentChapter = prev;
+    updateNavButtons();
+  }
+});
+
+// NEXT BUTTON (follows first available choice)
+document.getElementById('next-btn')?.addEventListener('click', () => {
+  const firstChoice = currentChapter?.querySelector('.choice-btn');
+  if (firstChoice) {
+    firstChoice.click();
+  }
+});
+
+// Update visibility logic
+function updateNavButtons() {
+  const isFirst = currentChapter?.id === 'chapter-1';
+  const isEnding = currentChapter?.classList.contains('story-ending');
+
+  document.getElementById('prev-btn')?.classList.toggle('hidden', isFirst);
+  document.getElementById('next-btn')?.classList.toggle('hidden', isEnding);
+}
+
+// GHOST TOWN MAP TOGGLE
+document.getElementById('map-btn')?.addEventListener('click', () => {
+  const map = document.querySelector('.story-map');
+  if (map) {
+    map.classList.toggle('hidden');
+    map.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+});
+
+
+
+
