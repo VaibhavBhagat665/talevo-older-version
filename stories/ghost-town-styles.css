@@ -20,8 +20,6 @@
   overflow-x: hidden;
   width: 100%;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 /* Add this to ensure all elements use border-box sizing */
@@ -47,52 +45,12 @@
   100% { background-position: -2000px 0; }
 }
 
-/* MOBILE SPECIFIC STYLES - ALWAYS APPLIED FOR MOBILE DEVICES */
-/* Using broader selector to ensure these take precedence */
-@media screen and (max-width: 600px) {
-  /* This will catch most mobile phones */
-  .ghost-theme .story-chapter {
-    padding: 1.5rem 1rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    border-radius: 0 !important;
-    margin: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    position: relative !important;
-  }
-
-  .ghost-theme .chapter-title {
-    font-size: 1.8rem !important;
-    text-align: center !important;
-    display: block !important;
-    width: 100% !important;
-  }
-
-  .ghost-theme .story-title {
-    font-size: 1.4rem !important;
-    text-align: center !important;
-    width: 100% !important;
-    display: block !important;
-  }
-  
-  .ghost-theme .story-header {
-    padding: 1rem 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    flex-direction: column !important;
-    text-align: center !important;
-    border-radius: 0 !important;
-    margin: 0 !important;
-  }
-}
-
 /* Story map specific spooky styling */
 .ghost-theme .story-map {
   border: 2px dashed var(--accent-color);
   padding: 1rem;
-  margin: 0;
-  border-radius: 0;
+  margin: 2rem auto;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.03);
   box-shadow: 0 0 15px rgba(108, 60, 255, 0.2);
   animation: pulseGlow 4s ease-in-out infinite;
@@ -126,17 +84,17 @@
   margin: auto;
 }
 
-/* Base styles with mobile focus */
+/* Existing content retained below */
+
 .ghost-theme .story-header {
   background-color: #1f1f23;
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: var(--shadow);
   border-bottom: 1px solid #2a2a2e;
   width: 100%;
-  margin: 0;
 }
 
 .ghost-theme .story-title {
@@ -148,17 +106,15 @@
 }
 
 .ghost-theme .story-chapter {
-  padding: 2rem 1rem;
+  padding: 3rem 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   animation: fadeIn 1.2s ease-in-out;
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(4px);
   box-shadow: var(--glow);
-  border-radius: 0;
-  margin: 0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
   width: 100%;
-  max-width: 100%;
-  position: relative;
 }
 
 .ghost-theme .chapter-title {
@@ -229,6 +185,7 @@
   box-shadow: var(--shadow);
   transition: 0.3s ease;
   width: 100%;
+  max-width: 100%;
 }
 
 .ghost-theme .restart-btn:hover {
@@ -258,45 +215,59 @@
   background: #1a1a1d;
 }
 
-/* Additional mobile styles for smaller screens */
-/* @media screen and (max-width: 480px) { */
-  /* Extra small devices */
-/*   .ghost-theme .story-chapter {
-    width: 100% !important;
-    max-width: none !important;
-    border-radius: 0 !important;
-    margin: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
+@media (max-width: 768px) {
+  .ghost-theme .story-chapter {
+    padding: 1.5rem 1rem;
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  .ghost-theme .chapter-title {
+    font-size: 1.5rem;
+  }
+
+  .ghost-theme .story-title {
+    font-size: 1.4rem;
   }
   
-   Header button container 
-  .ghost-theme .header-buttons {
-    display: flex !important;
-    justify-content: center !important;
-    width: 100% !important;
-    margin-top: 0.5rem !important;
-    gap: 1rem !important;
+  .ghost-theme .story-header {
+    padding: 1rem;
+    width: 100%;
   }
   
-  .ghost-theme .header-button {
-    padding: 0.5rem 1rem !important;
+  .ghost-theme .story-map {
+    margin: 1rem 0;
+    width: 100%;
+    border-radius: 0;
   }
   
-  /* Adjust content container width 
-  .ghost-theme .story-content,
-  .ghost-theme .chapter-container {
-    width: 100% !important;
-    max-width: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+  .ghost-theme .nav-buttons {
+    padding: 0;
+    width: 100%;
+  }
+  
+  .ghost-theme #prev-btn,
+  .ghost-theme #next-btn {
+    padding: 0.7rem 1rem;
+  }
+  
+  /* Remove side margins for full-width experience */
+  .ghost-theme .story-choices,
+  .ghost-theme .choice-options,
+  .ghost-theme .restart-btn {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 .ghost-theme .nav-buttons {
   display: flex;
   justify-content: space-between;
-  margin: 1rem auto;
+  margin: 2rem auto;
+  max-width: 700px;
   padding: 0 1rem;
   width: 100%;
 }
@@ -319,4 +290,3 @@
   background: var(--accent-color);
   color: black;
 }
- */
