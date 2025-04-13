@@ -38,6 +38,7 @@
 }
 
 .ghost-theme .story-chapter {
+  padding: 3rem 2rem;
   width: 120%;
   max-width: 1000px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -45,7 +46,8 @@
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(4px);
   box-shadow: var(--glow);
-  margin-bottom: 2rem; 
+  border-radius: 8px;
+  margin-bottom: 2rem;
 }
 
 .ghost-theme .chapter-title {
@@ -182,4 +184,3 @@
     font-size: 1.5rem;
   }
 }
-
