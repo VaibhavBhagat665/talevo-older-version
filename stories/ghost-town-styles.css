@@ -1,3 +1,5 @@
+/* Ghost Town Horror Theme Stylesheet (Scoped under .ghost-theme) */
+
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Share+Tech+Mono&display=swap');
 
 .ghost-theme {
@@ -14,7 +16,66 @@
   color: var(--text-color);
   background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
   background-blend-mode: overlay;
+  position: relative;
+  overflow-x: hidden;
 }
+
+/* Ghost mist animation */
+.ghost-theme::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('https://i.ibb.co/YjK9p0G/mist-layer.gif') repeat-x;
+  opacity: 0.08;
+  animation: floatMist 120s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes floatMist {
+  0% { background-position: 0 0; }
+  100% { background-position: -2000px 0; }
+}
+
+/* Story map specific spooky styling */
+.ghost-theme .story-map {
+  border: 2px dashed var(--accent-color);
+  padding: 1rem;
+  margin: 2rem auto;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 15px rgba(108, 60, 255, 0.2);
+  animation: pulseGlow 4s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(108, 60, 255, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(108, 60, 255, 0.4); }
+}
+
+.ghost-theme .story-map h3 {
+  color: var(--accent-color);
+  text-align: center;
+  font-family: 'Unbounded', sans-serif;
+  margin-bottom: 1rem;
+  text-shadow: var(--shadow);
+}
+
+.ghost-theme .story-map img {
+  width: 100%;
+  max-width: 500px;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  filter: brightness(0.85) contrast(1.1);
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  display: block;
+  margin: auto;
+}
+
+/* Existing content retained below */
 
 .ghost-theme .story-header {
   background-color: #1f1f23;
@@ -152,4 +213,3 @@
     font-size: 1.5rem;
   }
 }
-
