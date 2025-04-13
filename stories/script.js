@@ -463,7 +463,7 @@ document.addEventListener("DOMContentLoaded", function() {
 let storyHistory = [];
 let currentChapter = document.querySelector('.story-chapter:not(.hidden)');
 
-// CHOICE HANDLING
+// CHOICE NAVIGATION
 document.querySelectorAll('.choice-btn').forEach(button => {
   button.addEventListener('click', () => {
     if (currentChapter) {
@@ -480,7 +480,7 @@ document.querySelectorAll('.choice-btn').forEach(button => {
   });
 });
 
-// PREV BUTTON
+// PREV LOGIC
 document.getElementById('prev-btn')?.addEventListener('click', () => {
   const prevId = storyHistory.pop();
   const prev = document.getElementById(prevId);
@@ -492,7 +492,7 @@ document.getElementById('prev-btn')?.addEventListener('click', () => {
   }
 });
 
-// NEXT BUTTON (follows first available choice)
+// NEXT LOGIC (follows first available choice)
 document.getElementById('next-btn')?.addEventListener('click', () => {
   const firstChoice = currentChapter?.querySelector('.choice-btn');
   if (firstChoice) {
@@ -500,7 +500,7 @@ document.getElementById('next-btn')?.addEventListener('click', () => {
   }
 });
 
-// Update visibility logic
+// BUTTON VISIBILITY CONTROL
 function updateNavButtons() {
   const isFirst = currentChapter?.id === 'chapter-1';
   const isEnding = currentChapter?.classList.contains('story-ending');
