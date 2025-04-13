@@ -40,6 +40,7 @@
 .ghost-theme .story-chapter {
   padding: 3rem 2rem;
   width: 120%;
+  align-items: center;
   margin: 2rem auto;
   max-width: 1000px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
