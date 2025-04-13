@@ -57,6 +57,10 @@
   box-shadow: var(--glow);
   border-radius: 8px;
   margin-bottom: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .ghost-theme .chapter-title {
