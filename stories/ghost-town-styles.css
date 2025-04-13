@@ -259,9 +259,9 @@
 }
 
 /* Additional mobile styles for smaller screens */
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) { */
   /* Extra small devices */
-  .ghost-theme .story-chapter {
+/*   .ghost-theme .story-chapter {
     width: 100% !important;
     max-width: none !important;
     border-radius: 0 !important;
@@ -270,7 +270,7 @@
     right: 0 !important;
   }
   
-  /* Header button container */
+   Header button container 
   .ghost-theme .header-buttons {
     display: flex !important;
     justify-content: center !important;
@@ -283,7 +283,7 @@
     padding: 0.5rem 1rem !important;
   }
   
-  /* Adjust content container width */
+  /* Adjust content container width 
   .ghost-theme .story-content,
   .ghost-theme .chapter-container {
     width: 100% !important;
@@ -319,3 +319,4 @@
   background: var(--accent-color);
   color: black;
 }
+ */
