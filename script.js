@@ -383,63 +383,78 @@ function checkLoginStatus() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
+    // Initialize application elements
+    initializeApp();
+    
+    // Check login status
     checkLoginStatus();
 
     // Sign Up
-    const signupButton = document.getElementById("createAccountBtn");
+    const createAccountBtn = document.getElementById("createAccountBtn");
+    if (createAccountBtn) {
+        createAccountBtn.addEventListener("click", function() {
+            const name = document.getElementById("new-name").value.trim();
+            const email = document.getElementById("new-email").value.trim();
+            const password = document.getElementById("new-password").value.trim();
 
-if (signupButton) {
-    signupButton.addEventListener("click", function () {
-        const name = document.getElementById("new-name").value.trim();
-        const email = document.getElementById("new-email").value.trim();
-        const password = document.getElementById("new-password").value.trim();
-
-        if (!name || !email || !password) {
-            alert("Please fill out all fields.");
-            return;
-        }
-
-        // Save to localStorage
-        localStorage.setItem(`user_${email}`, JSON.stringify({ name, password }));
-        alert("Account created! You can now sign in.");
-    });
-    }
-
-    
-
-    // Sign In
-    const signinButton = document.querySelector('#login-form .btn');
-    if (signinButton) {
-        signinButton.addEventListener('click', function () {
-            const email = document.getElementById('email').value.trim();
-            const password = document.getElementById('password').value.trim();
-
-            const userData = localStorage.getItem(`user_${email}`);
-            if (!userData) {
-                alert("No account found with this email.");
+            if (!name || !email || !password) {
+                showNotification("Please fill out all fields.");
                 return;
             }
 
-            const parsed = JSON.parse(userData);
-            if (parsed.password === password) {
-                localStorage.setItem("loggedInUser", JSON.stringify({ name: parsed.name, email }));
-                alert(`Welcome back, ${parsed.name}!`);
-                document.getElementById('loginModal').style.display = 'none';
-                document.body.style.overflow = 'auto';
-                checkLoginStatus();
-            } else {
-                alert("Incorrect password.");
+            // Save to localStorage
+            localStorage.setItem(`user_${email}`, JSON.stringify({ name, password }));
+            showNotification("Account created! You can now sign in.");
+            
+            // Switch to login tab
+            const loginTab = document.querySelector('.auth-tab[data-tab="login"]');
+            if (loginTab) {
+                loginTab.click();
             }
         });
+    }
+
+    // Sign In
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+        const signinButton = loginForm.querySelector('.btn');
+        if (signinButton) {
+            signinButton.addEventListener('click', function() {
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value.trim();
+
+                if (!email || !password) {
+                    showNotification("Please enter both email and password.");
+                    return;
+                }
+
+                const userData = localStorage.getItem(`user_${email}`);
+                if (!userData) {
+                    showNotification("No account found with this email.");
+                    return;
+                }
+
+                const parsed = JSON.parse(userData);
+                if (parsed.password === password) {
+                    localStorage.setItem("loggedInUser", JSON.stringify({ name: parsed.name, email }));
+                    showNotification(`Welcome back, ${parsed.name}!`);
+                    document.getElementById('loginModal').style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    checkLoginStatus();
+                } else {
+                    showNotification("Incorrect password.");
+                }
+            });
+        }
     }
 
     // Logout
     const logoutBtn = document.getElementById("logoutBtn");
     if (logoutBtn) {
-        logoutBtn.addEventListener("click", () => {
+        logoutBtn.addEventListener("click", function() {
             localStorage.removeItem("loggedInUser");
-            alert("You have been signed out.");
+            showNotification("You have been signed out.");
             checkLoginStatus();
         });
     }
