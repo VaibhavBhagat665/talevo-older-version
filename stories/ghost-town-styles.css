@@ -183,10 +183,12 @@
   }
 
   .ghost-theme .story-chapter {
-    width: 130%;
-    margin: 2rem auto;
-    padding: 2rem 1rem;
-  }
+  width: 100%;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
 
   .ghost-theme .story-title {
     width: 100%;
