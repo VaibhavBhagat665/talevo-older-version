@@ -347,3 +347,33 @@ if (mapBtn && storyMapModal) {
         storyMapModal.classList.remove('hidden');
     });
 }
+
+function handleSignup() {
+    const username = document.getElementById('signup-username').value;
+    const password = document.getElementById('signup-password').value;
+
+    if (!username || !password) {
+        alert("Please enter both username and password.");
+        return;
+    }
+
+    // Save to localStorage
+    localStorage.setItem(`user_${username}`, password);
+    alert("Account created! You can now sign in.");
+}
+
+function handleSignin() {
+    const username = document.getElementById('signin-username').value;
+    const password = document.getElementById('signin-password').value;
+
+    const savedPassword = localStorage.getItem(`user_${username}`);
+
+    if (savedPassword === password) {
+        alert("Login successful!");
+        // Redirect to homepage or dashboard
+        window.location.href = "index.html";
+    } else {
+        alert("Invalid username or password.");
+    }
+}
+
