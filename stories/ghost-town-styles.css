@@ -65,15 +65,18 @@
   transform: translate(-50%, -50%); */
 /* } */
 .ghost-theme .story-chapter {
-  /* Fixed dimensions instead of percentages */
-  width: 400px;
-  padding: 1.5rem;
+  /* Control both width and height */
+  width: 800px;
+  max-height: 60vh; /* Limit vertical size */
+  overflow-y: auto; /* Add scrolling for overflow content */
   
-  /* Remove absolute positioning completely */
+  /* Center positioning with flex instead of absolute */
   position: static;
   transform: none;
+  margin: 0;
   
   /* Other styles */
+  padding: 1.5rem;
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(4px);
   box-shadow: var(--glow);
