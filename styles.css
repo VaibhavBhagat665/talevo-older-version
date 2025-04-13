@@ -60,8 +60,8 @@ body {
 /* Theme Toggle */
 .theme-toggle {
     position: fixed;
-    top: 28px;
-    right: 950px;
+    top: 30px;
+    right: 180px;
     z-index: 1000;
 }
 
