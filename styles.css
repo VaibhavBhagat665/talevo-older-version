@@ -57,13 +57,20 @@ body {
     color: var(--light-text);
 }
 
-/* Theme Toggle */
-.theme-toggle {
-  position: fixed;
-  top: 30px;
-  right: 30px; /* much more responsive */
-  z-index: 1000;
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
 }
+
+.theme-toggle {
+  background: transparent;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
 
 #theme-switch {
     background: transparent;
