@@ -377,3 +377,82 @@ function handleSignin() {
     }
 }
 
+// Check if user is already logged in
+function checkLoginStatus() {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    const welcomeUser = document.getElementById("welcomeUser");
+    const userNameSpan = document.getElementById("userName");
+    const loginBtn = document.getElementById("loginBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    if (loggedInUser) {
+        const user = JSON.parse(loggedInUser);
+        welcomeUser.classList.remove("hidden");
+        userNameSpan.textContent = user.name;
+        loginBtn.classList.add("hidden");
+        logoutBtn.classList.remove("hidden");
+    } else {
+        welcomeUser.classList.add("hidden");
+        userNameSpan.textContent = "";
+        loginBtn.classList.remove("hidden");
+        logoutBtn.classList.add("hidden");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    checkLoginStatus();
+
+    // Sign Up
+    const signupButton = document.querySelector('#signup-form .btn');
+    if (signupButton) {
+        signupButton.addEventListener('click', function () {
+            const name = document.getElementById('new-name').value.trim();
+            const email = document.getElementById('new-email').value.trim();
+            const password = document.getElementById('new-password').value.trim();
+
+            if (!email || !password || !name) {
+                alert("Please fill out all fields.");
+                return;
+            }
+
+            localStorage.setItem(`user_${email}`, JSON.stringify({ name, password }));
+            alert("Account created! Now sign in.");
+        });
+    }
+
+    // Sign In
+    const signinButton = document.querySelector('#login-form .btn');
+    if (signinButton) {
+        signinButton.addEventListener('click', function () {
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            const userData = localStorage.getItem(`user_${email}`);
+            if (!userData) {
+                alert("No account found with this email.");
+                return;
+            }
+
+            const parsed = JSON.parse(userData);
+            if (parsed.password === password) {
+                localStorage.setItem("loggedInUser", JSON.stringify({ name: parsed.name, email }));
+                alert(`Welcome back, ${parsed.name}!`);
+                document.getElementById('loginModal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+                checkLoginStatus();
+            } else {
+                alert("Incorrect password.");
+            }
+        });
+    }
+
+    // Logout
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", () => {
+            localStorage.removeItem("loggedInUser");
+            alert("You have been signed out.");
+            checkLoginStatus();
+        });
+    }
+});
