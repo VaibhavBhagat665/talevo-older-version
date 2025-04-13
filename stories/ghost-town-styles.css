@@ -181,4 +181,16 @@
   .ghost-theme .story-title {
     font-size: 1.5rem;
   }
+
+  .ghost-theme .story-chapter {
+    width: 100%;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+  }
+
+  .ghost-theme .story-title {
+    font-size: 1.5rem;
+    width: 100%;
+  }
 }
+
