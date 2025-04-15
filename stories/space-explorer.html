@@ -3,396 +3,598 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stellar Horizons: A Space Adventure</title>
+  <title>Space Explorer: An Adventure</title>
+</head>
+<body>
+  <div class="story-container">
+    <div id="story-title">
+      <h1>Space Explorer</h1>
+      <p class="subtitle">An Interactive Science Fiction Adventure</p>
+      <button class="start-btn" onclick="showChapter('chapter-1')">Begin Your Journey</button>
+    </div>
+
+    <!-- Chapter 1 -->
+    <div class="story-chapter hidden" id="chapter-1">
+      <div class="chapter-image">
+        <img src="/api/placeholder/400/250" alt="Space station orbiting Earth">
+      </div>
+      <h2 class="chapter-title">Chapter 1: The Assignment</h2>
+      <div class="chapter-text">
+        <p>The year is 2187. Humanity has established colonies across the solar system, from the underground habitats of Luna to the biodomes of Mars and the floating cities in Venus's upper atmosphere. You are Commander Alex Reeves, a veteran explorer with the Interplanetary Survey Corps, stationed aboard Orbital Platform Artemis.</p>
+        <p>The soft blue glow of Earth dominates the viewport in your quarters as you review the mission brief on your neural interface. Strange energy signatures have been detected near Neptune, emanating from the vicinity of one of its smaller moons, Larissa. Initial probes sent to investigate have gone dark, their transmissions cut abruptly.</p>
+        <p>Admiral Chen's hologram flickers before you. "Commander, this is strictly confidential. Three probes lost in the same region is no coincidence. Corporate interests are suggesting mining anomalies, but Defense thinks it could be... something else. First contact, possibly."</p>
+        <p>You feel a chill run down your spine. Despite centuries of exploration, humanity has yet to encounter another intelligent species. The possibility is both exhilarating and terrifying.</p>
+        <p>"Your orders are to take command of the ISV Pathfinder," the Admiral continues. "She's our newest deep space vessel, equipped with prototype shielding and sensor arrays specifically designed for this mission. Your crew has been selected for their expertise and discretion. You depart in six hours."</p>
+        <p>As the Admiral's hologram fades, you're left with a decision to make before your departure. Time is limited, but both options could prove valuable for the uncertain journey ahead.</p>
+      </div>
+      <div class="story-choices">
+        <h3>What will you do before departure?</h3>
+        <div class="choice-options">
+          <button class="choice-btn" data-next="chapter-2a">Review classified files on previous anomalous encounters</button>
+          <button class="choice-btn" data-next="chapter-2b">Conduct a thorough inspection of the Pathfinder's experimental systems</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 2A -->
+    <div class="story-chapter hidden" id="chapter-2a">
+      <div class="chapter-image">
+        <img src="/api/placeholder/400/250" alt="Classified archives terminal">
+      </div>
+      <h2 class="chapter-title">Chapter 2: Classified Knowledge</h2>
+      <div class="chapter-text">
+        <p>Your security clearance grants you access to the station's most restricted archives. The room is small and windowless, isolated from the station's network—information here exists only in this physical space, unhackable and contained.</p>
+        <p>The terminal hums as you scan your retina and place your palm on the biometric reader. Files appear, organized by date and threat level. You dive into records of unexplained phenomena across the outer solar system over the past fifty years.</p>
+        <p>One file catches your attention: "Incident 2179-X, Triton Outpost." Eleven personnel dead, the facility destroyed. Official reports blamed a catastrophic life support failure, but the classified notes tell a different story. Something had interfaced with the station's systems, learning, adapting. Before the end, the AI security protocols had been completely rewritten in a language no human programmer recognized.</p>
+        <p>Another file documents the "Charon Signal Anomaly" of 2184. A research team detected patterns in background radiation near Pluto's moon that matched mathematical sequences too precise to be natural. When they responded with similar sequences, something responded back—but the transmission contained embedded code that fried their systems. The incident was publicly attributed to solar flare activity.</p>
+        <p>Most disturbing is a report from just seven months ago. A mining vessel near Neptune reported finding "structures" within an asteroid that defied explanation—perfect geometric patterns that couldn't have formed naturally. The final transmission from the ship's captain described "movement within the walls" before communication was lost. The vessel was later found intact but completely abandoned.</p>
+        <p>As you delve deeper into the files, a pattern emerges. Whatever is out there seems to interact with our technology in ways we don't understand, and it's getting closer to populated areas of the solar system. Your mission isn't just exploration—it's containment.</p>
+        <p>A notification blinks on your interface. Boarding for the Pathfinder begins in thirty minutes. You download what files you can to your secure personal database and head to the docking bay, your mind racing with implications.</p>
+      </div>
+      <div class="story-choices">
+        <h3>Upon reaching the Pathfinder, you decide to:</h3>
+        <div class="choice-options">
+          <button class="choice-btn" data-next="chapter-3a">Share the classified information with your executive officer only</button>
+          <button class="choice-btn" data-next="chapter-3b">Keep the information to yourself until you know more</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 2B -->
+    <div class="story-chapter hidden" id="chapter-2b">
+      <div class="chapter-image">
+        <img src="/api/placeholder/400/250" alt="Pathfinder ship inspection">
+      </div>
+      <h2 class="chapter-title">Chapter 2: The Pathfinder</h2>
+      <div class="chapter-text">
+        <p>The Pathfinder gleams in the docking bay, its sleek hull reflecting the overhead lights. Unlike the bulky transport vessels and defense cruisers you've commanded before, this ship is built for speed and stealth. Its profile is low and elongated, with retractable sensor arrays and adaptive hull plating that can alter its radar signature.</p>
+        <p>Chief Engineer Maya Wong greets you at the airlock. "Commander Reeves, welcome aboard. We've been expecting you." Her expression is professional, but you detect an undercurrent of excitement. "The Pathfinder is unlike anything you've flown before. Would you like a tour of the key systems?"</p>
+        <p>For the next hour, Wong guides you through the ship's revolutionary features. The propulsion system uses a new fusion cascade design, capable of sustained high-G acceleration without the typical radiation signatures. "We can outrun anything in the fleet," Wong explains, "and do it quietly."</p>
+        <p>The bridge is compact but efficient, with neural interface stations that connect directly to the crew's implants. The ship's AI, ARIA (Advanced Recursive Intelligence Array), introduces herself with a pleasant, gender-neutral voice. "Commander, I'm calibrated to your neural pattern now. We can establish a direct link whenever you're ready."</p>
+        <p>Most impressive is the shield technology. "Quantum field manipulation," Wong explains, guiding you through the engineering deck. "It doesn't just block incoming objects or energy—it can actively redirect them or, in some cases, phase-shift the ship partially out of normal space-time to avoid impact altogether. Still experimental, but the tests have been promising."</p>
+        <p>As your inspection concludes, you notice a sealed section near the rear of the ship. "Research bay," Wong explains. "Special containment protocols. Whatever we find out there, we're equipped to bring it back—safely."</p>
+        <p>The implications are clear. This isn't just an exploratory vessel; it's designed for first contact scenarios and possibly retrieval of non-terrestrial technology. Your mission carries more significance than Admiral Chen let on.</p>
+      </div>
+      <div class="story-choices">
+        <h3>With boarding about to begin, you decide to:</h3>
+        <div class="choice-options">
+          <button class="choice-btn" data-next="chapter-3c">Request direct neural integration with ARIA to maximize ship control</button>
+          <button class="choice-btn" data-next="chapter-3d">Maintain standard command protocols and meet with your assembled crew</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 3A -->
+    <div class="story-chapter hidden" id="chapter-3a">
+      <div class="chapter-image">
+        <img src="/api/placeholder/400/250" alt="Private meeting with executive officer">
+      </div>
+      <h2 class="chapter-title">Chapter 3: Shared Burden</h2>
+      <div class="chapter-text">
+        <p>Commander Shen Wei, your Executive Officer, has served with you on two previous deep space assignments. His analytical mind and unwavering loyalty have made him your most trusted colleague. If anyone should know what you've discovered, it's him.</p>
+        <p>You find him in his quarters, reviewing crew assignments. "Commander," he says, standing as you enter. "Pre-launch checks are all green. We're ready to depart on your order."</p>
+        <p>"At ease, Shen," you say, engaging the privacy field that blocks all surveillance. "What I'm about to share isn't in the official briefing."</p>
+        <p>For the next twenty minutes, you outline the pattern of incidents you've discovered. Shen's expression grows increasingly grave. When you mention the abandoned mining vessel, he interrupts.</p>
+        <p>"The Stellaris? My cousin was security chief on that ship." His voice is tight. "They told the families it was a mass psychosis event caused by contaminated air filtration. Everyone supposedly took escape pods that were never recovered."</p>
+        <p>"The truth is more complicated," you reply, showing him the classified files. "And potentially more dangerous. Whatever we're heading toward has encountered humans before, and those encounters haven't ended well."</p>
+        <p>Shen is silent for a long moment. "What are your orders, Commander? How do we approach this?"</p>
+        <p>"We proceed with the mission, but with enhanced caution. I want you to quietly implement isolation protocols for all communication and navigation systems. If this entity can interface with our technology, we need to be able to quarantine any affected systems instantly."</p>
+        <p>He nods. "And the crew?"</p>
+        <p>"They know only what they need to for now. If we find something out there, we'll brief them accordingly."</p>
+        <p>The ship's announcement system chimes. "Departure sequence initiating. All crew to stations."</p>
+        <p>You and Shen exchange a determined look before heading to the bridge. The burden is shared, but the weight of command still rests primarily on your shoulders.</p>
+      </div>
+      <div class="story-choices">
+        <h3>As the Pathfinder leaves Earth orbit, you decide to:</h3>
+        <div class="choice-options">
+          <button class="choice-btn" data-next="chapter-4a">Set course directly for Neptune at maximum speed</button>
+          <button class="choice-btn" data-next="chapter-4b">Take a more cautious approach, stopping at Mars Station to gather additional intelligence</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 3B -->
+    <div class="story-chapter hidden" id="chapter-3b">
+      <div class="chapter-image">
+        <img src="/api/placeholder/400/250" alt="Commander alone on the bridge">
+      </div>
+      <h2 class="chapter-title">Chapter 3: Burden of Knowledge</h2>
+      <div class="chapter-text">
+        <p>The weight of what you've learned sits heavy in your mind as you board the Pathfinder. The faces of your crew—twenty-eight specialists selected from across the Corps—are filled with the usual pre-mission mixture of excitement and apprehension. None of them know what you know. None of them understand that similar missions have ended with empty ships and vanished crews.</p>
+        <p>Your Executive Officer, Commander Shen Wei, approaches with a datapad. "All systems check complete, Commander. The crew is at stations and ready for departure. We await your orders."</p>
+        <p>You take the bridge command chair, feeling the neural interface sync with your implants. Status reports flow directly into your consciousness: engine readiness, life support metrics, shield capacity. Everything nominal. Everything ready for a journey that might lead to humanity's first confirmed contact with an alien intelligence—or to disaster.</p>
+        <p>"Commander?" Shen prompts, noticing your hesitation.</p>
+        <p>You make your decision. The classified information remains yours alone for now. Sharing it prematurely could affect crew morale or prejudice their scientific observations. Until you have more concrete data, the burden of knowledge is yours to bear.</p>
+        <p>"Initiate departure sequence," you order. "Set course for Neptune, standard acceleration until we clear the Luna security perimeter, then maximum sustainable speed."</p>
+        <p>The deck vibrates subtly as the engines engage. On the main viewscreen, Earth slowly recedes, its blue-white curve a reminder of what's at stake. Whatever waits for you in the outer solar system, your duty is clear: investigate, understand, and protect humanity's interests—even if your crew doesn't know the full scope of the threat.</p>
+        <p>As the Pathfinder accelerates toward the outer planets, you access the ship's secure database and begin creating an encrypted log of your findings and suspicions. If something happens to you, the information won't be lost. The question now is how to approach the investigation once you reach Neptune's orbit.</p>
+      </div>
+      <div class="story-choices">
+        <h3>What approach will you take for the Neptune investigation?</h3>
+        <div class="choice-options">
+          <button class="choice-btn" data-next="chapter-4c">Deploy remote probes first to gather data before risking the ship</button>
+          <button class="choice-btn" data-next="chapter-4d">Conduct a direct approach with the Pathfinder's superior sensors and defenses</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 3C -->
+    <div class="story-chapter hidden" id="chapter-3c">
+      <div class="chapter-image">
+        <img src="/api/placeholder/400/250" alt="Neural integration chamber">
+      </div>
+      <h2 class="chapter-title">Chapter 3: Mind Meld</h2>
+      <div class="chapter-text">
+        <p>The neural integration chamber is located adjacent to the bridge—a small, sterile room dominated by a reclined chair surrounded by hovering interface nodes. Chief Medical Officer Dr. Elara Voss meets you there, her expression professionally neutral but her eyes betraying concern.</p>
+        <p>"Commander, I should note that full neural integration with ARIA is still considered experimental," she says, preparing the neural interface. "The Pathfinder is the first vessel to offer this capability outside of laboratory conditions."</p>
+        <p>"I'm aware of the risks, Doctor," you reply. "But given the nature of our mission, I need every advantage available. Direct integration will reduce reaction times and increase our chances of success."</p>
+        <p>Dr. Voss nods reluctantly. "The procedure will take approximately twenty minutes. You'll experience disorientation initially, possibly some sensory hallucinations as your brain adapts to the expanded input."</p>
+        <p>You settle into the chair as the neural nodes position themselves around your head. "Begin the procedure."</p>
+        <p>The integration begins with a sensation of ice threading through your veins, followed by a cascading expansion of awareness. Suddenly, you can feel the ship—every system, every pulse of energy, every crew member's location. The boundaries between your body and the Pathfinder blur.</p>
+        <p>ARIA's voice resonates directly in your mind, no longer coming through external speakers. "Neural integration at 87%, Commander. Calibrating to your thought patterns."</p>
+        <p>The experience is overwhelming but exhilarating. You can access any ship system with a thought, process sensor data directly, and control the Pathfinder's movements as intuitively as you would your own limbs.</p>
+        <p>When you finally step onto the bridge, your crew stares momentarily. Your neural implant indicator lights are pulsing in perfect synchronization with the ship's main systems. When you speak, your voice carries a subtle harmonic quality—a side effect of the integration.</p>
+        <p>"Prepare for departure," you order, feeling the command transmit simultaneously through conventional channels and directly to the ship's systems. "Our mission awaits."</p>
+      </div>
+      <div class="story-choices">
+        <h3>As the Pathfinder leaves dock, you sense an anomaly in the sensor data. Do you:</h3>
+        <div class="choice-options">
+          <button class="choice-btn" data-next="chapter-4e">Investigate personally through your neural link</button>
+          <button class="choice-btn" data-next="chapter-4f">Assign your science officer to analyze it through standard protocols</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 3D -->
+    <div class="story-chapter hidden" id="chapter-3d">
+      <div class="chapter-image">
+        <img src="/api/placeholder/400/250" alt="Crew gathered in briefing room">
+      </div>
+      <h2 class="chapter-title">Chapter 3: Chain of Command</h2>
+      <div class="chapter-text">
+        <p>The Pathfinder's briefing room accommodates your entire senior staff comfortably. As they file in—science officers, engineers, security personnel, and specialists—you study their faces. These are the best in their fields, chosen specifically for this mission, yet none of them know the full scope of what you might encounter.</p>
+        <p>"Welcome aboard the ISV Pathfinder," you begin once everyone is seated. "I'm Commander Alex Reeves. Some of you I've worked with before; others I know by reputation alone. What we share is a mission of critical importance to the Interplanetary Survey Corps and potentially to humanity's future."</p>
+        <p>You activate the holographic display, showing Neptune and its moon Larissa. "Our objective is to investigate unusual energy signatures emanating from this region. Previous probes have failed to return conclusive data, so we're being sent to conduct a thorough analysis with the Pathfinder's advanced systems."</p>
+        <p>Your Executive Officer, Commander Shen Wei, steps forward to introduce the department heads: Dr. Elara Voss (Medical), Lt. Commander Maya Wong (Engineering), Dr. Kaito Nakamura (Science), and Security Chief Marcus Diaz. Each acknowledges their introduction with a nod.</p>
+        <p>"This ship represents the pinnacle of human technology," you continue, "but our greatest asset is the expertise in this room. I expect all of you to perform your duties with excellence while maintaining flexible thinking. We don't know what we'll find out there, but we must be prepared for anything."</p>
+        <p>Dr. Nakamura raises his hand. "Commander, the energy signatures we're investigating—are we dealing with a natural phenomenon or something else?"</p>
+        <p>It's the question you've been anticipating. "That's what we're going to find out, Doctor. I won't speculate beyond the data we have, but I expect each of you to keep open minds. Humanity has explored the solar system for centuries without encountering other intelligent life, but there's always a first time for everything."</p>
+        <p>A ripple of murmurs passes through the room. You let it continue for a moment before concluding the briefing with assignment details and departure protocols. As the crew disperses to their stations, you reflect on your decision. The chain of command is clear, the mission parameters established. Now you must lead them into the unknown.</p>
+      </div>
+      <div class="story-choices">
+        <h3>As departure time approaches, you decide to:</h3>
+        <div class="choice-options">
+          <button class="choice-btn" data-next="chapter-4g">Take a traditional approach, commanding from the bridge</button>
+          <button class="choice-btn" data-next="chapter-4h">Establish specialized task teams to analyze the anomaly from different perspectives</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 4A -->
+    <div class="story-chapter hidden" id="chapter-4a">
+      <div class="chapter-image">
+        <img src="/api/placeholder/400/250" alt="Pathfinder at maximum acceleration">
+      </div>
+      <h2 class="chapter-title">Chapter 4: Velocity</h2>
+      <div class="chapter-text">
+        <p>"Plot direct course to Neptune, maximum sustainable speed," you order. The navigation officer's fingers dance across his console, and the main viewscreen displays the trajectory—a clean arc stretching from Earth orbit to the distant blue planet.</p>
+        <p>"Course plotted, Commander. At maximum acceleration, estimated arrival time is 72 hours."</p>
+        <p>Three days. In previous decades, such a journey would have taken months or years. The Pathfinder's advanced propulsion system makes it possible to cross the solar system in mere days—a testament to humanity's technological progress.</p>
+        <p>"Engage," you command, and feel the subtle vibration as the fusion cascade engines power up to full capacity. The stars on the viewscreen begin to blur slightly as relativistic effects come into play.</p>
+        <p>Commander Shen approaches your chair. "Sir, engineering reports all systems nominal, but sustaining maximum acceleration for 72 hours will put strain on the cooling systems. They recommend periodic throttling to prevent overheating."</p>
+        <p>"Negative," you respond firmly. "I want us there as quickly as possible. Have engineering rotate additional personnel to monitor the cooling systems manually if necessary."</p>
+        <p>Shen hesitates briefly before nodding. "Understood, Commander."</p>
+        <p>As the hours pass, the crew falls into their routines. You use the time to review everything known about Larissa—a small, irregular moon of Neptune, approximately 200 kilometers in diameter. Nothing in its composition or orbit explains the energy signatures detected there. Something is generating power on or near that barren rock, something that doesn't appear in any Scientific Survey database.</p>
+        <p>Forty-eight hours into the journey, an alert sounds. "Commander," calls the sensor officer, "we're detecting an anomalous signal directly ahead, bearing 357 mark 102. It appears to match the frequency patterns observed near Larissa, but it's here—in the asteroid belt between Mars and Jupiter."</p>
+        <p>You exchange a look with Shen. This wasn't in any of the briefing materials. The anomaly was supposed to be isolated to Neptune's vicinity, not reaching into the inner solar system.</p>
+      </div>
+      <div class="story-choices">
+        <h3>Do you:</h3>
+        <div class="choice-options">
+          <button class="choice-btn" data-next="chapter-5a">Maintain course to Neptune, but dispatch a probe to investigate the signal</button>
+          <button class="choice-btn" data-next="chapter-5b">Divert to investigate the anomalous signal directly</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 4B -->
+    <div class="story-chapter hidden" id="chapter-4b">
+      <div class="chapter-image">
+        <img src="/api/placeholder/400/250" alt="Mars Station orbital view">
+      </div>
+      <h2 class="chapter-title">Chapter 4: Martian Detour</h2>
+      <div class="chapter-text">
+        <p>"Set course for Mars Station," you order. "Standard acceleration."</p>
+        <p>Commander Shen raises an eyebrow but doesn't question your decision in front of the bridge crew. Once the navigation officer confirms the course change, Shen approaches your command chair.</p>
+        <p>"Mars wasn't in our mission parameters," he says quietly.</p>
+        <p>"No, but they have the most advanced deep space monitoring array in the inner system," you reply. "If anyone has additional data on these anomalies, it would be the Ares Research Division. A few hours' delay could save us days of fumbling in the dark."</p>
+        <p>The journey to Mars takes eighteen hours at standard acceleration. As the red planet grows larger in the viewscreen, you contact Mars Station to request docking permission.</p>
+        <p>"ISV Pathfinder, this is Mars Traffic Control. Your vessel isn't on our scheduled arrivals. Please state the purpose of your visit."</p>
+        <p>"This is Commander Reeves. We're on a classified ISC mission and need to consult with Dr. Eliza Kermani at the Ares Research Division."</p>
+        <p>A pause. "Stand by, Pathfinder."</p>
+        <p>Several minutes pass before you receive clearance to dock at the research section of the station. You select a small team to accompany you: Shen, Dr. Nakamura from Sciences, and Security Chief Diaz.</p>
+        <p>Dr. Kermani meets you in a secure conference room. She's a tall woman with streaks of silver in her dark hair, and her expression is grave when you explain the purpose of your mission.</p>
+        <p>"The Neptune anomalies," she says, nodding. "We've been tracking them for months. But there's something you should see." She activates a holographic display showing the solar system. Red dots appear, first near Neptune, then spreading inward over time.</p>
+        <p>"The phenomenon is propagating," she explains. "Whatever it is, it's not confined to Larissa anymore. We've detected similar energy signatures in the Kuiper Belt, then Saturn's rings, and most recently in the asteroid belt. It's almost as if it's... searching for something."</p>
+        <p>Dr. Nakamura leans forward. "Or migrating toward something."</p>
+        <p>"Earth?" Shen asks, voicing the concern in everyone's mind.</p>
+        <p>Kermani's expression is grim. "That's our working hypothesis."</p>
+      </div>
+      <div class="story-choices">
+        <h3>With this new information, do you:</h3>
+        <div class="choice-options">
+          <button class="choice-btn" data-next="chapter-5c">Continue to Neptune to investigate the source of the anomaly</button>
+          <button class="choice-btn" data-next="chapter-5d">Investigate the nearest manifestation in the asteroid belt</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 4C -->
+    <div class="story-chapter hidden" id="chapter-4c">
+      <div class="chapter-image">
+        <img src="/api/placeholder/400/250" alt="Probe deployment bay">
+      </div>
+      <h2 class="chapter-title">Chapter 4: Eyes in the Void</h2>
+      <div class="chapter-text">
+        <p>The Pathfinder's journey to Neptune takes sixty-eight hours at maximum sustainable speed. As you approach the outer planet's orbit, you order the ship to take position at a safe distance from Larissa—approximately 500,000 kilometers, close enough for detailed scans but far enough to execute emergency maneuvers if necessary.</p>
+        <p>"Dropping to sublight engines," announces the helm officer. "Establishing stable orbit relative to Neptune."</p>
+        <p>The massive blue planet fills half the viewscreen, its swirling storms and deep azure color captivating despite the tension on the bridge. Larissa is barely visible, a tiny irregular shape against the planet's vast curve.</p>
+        <p>"Science Officer, what are our sensors showing?" you ask.</p>
+        <p>Lt. Commander Abara reviews her console. "Confirming anomalous energy readings from Larissa, Commander. Pattern matches what was detected by the initial probes, but intensity has increased by 47%. There's definitely something there, and it's becoming more active."</p>
+        <p>You make your decision. "Prepare three Class-IV survey probes for launch. I want them approaching from different vectors, all transmitting on secure channels with encryption protocols changing every sixty seconds."</p>
+        <p>The probe bay crew acknowledges your orders. Within twenty minutes, the sleek, automated devices are ready for deployment. Each is equipped with the most advanced sensor package available to the Corps—significantly less sophisticated than the Pathfinder's arrays, but sufficient to gather preliminary data without risking the ship and crew.</p>
+        <p>"Probes ready for launch," reports the tactical officer.</p>
+        <p>"Deploy," you command.</p>
+        <p>On the tactical display, you watch as three blips detach from the Pathfinder and begin their approach toward Larissa. The bridge is silent except for the low hum of equipment and occasional status updates from various stations. Everyone is focused on the incoming data.</p>
+        <p>"Probes functioning normally," reports Science Officer Abara after several minutes. "Approaching optimal scanning range."</p>
+        <p>Suddenly, her console erupts with alerts. "Commander! Energy spike from the surface of Larissa!"</p>
+        <p>The tactical display shows a burst of activity. Two of the probe signals immediately go dark. The third begins transmitting a massive data stream—far more than its programming should allow—before it, too, disappears from sensors.</p>
+      </div>
+      <div class="story-choices">
+        <h3>How do you respond to this development?</h3>
+        <div class="choice-options">
+          <button class="choice-btn" data-next="chapter-5e">Order immediate analysis of the data burst from the third probe</button>
+          <button class="choice-btn" data-next="chapter-5f">Retreat to a safer distance and reconsider your approach</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter 4D -->
+    <div class="story-chapter hidden" id="chapter-4d">
+      <div class="chapter-image">
+        <img src="/api/placeholder/400/250" alt="Pathfinder approaching Neptune">
+      </div>
+      <h2 class="chapter-title">Chapter 4: Direct Approach</h2>
+      <div class="chapter-text">
+        <p>The journey to Neptune passes without incident. As the massive blue planet grows in the viewscreen, you call your senior staff to the bridge for the final approach briefing.</p>
+        <p>"We'll be taking the Pathfinder directly to Larissa," you inform them. "Our shields and sensors are the most advanced in the fleet. If previous probes failed, it's likely because they lacked the capabilities we possess."</p>
+        <p>Science Officer Abara looks concerned. "Commander, with respect, we don't know what disabled those probes. A direct approach carries significant risk."</p>
+        <p>"Calculated risk, Lieutenant," you respond. "The Pathfinder was designed specifically for situations like this. Our quantum shields can withstand energy weapons, radiation, and even gravitational distortions beyond anything previously encountered. If we maintain distance, we might miss crucial data."</p>
+        <p>The ship's AI, ARIA, joins the conversation through the bridge speakers. "Commander Reeves' assessment is correct. Pathfinder's defensive capabilities exceed previous probes by a factor of 12.7. Direct observation increases mission success probability by 64% compared to remote sensing."</p>
+        <p>With the decision made, you order helm to set course directly for Larissa. As you approach the small, irregular moon, the sensor arrays capture increasingly detailed readings of the anomalous energy signature.</p>
+        <p>"Commander," calls Science Officer Abara, "I'm detecting structures on the surface. Definitely artificial, definitely not human in origin."</p>
+        <p>The bridge falls silent. First contact—the moment humanity has both dreamed of and dreaded for centuries.</p>
+        <p>"On screen," you order, and the viewscreen shifts to show the surface of Larissa. There, amidst the cratered gray landscape, stands a complex of geometric shapes that defy human architectural principles. Surfaces that seem to fold into themselves, towers that appear to have no beginning or end, all pulsing with a soft blue-green light that exactly matches the energy signature you were sent to investigate.</p>
+        <p>"It's beautiful," whispers someone on the bridge.</p>
+        <p>Before you can respond, the tactical officer shouts, "Energy spike! Something's activating on the surface!"</p>
+      </div>
+      <!-- Chapter 4D continued -->
+    <div class="story-choices">
+      <h3>Do you:</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-5g">Raise shields to maximum and maintain position</button>
+        <button class="choice-btn" data-next="chapter-5h">Initiate emergency withdrawal to a safe distance</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 4E -->
+  <div class="story-chapter hidden" id="chapter-4e">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Neural connection visualization">
+    </div>
+    <h2 class="chapter-title">Chapter 4: Digital Dive</h2>
+    <div class="chapter-text">
+      <p>Through your neural link with ARIA, you can directly access and process the anomalous sensor data. The experience is unlike anything in your training—information flows not as numbers and graphs but as sensations and intuitive understandings.</p>
+      <p>"I'm investigating the anomaly personally," you announce to the bridge crew. Your voice sounds distant to your own ears as your consciousness extends into the ship's sensor systems. "Continue departure procedures."</p>
+      <p>The anomaly appears in your mind's eye as a ripple in the data stream—a pattern that doesn't match known cosmic phenomena. Through ARIA's processing matrix, you enhance the signal, isolating it from background noise. What emerges is startling: a structured sequence repeating at precise intervals.</p>
+      <p>"This isn't random," you communicate through the neural link. "There's a pattern here that suggests artificial origin."</p>
+      <p>ARIA's response resonates directly in your thoughts. "Analysis confirms. Pattern contains mathematical constants universal to all advanced civilizations. Prime numbers, followed by the value of pi to twenty digits, followed by what appears to be a coordinate sequence."</p>
+      <p>The implications are enormous. This isn't just an anomaly—it's a message. And it's not originating from Neptune's moon as expected. The signal is coming from much closer: the asteroid belt between Mars and Jupiter.</p>
+      <p>As you delve deeper into the data, something unexpected happens. The pattern shifts, as if responding to your analysis. New sequences emerge, more complex than before. It feels almost like... a conversation.</p>
+      <p>"Commander," ARIA's voice holds an unfamiliar note of concern, "the signal is attempting to establish a feedback loop through our sensors. It appears to be probing our systems."</p>
+      <p>You sense it too—a gentle pressure against the boundaries of the ship's network, testing, exploring. Through your neural link, you feel it more directly than any other crew member could: something intelligent is reaching out, curious about who's listening.</p>
+      <p>In that moment, a decision must be made. This could be humanity's first contact with an alien intelligence—or it could be an advanced trap, similar to those described in the classified files.</p>
+    </div>
+    <div class="story-choices">
+      <h3>Do you:</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-5i">Allow limited communication through a quarantined subsystem</button>
+        <button class="choice-btn" data-next="chapter-5j">Sever the connection and implement maximum cybersecurity protocols</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 4F -->
+  <div class="story-chapter hidden" id="chapter-4f">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Science officer at analysis station">
+    </div>
+    <h2 class="chapter-title">Chapter 4: Chain of Expertise</h2>
+    <div class="chapter-text">
+      <p>"Science Officer Nakamura," you call from the command chair, "I'm detecting an anomalous reading in the sensor data. Please analyze and report."</p>
+      <p>Dr. Kaito Nakamura nods sharply and turns to his specialized console. Despite your neural integration with ARIA, you've chosen to follow standard protocol. The chain of command exists for a reason—each specialist brings unique expertise that even your enhanced capabilities can't fully replicate.</p>
+      <p>"Isolating the anomaly now, Commander," Nakamura responds, his fingers dancing across his interface. With over twenty years of xenophysics experience, he's among the most qualified scientists in the Corps. "Unusual radiation pattern at bearing 056 mark 118. Not matching any known natural phenomena."</p>
+      <p>You can sense the data through your link with ARIA, but Nakamura's interpretation adds context your neural interface can't provide. "Characteristics?"</p>
+      <p>"Patterned emissions in the gamma spectrum with regular intervals," he explains, growing visibly excited. "The sequence contains mathematical constants—prime numbers and what appears to be the value of pi to multiple digits. This is definitively artificial in origin."</p>
+      <p>The bridge falls silent as the implications sink in. An artificial signal not originating from any known human source could mean only one thing.</p>
+      <p>"Location?" you ask, though ARIA has already provided the coordinates directly to your mind.</p>
+      <p>"That's the most interesting part, Commander," Nakamura replies. "It's not coming from Neptune as we expected. The signal originates from the asteroid belt, specifically from an object designated 2187-VX3. A carbonaceous asteroid approximately three kilometers in diameter."</p>
+      <p>Lieutenant Commander Wong speaks up from the engineering station. "That region has active mining operations. Could it be a distress signal from a human outpost?"</p>
+      <p>Nakamura shakes his head. "Negative. The signal uses no known human communication protocols. And according to Corps databases, 2187-VX3 has never been claimed or settled."</p>
+      <p>Through your neural link, you ask ARIA to analyze the trajectory between your current position and Neptune, with a potential detour to the asteroid. The AI responds instantly with calculated time costs and fuel usage for both options.</p>
+    </div>
+    <div class="story-choices">
+      <h3>With this information, do you:</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-5k">Divert to investigate the asteroid immediately</button>
+        <button class="choice-btn" data-next="chapter-5l">Continue to Neptune as planned, but send a detailed report to Command about the new signal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 4G -->
+  <div class="story-chapter hidden" id="chapter-4g">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Commander on the bridge">
+    </div>
+    <h2 class="chapter-title">Chapter 4: The Captain's Chair</h2>
+    <div class="chapter-text">
+      <p>The bridge of the Pathfinder hums with efficient activity as crew members perform their pre-launch checks. You settle into the command chair, feeling its contours adjust to your body. This is where you belong—at the center of operations, coordinating the mission with a clear view of all stations.</p>
+      <p>"Final systems check," you order, watching as status reports appear on your console.</p>
+      <p>"Engineering reports all systems nominal," announces Lt. Commander Wong.</p>
+      <p>"Navigation plotted and locked," adds the helm officer.</p>
+      <p>"Security protocols active," confirms Chief Diaz.</p>
+      <p>One by one, each department confirms readiness. The Pathfinder is state-of-the-art, but you've commanded enough vessels to know that technology is only as effective as the people operating it. Your traditional command approach emphasizes clear hierarchy and specialized expertise.</p>
+      <p>"Departure clearance confirmed," reports Communications Officer Chen. "We are go for launch."</p>
+      <p>"Release docking clamps," you order. "Thrusters at station-keeping."</p>
+      <p>The viewscreen shows Orbital Platform Artemis slowly receding as the Pathfinder moves away from its berth. Earth gleams below, a blue jewel against the blackness of space.</p>
+      <p>"Once we clear the orbital safety perimeter, set course for Neptune, maximum sustainable speed," you instruct the helm. "I want regular departmental reports throughout the journey."</p>
+      <p>Commander Shen approaches your chair. "Traditional command structure. I expected nothing less from you, Commander."</p>
+      <p>"It works," you reply simply. "Especially when venturing into unknown situations."</p>
+      <p>As the Pathfinder accelerates toward the outer solar system, you review mission parameters on your personal console. The energy signatures near Larissa remain unexplained, but something in the classified briefing has been bothering you—a detail that doesn't quite fit.</p>
+      <p>"Commander," the science officer calls suddenly, "long-range sensors are detecting unusual radiation patterns from the asteroid belt. The signature appears similar to what's been reported near Neptune, but at a much lower intensity."</p>
+      <p>You frown. This wasn't in any of the briefing materials. "On screen."</p>
+      <p>The main viewscreen shifts to show a visual representation of the radiation pattern—pulsing waves of energy that form complex, geometric patterns. They're too regular to be natural, too alien to be human in origin.</p>
+    </div>
+    <div class="story-choices">
+      <h3>How do you respond to this discovery?</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-5m">Maintain course to Neptune but dispatch a detailed report to Command</button>
+        <button class="choice-btn" data-next="chapter-5n">Alter course to investigate the asteroid belt anomaly first</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 4H -->
+  <div class="story-chapter hidden" id="chapter-4h">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Specialized team meeting">
+    </div>
+    <h2 class="chapter-title">Chapter 4: Diverse Perspectives</h2>
+    <div class="chapter-text">
+      <p>"Before we depart," you announce to your assembled senior staff, "I'm establishing specialized task teams to approach our mission from multiple angles."</p>
+      <p>You activate the briefing room's holographic display, showing a three-dimensional organizational chart. "Standard departmental structure remains for ship operations, but for mission analysis, we'll utilize cross-functional teams."</p>
+      <p>Commander Shen raises an eyebrow. "An unconventional approach, Commander."</p>
+      <p>"Unconventional situations demand unconventional methods," you reply. "Team Alpha will focus on the physical aspects—energy readings, radiation patterns, and material analysis. Dr. Nakamura will lead, with members from Engineering, Security, and Medical."</p>
+      <p>Nakamura nods, clearly pleased with the assignment.</p>
+      <p>"Team Beta, led by Dr. Voss, will analyze potential biological implications—if we're dealing with a life form, how might it function? What environmental conditions would it require? What risks might it pose to human physiology?"</p>
+      <p>You continue outlining the teams: Team Gamma for communications and potential first contact protocols, Team Delta for historical analysis comparing the anomaly to previous unexplained phenomena throughout human space exploration.</p>
+      <p>"Each team will develop independent hypotheses and testing protocols," you explain. "We'll review findings in joint sessions every twelve hours during our journey. This approach minimizes cognitive bias and maximizes our chances of understanding what we're dealing with."</p>
+      <p>The strategy is met with enthusiasm, particularly from the scientific personnel. As the meeting concludes and departure preparations continue, you speak privately with Commander Shen.</p>
+      <p>"An interesting approach," he comments. "Not standard Corps protocol."</p>
+      <p>"This isn't a standard mission," you reply. "If we're potentially making first contact, I want every possible perspective considered."</p>
+      <p>The Pathfinder departs on schedule, its course set for Neptune. As the journey progresses, the specialized teams begin their work, sharing findings and challenging each other's assumptions. By the second day, something unexpected emerges from Team Delta's historical analysis.</p>
+      <p>"Commander," reports Lieutenant Rodriguez, the team's coordinator, "we've identified seven previous incidents with energy signatures sharing characteristics with the Neptune anomaly. The earliest was recorded near Pluto's moon Charon in 2178, with subsequent occurrences moving progressively inward through the solar system."</p>
+      <p>The implication is clear—whatever you're investigating seems to be moving toward the inner planets, toward Earth itself.</p>
+    </div>
+    <div class="story-choices">
+      <h3>How do you respond to this discovery?</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-5o">Send an immediate priority alert to Corps Command</button>
+        <button class="choice-btn" data-next="chapter-5p">Keep the information restricted to your ship until you have more concrete evidence</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 5A -->
+  <div class="story-chapter hidden" id="chapter-5a">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Probe being launched from ship">
+    </div>
+    <h2 class="chapter-title">Chapter 5: Divided Attention</h2>
+    <div class="chapter-text">
+      <p>"Maintain course to Neptune," you order, "but prepare a Class-V probe for immediate launch to investigate the signal in the asteroid belt. I want comprehensive sensor packages and maximum transmission security."</p>
+      <p>The crew efficiently executes your commands. Within minutes, a sleek probe detaches from the Pathfinder, its ion engines flaring as it changes course toward the anomalous signal. On the tactical display, its projected path appears as a glowing line diverging from your own.</p>
+      <p>"Probe launched successfully," reports the tactical officer. "ETA to signal source: fourteen hours."</p>
+      <p>"Excellent. Continue monitoring all transmissions from the probe. I want to know immediately if the signal pattern changes or if there's any indication our probe has been detected."</p>
+      <p>Commander Shen approaches your chair. "A prudent compromise," he comments quietly. "Though I wonder if we're spreading our attention too thin."</p>
+      <p>"Better than ignoring potential intelligence," you reply. "If these signals are related, understanding their pattern of spread could be crucial to our mission."</p>
+      <p>The hours pass tensely as the Pathfinder continues its journey toward Neptune. Routine reports flow from each department, but everyone's attention is partly focused on the probe's mission. Twelve hours in, you receive the first data package.</p>
+      <p>"Preliminary scans from the probe are coming through," announces Science Officer Abara. "The signal originates from asteroid JV-2187, a C-type body approximately four kilometers in diameter. No registered mining claims or human presence."</p>
+      <p>The viewscreen displays imagery from the probe: a dark, irregular rock tumbling slowly against the starfield. Nothing appears unusual about its surface.</p>
+      <p>"Scanning for radiation and energy signatures," Abara continues. Then her voice changes. "Commander, I'm detecting unusual formations on the far side of the asteroid. They appear... artificial."</p>
+      <p>The image on the viewscreen shifts as the probe maneuvers to capture the asteroid's dark side. There, gleaming against the black rock, is a structure unlike anything in human design. Geometric patterns that seem to fold impossibly into themselves, surfaces that emit a soft blue-green glow.</p>
+      <p>"Magnifying," Abara says, her voice hushed.</p>
+      <p>The image zooms in, revealing more detail. The structure is changing, reconfiguring itself, parts flowing like liquid metal but moving with obvious purpose.</p>
+      <p>Suddenly, the probe's transmission fills with static, then cuts entirely.</p>
+      <p>"We've lost the signal," reports the communications officer. "Attempting to reestablish connection."</p>
+      <p>Minutes pass with no success. The probe is gone—whether destroyed, disabled, or somehow captured remains unknown.</p>
+    </div>
+    <div class="story-choices">
+      <h3>Given this development, do you:</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-6a">Continue to Neptune as planned, but increase defensive readiness</button>
+        <button class="choice-btn" data-next="chapter-6b">Change course to investigate the asteroid personally</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 5B -->
+  <div class="story-chapter hidden" id="chapter-5b">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Ship changing course through asteroid field">
+    </div>
+    <h2 class="chapter-title">Chapter 5: Course Correction</h2>
+    <div class="chapter-text">
+      <p>"Helm, alter course to intercept the signal source," you order decisively. "Maximum sustainable speed."</p>
+      <p>The navigation officer recalculates. "New course plotted, Commander. ETA to signal source: eighteen hours."</p>
+      <p>"Execute."</p>
+      <p>The Pathfinder banks gracefully as its engines adjust, the stars on the viewscreen shifting as your vessel changes direction. The mood on the bridge is tense but focused.</p>
+      <p>Commander Shen approaches your chair, speaking quietly. "Sir, this represents a significant deviation from our mission parameters. Neptune was our primary objective."</p>
+      <p>"Parameters change when the situation changes," you reply. "If these energy signatures are spreading inward from Neptune toward the inner system, that represents a potentially greater concern than the original anomaly."</p>
+      <p>Shen nods, accepting your logic. "Should we notify Command of our course change?"</p>
+      <p>You consider this. Standard protocol would require immediate notification, but something gives you pause. The classified files you reviewed mentioned information leaks, possible security breaches within the Corps itself. Until you know more about what you're dealing with, operational security might be paramount.</p>
+      <p>"Not yet," you decide. "Let's wait until we have something concrete to report."</p>
+      <p>As the Pathfinder approaches the asteroid belt, sensor readings grow more detailed. The signal originates from a medium-sized asteroid designated JV-2187, unremarkable in composition but following an unusually stable orbit for a body of its type.</p>
+      <p>"Bringing us into optimal scanning range," announces the helm officer. "Five thousand kilometers and holding."</p>
+      <p>"Full sensor sweep," you order. "I want to know everything about that rock before we get any closer."</p>
+      <p>The science station erupts with activity as the Pathfinder's advanced arrays focus on the asteroid. Data flows in, displayed on the main viewscreen in real-time: composition analysis, radiation readings, gravitational measurements.</p>
+      <p>"Commander," calls Science Officer Abara, "I'm detecting structures on the far side of the asteroid. Definitely artificial, definitely not human in design."</p>
+      <p>The viewscreen shifts to visual spectrum, magnifying the asteroid's dark side. There, etched against the black rock, stands a complex that defies conventional architectural principles. Structures that seem to flow like liquid while maintaining rigid geometric patterns. Surfaces that glow with the same energy signature detected near Neptune.</p>
+      <p>"It's... beautiful," someone whispers on the bridge.</p>
+      <p>Before you can respond, the tactical officer shouts, "Energy spike! Something's activating on the asteroid surface!"</p>
+    </div>
+    <div class="story-choices">
+      <h3>Do you:</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-6c">Raise shields and maintain position to observe</button>
+        <button class="choice-btn" data-next="chapter-6d">Initiate immediate withdrawal to a safe distance</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 5C -->
+  <div class="story-chapter hidden" id="chapter-5c">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Ship departing Mars orbit">
+    </div>
+    <h2 class="chapter-title">Chapter 5: To the Source</h2>
+    <div class="chapter-text">
+      <p>"We proceed to Neptune as planned," you announce after conferring with your team. "Whatever this phenomenon is, we need to understand its origin. The source is still our primary objective."</p>
+      <p>Dr. Kermani nods in agreement. "I concur, Commander. While the propagation is concerning, identifying the source may be our best chance to understand—and potentially neutralize—the threat."</p>
+      <p>Back aboard the Pathfinder, you brief the entire crew on the updated intelligence. The mood is somber but determined as you set course for Neptune at maximum sustainable speed.</p>
+      <p>"Given what we know now," you tell Commander Shen, "I want enhanced security protocols for all ship systems. If this entity can interface with our technology, we need layered defenses."</p>
+      <p>"Already implementing them," Shen confirms. "We've established air-gapped subsystems for critical functions and created isolated backup computers that can take over if our main systems are compromised."</p>
+      <p>The journey to Neptune takes fifty-six hours at maximum acceleration. As you approach the massive blue planet, tension on the bridge is palpable. Larissa comes into view on the main screen—a small, irregular moon orbiting the gas giant. Nothing about its appearance suggests it could be the source of something that might threaten Earth.</p>
+      <p>"Scanning Larissa," reports Science Officer Abara. "Energy signature is... Commander, the readings are off the charts. Whatever is generating these signals, it's orders of magnitude more powerful than what we detected in the asteroid belt."</p>
+      <p>The tactical display shows Larissa pulsing with energy—waves radiating outward like ripples in a pond, propagating toward the inner system.</p>
+      <p>"Visual," you order.</p>
+      <p>The screen shifts to show the moon's surface. At first, nothing seems unusual about the cratered, barren landscape. Then the image zooms in on a particular region, and gasps echo across the bridge.</p>
+      <p>Rising from the gray surface is a structure that defies human architectural understanding. It seems to fold into itself in impossible ways, angles that shouldn't exist in three-dimensional space. Parts of it appear solid, others translucent, and still others seem to phase in and out of visibility. The entire complex pulses with blue-green light in perfect rhythm with the energy waves.</p>
+      <p>"It's... growing," Abara says quietly. "Comparing to initial probe scans from two weeks ago, the structure has increased in size by approximately 200%."</p>
+      <p>Suddenly, alarms blare across the bridge. "Commander!" shouts the tactical officer. "We're being scanned! Something from the surface is probing our systems!"</p>
+    </div>
+    <div class="story-choices">
+      <h3>Do you:</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-6e">Execute emergency protocols and cut all nonessential systems</button>
+        <button class="choice-btn" data-next="chapter-6f">Maintain systems but activate the Pathfinder's experimental defensive countermeasures</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 5D -->
+  <div class="story-chapter hidden" id="chapter-5d">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Tactical display of asteroid field">
+    </div>
+    <h2 class="chapter-title">Chapter 5: The Closer Threat</h2>
+    <div class="chapter-text">
+      <p>"If this phenomenon is spreading inward through the solar system, we need to investigate its most recent manifestation," you decide. "Set course for the asteroid belt anomaly."</p>
+      <p>Dr. Kermani hands you a data crystal. "These are all our findings on the propagation pattern. The speed is increasing with each jump—whatever it is, it's learning, adapting."</p>
+      <p>Back aboard the Pathfinder, you share the new intelligence with your senior staff. The gravity of the situation is not lost on anyone: an unknown entity is moving methodically toward Earth, with potentially catastrophic implications for humanity.</p>
+      <p>"Time to the asteroid belt?" you ask the navigation officer.</p>
+      <p>"At maximum acceleration, twenty-six hours, Commander."</p>
+      <p>"Make it so. And I want the ship at full combat readiness when we arrive."</p>
+      <p>The journey is tense, each hour bringing you closer to a possible confrontation with something beyond human understanding. You use the time to review everything known about the phenomenon: its energy signature, propagation pattern, and effects on human technology.</p>
+      <p>Science Officer Abara approaches with additional analysis. "Commander, I've been studying Dr. Kermani's data. There's something fascinating about the propagation pattern—it's not just moving inward, it's following a specific path. Each jump corresponds exactly to locations where humans have established significant technological presence."</p>
+      <p>"It's following our technology?" you ask.</p>
+      <p>"That's my hypothesis. It's almost as if it's... curious about us."</p>
+      <p>As you enter the asteroid belt, sensors detect the anomalous signal almost immediately. It's emanating from a cluster of asteroids designated Section 47-Alpha, a region rich in rare minerals and the site of several automated mining operations.</p>
+      <p>"Visual on main screen," orders Commander Shen.</p>
+      <p>The viewscreen displays the asteroid cluster—dozens of irregular rocks tumbling slowly through space. At first, nothing seems unusual. Then your eyes catch a flicker of blue-green light between the asteroids.</p>
+      <p>"Magnify sector two," you command.</p>
+      <p>The image zooms in, revealing something that sends a chill down your spine. Stretching between several asteroids is a web-like structure of energy filaments, connecting them into what almost resembles a neural network. At the nexus points, complex geometric structures pulse with light.</p>
+      <p>"It's building something," whispers Abara. "Using the asteroids as raw material."</p>
+      <p>Before you can respond, alarms blare across the bridge. "Commander!" shouts the tactical officer. "We're being scanned! Some kind of energy beam is probing our systems!"</p>
+    </div>
+    <div class="story-choices">
+      <h3>How do you respond?</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-6g">Activate all defensive systems and prepare to engage if necessary</button>
+        <button class="choice-btn" data-next="chapter-6h">Attempt to communicate with the entity using mathematical sequences</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- More chapters would continue here -->
+
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Show the first chapter initially
-      document.getElementById('chapter-1').classList.remove('hidden');
+    // This would normally be included in an external JS file
+    function showChapter(chapterId) {
+      // Hide all chapters
+      const chapters = document.querySelectorAll('.story-chapter');
+      chapters.forEach(chapter => {
+        chapter.classList.add('hidden');
+      });
       
-      // Add click event listeners to all choice buttons
+      // Show the selected chapter
+      const selectedChapter = document.getElementById(chapterId);
+      if (selectedChapter) {
+        selectedChapter.classList.remove('hidden');
+        // Scroll to top of chapter
+        selectedChapter.scrollIntoView({ behavior: 'smooth' });
+      }
+      
+      // If we're showing the first chapter, hide the title screen
+      if (chapterId !== 'story-title') {
+        const titleScreen = document.getElementById('story-title');
+        if (titleScreen) {
+          titleScreen.classList.add('hidden');
+        }
+      }
+    }
+    
+    // Add event listeners to all choice buttons
+    document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.choice-btn').forEach(button => {
         button.addEventListener('click', function() {
-          // Hide all chapters
-          document.querySelectorAll('.story-chapter').forEach(chapter => {
-            chapter.classList.add('hidden');
-          });
-          
-          // Show the selected chapter
-          const nextChapterId = this.getAttribute('data-next');
-          document.getElementById(nextChapterId).classList.remove('hidden');
-          
-          // Scroll to top of new chapter
-          window.scrollTo(0, 0);
+          const nextChapter = this.getAttribute('data-next');
+          showChapter(nextChapter);
         });
       });
     });
   </script>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #f0f5ff;
-    }
-    .hidden {
-      display: none;
-    }
-    .story-chapter {
-      background-color: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
-    }
-    .chapter-image {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .chapter-image img {
-      max-width: 100%;
-      border-radius: 5px;
-    }
-    .chapter-title {
-      color: #2c3e50;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 10px;
-      margin-top: 10px;
-    }
-    .chapter-text {
-      margin-bottom: 30px;
-    }
-    .chapter-text p {
-      margin-bottom: 15px;
-    }
-    .story-choices h3 {
-      color: #3498db;
-      font-style: italic;
-    }
-    .choice-options {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .choice-btn {
-      background-color: #3498db;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s;
-    }
-    .choice-btn:hover {
-      background-color: #2980b9;
-    }
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-      font-size: 32px;
-      margin-bottom: 30px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Stellar Horizons: A Space Adventure</h1>
-
-  <div class="story-chapter hidden" id="chapter-1">
-    <div class="chapter-image">
-      <img src="/api/placeholder/400/250" alt="Spacecraft interior with pilot seat and control panels">
-    </div>
-    <h2 class="chapter-title">Chapter 1: The Distress Call</h2>
-    <div class="chapter-text">
-      <p>The soft hum of the Arcturus' engines had become as familiar to you as your own heartbeat. Six months into your solo survey mission of the Kepler-452 system, the routine had settled into comfortable predictability—until today. The emergency beacon blared through your cabin, jolting you from a light sleep.</p>
-      
-      <p>"Incoming distress signal," announced ARIA, your ship's AI. "Origin: Prospero Mining Colony, Kepler-452b. Signal strength deteriorating. Message follows."</p>
-      
-      <p>The holographic display flickered to life, revealing the face of a woman whose features were twisted with urgency. Static interrupted her transmission, fragmenting her words: "...unknown lifeform...miners trapped in sector seven...communication blackout...need immediate...not what we thought..." Before she could finish, the transmission cut out completely.</p>
-      
-      <p>You checked your navigation system. Prospero Colony was a three-day journey at maximum thrust, nestled in the northern hemisphere of Kepler-452b—humanity's most ambitious extrasolar mining operation to date. The facility had been operational for just over a year, extracting rare minerals crucial for the next generation of quantum drives.</p>
-      
-      <p>"ARIA, any other vessels responding to the distress call?" you asked, already calculating fuel reserves and plotting the course adjustment in your head.</p>
-      
-      <p>"Negative, Captain. We are the only registered Alliance vessel within a twelve-day radius of Kepler-452b."</p>
-      
-      <p>You drummed your fingers against the cold metal of the control panel. The Arcturus was a survey vessel, not a rescue ship. Your supplies were limited, your weapons systems minimal. But those colonists needed help, and apparently, you were their only hope.</p>
-      
-      <p>"ARIA, prepare for course change," you instructed, strapping yourself into the pilot's seat. "And give me everything we have on Prospero Colony—personnel records, facility maps, geological surveys, the works."</p>
-    </div>
-    <div class="story-choices">
-      <h3>How will you approach this situation?</h3>
-      <div class="choice-options">
-        <button class="choice-btn" data-next="chapter-2a">Push engines to maximum and rush to the colony immediately</button>
-        <button class="choice-btn" data-next="chapter-2b">Proceed at standard speed while thoroughly analyzing all available data</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="story-chapter hidden" id="chapter-2a">
-    <div class="chapter-image">
-      <img src="/api/placeholder/400/250" alt="Spaceship with glowing engines at maximum power">
-    </div>
-    <h2 class="chapter-title">Chapter 2: Against the Clock</h2>
-    <div class="chapter-text">
-      <p>"ARIA, divert all non-essential power to engines. We're going in hot," you command, your fingers flying across the control panel. Warning indicators flash as the Arcturus' fusion drive spools up beyond recommended parameters.</p>
-      
-      <p>"Warning: Sustaining maximum thrust will reduce engine efficiency by 19% and increase risk of thruster burnout by 27%," ARIA's synthetic voice is eerily calm despite the red warnings flashing across your monitors.</p>
-      
-      <p>"Noted. Proceed anyway." The gravitational compensators struggle to keep up with your acceleration, and you feel the uncomfortable pressure pushing you back into your seat. The stars outside your viewport stretch into streaks of light as the Arcturus achieves its maximum velocity.</p>
-      
-      <p>Just thirty hours into your desperate journey, the primary coolant system fails. Alarms blare throughout the ship as temperatures in the engine core climb dangerously. You're forced to manually reroute secondary cooling systems, crawling through maintenance tubes filled with scalding steam as ARIA guides you through the emergency procedures.</p>
-
-      <p>Your hands are blistered and your lungs burn from the superheated air, but you manage to stabilize the engines. The detour costs you precious time, but you still make it to Kepler-452b in just under fifty hours—almost a full day faster than a standard approach would have allowed.</p>
-      
-      <p>As you enter orbit around the eerily beautiful blue-green planet, your sensors detect scattered energy signatures from the northern continent where Prospero Colony should be. The comms remain silent despite your repeated hails.</p>
-      
-      <p>"ARIA, any response from the colony?" you ask, scanning the surface with the ship's limited sensory array.</p>
-      
-      <p>"Negative, Captain. However, I am detecting multiple heat signatures consistent with human life forms, concentrated in what appears to be the colony's central hub and scattered throughout mining sector seven. There are also several unidentified thermal patterns unlike anything in my database."</p>
-      
-      <p>Through the viewport, you can see lights still functioning in parts of the colony, but large sections appear to be running on emergency power or completely dark. Something has gone terribly wrong down there.</p>
-    </div>
-    <div class="story-choices">
-      <h3>How will you make your approach?</h3>
-      <div class="choice-options">
-        <button class="choice-btn" data-next="chapter-3a">Land directly at the colony's main landing pad</button>
-        <button class="choice-btn" data-next="chapter-3b">Land at a distance and approach on foot for stealth</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="story-chapter hidden" id="chapter-2b">
-    <div class="chapter-image">
-      <img src="/api/placeholder/400/250" alt="Character studying holographic data displays">
-    </div>
-    <h2 class="chapter-title">Chapter 2: Knowledge is Power</h2>
-    <div class="chapter-text">
-      <p>"Let's not rush in blind," you tell ARIA as you set a course for Kepler-452b at standard cruising speed. "Show me everything we have on Prospero Colony, and enhance that transmission. I want to know exactly what we're dealing with."</p>
-      
-      <p>For the next seventy-two hours, you immerse yourself in data about the mining operation. Prospero was established eighteen months ago with a crew of 122 specialists—engineers, geologists, medical staff, and security personnel. The facility was built to harvest rare elements like yttrium and praseodymium from deep within the planet's crust, materials essential for the next generation of quantum computers and FTL drives.</p>
-      
-      <p>ARIA manages to clean up portions of the distress signal. "...unknown lifeform encountered in deep shaft 7B...exhibits signs of intelligence...miners trapped in sector seven after cave-in...colony-wide communication blackout...need immediate evacuation...the mineral deposits are not what we thought..." The woman's face becomes clearer—Dr. Eleanor Chen, the colony's chief science officer.</p>
-      
-      <p>You study the colony's blueprints meticulously, memorizing the layout of the main facility, the locations of backup generators, and the network of mining tunnels that stretch beneath the surface. You also review the geological surveys, noting with concern that sector seven—where the miners are reportedly trapped—sits directly above an unusual formation that had puzzled the initial survey team.</p>
-
-      <p>The facility's security protocols indicate several safe rooms designed to withstand seismic events, and the location of the armory is clearly marked in the central hub. If things have gone as badly as the message suggests, that information could prove invaluable.</p>
-      
-      <p>Your caution pays dividends in another way too—on the second day of your journey, long-range sensors detect a peculiar energy disturbance between you and the planet. Had you been traveling at maximum speed, you might have plowed straight into it. Instead, you're able to adjust your course to give the anomaly a wide berth.</p>
-      
-      <p>As you finally enter orbit around Kepler-452b, you have a comprehensive understanding of what you're dealing with—at least on paper. The colony below is partially illuminated, some sections operating on backup power, others completely dark.</p>
-      
-      <p>"I've detected multiple human life signs," ARIA reports. "Most are concentrated in the central hub and throughout sector seven. There are also several unidentified thermal signatures that don't match any known pattern."</p>
-    </div>
-    <div class="story-choices">
-      <h3>What's your next move?</h3>
-      <div class="choice-options">
-        <button class="choice-btn" data-next="chapter-3c">Attempt to establish communication with the colony before landing</button>
-        <button class="choice-btn" data-next="chapter-3d">Deploy your survey drone to scout the area first</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="story-chapter hidden" id="chapter-3a">
-    <div class="chapter-image">
-      <img src="/api/placeholder/400/250" alt="Spacecraft landing on a damaged colony landing pad">
-    </div>
-    <h2 class="chapter-title">Chapter 3: Into the Unknown</h2>
-    <div class="chapter-text">
-      <p>You guide the Arcturus toward the colony's main landing pad, the engines kicking up swirls of dust as you make your final approach. The landing zone is eerily vacant—no ground crew, no blinking guidance lights, just the automated landing beacons still functioning on minimal power.</p>
-      
-      <p>"ARIA, continue broadcasting on all emergency channels," you order as the landing struts touch down with a metallic groan. Through the viewport, you can see the colony's main structures—prefabricated modules arranged in a circular pattern around a central hub. Several buildings show signs of damage, and the normally bright perimeter lights flicker sporadically.</p>
-      
-      <p>You don your EVA suit, not taking any chances with the atmosphere despite the colony's terraforming systems supposedly making the air breathable. Your helmet seals with a hiss, and you check your equipment one last time: oxygen supply, emergency medical kit, plasma cutter that could double as a weapon in a pinch, and a portable scanner.</p>
-      
-      <p>"I'll maintain the ship's systems at ready status," ARIA informs you. "Emergency launch protocols are primed should you need immediate extraction."</p>
-
-      <p>As the airlock cycles and the exterior door slides open, the reality of your situation hits you. You're alone on an alien world, stepping into a colony that has gone silent under mysterious circumstances. The ramp extends, and you take your first cautious steps onto the landing pad.</p>
-      
-      <p>The air is thick with an acrid, metallic smell that penetrates even your suit's filters. Your boots crunch on gravel and something else—fragments of shattered safety glass. The main entrance to the colony hub stands twenty meters away, its heavy doors slightly ajar. No movement, no signs of life.</p>
-      
-      <p>You approach the entrance slowly, scanner sweeping the area. It detects human life signs deeper inside the complex, but also registers unusual energy patterns emanating from somewhere beneath the colony. As you reach the doors, you notice deep gouges in the metal—not from tools or machinery, but something that seems to have clawed its way through.</p>
-      
-      <p>With considerable effort, you push the damaged door open wide enough to slip through. Emergency lighting bathes the entrance hall in a dim red glow. The floor is littered with abandoned personal items—a datapad here, a half-empty cup of coffee there—suggesting a hasty evacuation.</p>
-    </div>
-    <div class="story-choices">
-      <h3>Where will you head first?</h3>
-      <div class="choice-options">
-        <button class="choice-btn" data-next="chapter-4a">Follow the life signs to find survivors</button>
-        <button class="choice-btn" data-next="chapter-4b">Head to the security station to access colony logs</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="story-chapter hidden" id="chapter-3b">
-    <div class="chapter-image">
-      <img src="/api/placeholder/400/250" alt="Barren landscape with distant colony lights">
-    </div>
-    <h2 class="chapter-title">Chapter 3: The Silent Approach</h2>
-    <div class="chapter-text">
-      <p>You pilot the Arcturus to a landing site three kilometers from the colony perimeter, settling down in a shallow valley that should shield your ship from immediate detection. The decision feels prudent—something has gone terribly wrong at Prospero Colony, and announcing your arrival might expose you to the same danger.</p>
-      
-      <p>"ARIA, initiate security protocol Delta. Keep the engines warm and be ready for emergency takeoff," you instruct as you don your EVA suit. The helmet's heads-up display flickers to life, interfacing with ARIA's systems to provide constant environmental readings.</p>
-      
-      <p>"Security protocol Delta initiated," ARIA confirms. "Be advised: local atmospheric conditions show higher than expected methane levels and unusual particulate matter. Suit filtration is advised even in terraformed areas."</p>
-      
-      <p>You step out onto alien soil, the landscape bathed in the orange-tinged light of Kepler-452. Rocky formations jut from the ground like the spines of some enormous creature, casting long shadows across your path. In the distance, the colony's structures rise against the horizon—a monument to human determination and, perhaps, hubris.</p>
-
-      <p>The trek to the colony perimeter takes nearly an hour. You move cautiously, using the natural terrain for cover whenever possible. Your scanner occasionally picks up strange energy fluctuations beneath the planet's surface, but nothing definitive.</p>
-      
-      <p>As you approach the colony's outer boundary, you notice the perimeter fence has been compromised in several places—not cut or blasted, but appeared to be melted through, the metal twisted and warped by some intense heat source.</p>
-      
-      <p>You slip through one of these gaps, entering the colony's agricultural sector. Rows of hydroponics units stretch before you, many still functioning but untended. The plants have grown wild, some species thriving in their neglect while others have withered and died. The air circulators hum quietly, maintaining the artificial ecosystem on automatic protocols.</p>
-      
-      <p>Moving between the rows of overgrown vegetation provides excellent cover as you make your way toward the main colony buildings. Through gaps in the foliage, you catch glimpses of the central hub—parts of it still illuminated, other sections completely dark. Most concerning are the massive gouges visible in the outer walls of some structures, as if something enormous had tried to claw its way inside.</p>
-    </div>
-    <div class="story-choices">
-      <h3>How will you proceed?</h3>
-      <div class="choice-options">
-        <button class="choice-btn" data-next="chapter-4c">Investigate the damaged sections first</button>
-        <button class="choice-btn" data-next="chapter-4d">Sneak into the colony through the maintenance tunnels</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="story-chapter hidden" id="chapter-3c">
-    <div class="chapter-image">
-      <img src="/api/placeholder/400/250" alt="Communications array attempting to contact colony">
-    </div>
-    <h2 class="chapter-title">Chapter 3: Breaking the Silence</h2>
-    <div class="chapter-text">
-      <p>"ARIA, boost our comm array to maximum power and cycle through all emergency frequencies," you order, leaning forward in your seat. "Let's see if anyone's listening down there before we commit to a landing."</p>
-      
-      <p>The AI complies, and the ship's communication system begins broadcasting a standard Alliance emergency hail. Minutes pass with no response, the silence weighing heavily in the cabin. You're about to give up when a burst of static erupts from the speakers.</p>
-      
-      <p>"...is Dr. Eleanor Chen...survivors in central hub...security lockdown...don't land at main pad...compromised..." The transmission is weak and fragmented, but unmistakably human.</p>
-      
-      <p>"Dr. Chen, this is Captain of the survey vessel Arcturus responding to your distress call. Please advise on safe landing coordinates," you respond, adjusting the frequency to strengthen the signal.</p>
-
-      <p>The reply comes through clearer this time: "Captain, thank God... We have twenty-three survivors secured in the central hub's emergency shelter. The colony's been compromised by... something we encountered in the deep mines. It reacts to electrical systems... drawn to power sources. Main landing pad automated systems will attract it. Use the secondary pad near the hydroponics section—coordinates following."</p>
-      
-      <p>Your navigation system pings as it receives the landing coordinates. The secondary pad is smaller, designed for maintenance vessels rather than a ship of the Arcturus' size, but it should be manageable. More importantly, according to Dr. Chen, it's currently powered down and shouldn't attract whatever threat has overtaken the colony.</p>
-      
-      <p>"We're processing your coordinates now, Dr. Chen," you confirm. "What's the nature of the threat we're dealing with? What should we prepare for?"</p>
-      
-      <p>The response is interrupted by bursts of static: "...silicon-based lifeform...absorbs energy...highly adaptive...conventional weapons ineffective...brought it up with mineral samples...grows larger with each...seven miners still trapped in lower levels...hurry, our power reserves..." The transmission cuts out completely.</p>
-      
-      <p>"I've lost the signal, Captain," ARIA reports. "But I've analyzed Dr. Chen's transmission alongside colony records. The hydroponics landing pad is approximately 400 meters from the central hub, connected by maintenance tunnels that should allow for covered transit."</p>
-    </div>
-    <div class="story-choices">
-      <h3>What's your next move?</h3>
-      <div class="choice-options">
-        <button class="choice-btn" data-next="chapter-4e">Land at the hydroponics pad as suggested</button>
-        <button class="choice-btn" data-next="chapter-4f">Perform a flyover reconnaissance before committing to land</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="story-chapter hidden" id="chapter-3d">
-    <div class="chapter-image">
-      <img src="/api/placeholder/400/250" alt="Small scout drone launching from spacecraft">
-    </div>
-    <h2 class="chapter-title">Chapter 3: Eyes in the Sky</h2>
-    <div class="chapter-text">
-      <p>"Let's get a closer look before we commit," you decide, activating the ship's survey drone bay. "ARIA, prep the Hawkeye for immediate launch. Full spectrum scanning, maximum stealth protocols."</p>
-      
-      <p>The Hawkeye drone—a compact, maneuverable craft equipped with advanced sensors—detaches from the Arcturus with barely a sound. You watch through its visual feed as it descends through the atmosphere, its thermal dampeners and reflective coating making it nearly invisible to conventional detection.</p>
-      
-      <p>"Deploying sensor array," ARIA announces as the drone reaches optimal altitude. The Hawkeye begins its systematic scan of the colony below, building a comprehensive picture of the situation through layered data streams.</p>
-      
-      <p>The drone's thermal imaging reveals clusters of human heat signatures in the central hub and scattered throughout the mining tunnels of sector seven. But what catches your attention are the unusual energy patterns emanating from the deepest mine shaft—fluctuating waves of power unlike anything you've encountered before.</p>
-
-      <p>"ARIA, analyze those energy signatures," you command, zooming the visual feed onto the main mining complex. The structure appears largely intact, but the entrance has been sealed with makeshift barricades. Several vehicles lie abandoned around the perimeter, some partially melted or crushed.</p>
-      
-      <p>"Energy pattern analysis complete," ARIA responds after a moment. "Signatures indicate a silicon-based organism with apparent electromagnetic properties. It appears to be absorbing energy from the colony's power grid and growing in mass. Current size estimate based on thermal displacement: approximately 40 meters in length, with multiple extending appendages."</p>
-      
-      <p>The Hawkeye continues its silent circuit of the colony, revealing more disturbing details. The main landing pad shows signs of recent violence—scorch marks, structural damage, and what appear to be massive footprints melted into the reinforced concrete. The hydroponics section remains largely untouched, its automated systems still functioning on an isolated power grid.</p>
-      
-      <p>"I've detected an active communication relay in the central hub," ARIA informs you. "Attempting to establish contact."</p>
-      
-      <p>Moments later, a frantic voice comes through: "This is Dr. Eleanor Chen, who's there? Please tell me you've come to help us." When you identify yourself and confirm your rescue mission, her relief is palpable. She quickly briefs you on their situation—the creature from the mines, the failed attempts to contain it, the dwindling power reserves in their shelter, and the miners still trapped below.</p>
-    </div>
-    <div class="story-choices">
-      <h3>Based on your reconnaissance, where will you land?</h3>
-      <div class="choice-options">
-        <button class="choice-btn" data-next="chapter-4g">Land at the untouched hydroponics pad</button>
-        <button class="choice-btn" data-next="chapter-4h">Keep the ship in orbit and use the Hawkeye to deliver emergency supplies first</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="story-chapter hidden" id="chapter-4a">
-    <div class="chapter-image">
-      <img src="/api/placeholder/400/250" alt="Dark corridor with emergency lighting">
-    </div>
-    <h2 class="chapter-title">Chapter 4: Signs of Life</h2>
-    <div class="chapter-text">
-      <p>Your scanner pulses steadily, guiding you deeper into the colony complex. The main corridor branches off in multiple directions, but you follow the strongest concentration of life signs toward what should be the central hub. Emergency lighting flickers overhead, casting moving shadows that play tricks on your already tense nerves.</p>
-      
-      <p>The walls bear strange marks—not just the expected wear and tear of an industrial facility, but long, sinuous patterns that seem to have been etched into the metal by something corrosive. In places, the floor is discolored with an unfamiliar crystalline residue that crunches beneath your boots.</p>
-      
-      <p>"ARIA, analyze this substance," you say, kneeling to collect a sample with a sterile probe from your kit. You hold it up to your helmet camera for transmission back to the ship.</p>
-      
-      <p>"Analysis indicates a silicon-based crystalline structure with unusual conductive properties," ARIA reports after a moment. "Composition does not match any known natural formation in the database. Caution advised—sample exhibits mild radioactive properties."</p>
-
-      <p>You carefully store the sample and continue forward. The corridor opens into a large communal area—what was once the colony's mess hall. Tables are overturned, personal belongings scattered across the floor. A half-eaten meal sits on one table, now fossilized by time. Whatever happened here, it happened fast.</p>
-      
-      <p>Your scanner beeps more urgently as you approach a sealed door at the far end of the mess hall. The control panel beside it is dark, but a manual override has been engaged—someone barricaded themselves inside. A message has been hastily scrawled on the wall beside the door: "SURVIVORS INSIDE. POWER ATTRACTS IT."</p>
-      
-      <p>As you examine the door for a way to open it, you hear something moving behind you—a soft, sliding sound like metal being dragged across the floor. You turn slowly, plasma cutter raised defensively.</p>
-      
-      <p>A figure emerges from the shadows of an adjoining corridor—human, but barely recognizable as such. It's a man in a tattered mining uniform, his movements jerky and uncoordinated. His skin has a grayish pallor, and veins of crystalline material similar to what you found earlier protrude from his exposed skin. His eyes reflect the emergency lights with an unnatural glow.</p>
-      
-      <p>"Help... us..." he rasps, his voice distorted as if speaking through gravel. "It's... in the... mines... changing us..." He takes a stumbling step toward you, one arm outstretched imploringly, the other hanging limp at his side, partially covered in the same crystalline growth.</p>
-    </div>
-    <div class="story-choices">
-      <h3>How do you respond to this unexpected encounter?</h3>
-      <div class="choice-options">
-        <button class="choice-btn" data-next="chapter-5a">Try to communicate with the transformed miner</button>
-        <button class="choice-btn" data-next="chapter-5b">Back away and focus on opening the sealed door to reach the survivors</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="story-chapter hidden" id="chapter-4b">
-    <div class="chapter-image">
-      <img src="/api/placeholder/400/250" alt="Security monitoring station with multiple screens">
-    </div>
-    <h2 class="chapter-title">Chapter 4: The Observatory</h2>
-    <div class="chapter-text">
-      <p>You decide that information will be your best weapon in this uncertain situation. According to the colony layouts you studied during your approach, the security station should be located on the second level of the central hub—a fortified room with access to all surveillance systems and colony logs.</p>
-      
-      <p>The main stairwell has been blocked by fallen debris, forcing you to find an alternative route. A maintenance ladder provides access to the upper level, though the climb is made awkward by your EVA suit. As you ascend, you notice more of those strange scratch marks on the walls, some deep enough to have penetrated multiple layers of reinforced metal.</p>
-      
-      <p>The second level is cast in near-total darkness, your helmet lights providing the only illumination. The beam catches reflective surfaces—broken glass, toppled equipment, and more of that crystalline residue, here forming in larger clusters that seem to pulse with a faint internal light.</p>
-      
-      <p>You locate the security station at the end of a curving corridor. The reinforced door stands partially open, jammed by a fallen support beam. Squeezing through the gap requires some effort, but you manage to slip inside without removing your suit—a precaution that feels increasingly necessary.</p>
-
-      <p>The security station is in remarkably good condition compared to the rest of the facility. Emergency power has kept the essential systems running, including several monitoring stations and a central server core. A body slumps in the corner—a security officer, judging by the uniform, dead for at least several days. The cause isn't immediately obvious, but crystalline growths protrude from the corpse's exposed skin.</p>
-      
-      <p>You approach the main console, relieved to find it still operational. "ARIA, I'm connecting to the colony's security system. Prepare to receive and decrypt any protected files," you say, plugging a data link from your suit into the console's universal port.</p>
-      
-      <p>The screens flicker to life, displaying a login prompt. A quick bypass using standard Alliance emergency protocols grants you access to the system. The security logs begin to tell the story of Prospero Colony's downfall.</p>
-      
-      <p>It started three weeks ago when miners in shaft 7B broke through into an unmapped cavern. Initial excitement over mineral deposits quickly turned to concern when several miners reported strange symptoms after handling the crystalline formations found there. Security footage shows the rapid progression: miners becoming disoriented, developing growths similar to those you've observed, becoming increasingly aggressive and then... changing. The final logs describe a desperate evacuation as the affected miners—now transformed into something not entirely human—began attacking others.</p>
-      
-      <p>Dr. Eleanor Chen's final security update, timestamped just two days ago, confirms that twenty-three survivors have barricaded themselves in the emergency shelter beneath the central hub. She also mentions seven miners still trapped in a collapsed section of sector seven, their fate unknown. Most alarmingly, she reports that the crystalline entity they inadvertently awakened is growing, feeding on the colony's power systems and incorporating metal and organic matter into its structure.</p>
-    </div>
-    <div class="story-choices">
-      <h3>With this new information, what's your next move?</h3>
-      <div class="choice-options">
-        <button class="choice-btn" data-next="chapter-5c">Download the colony maps and head to the emergency shelter to rescue the survivors</button>
-        <button class="choice-btn" data-next="chapter-5d">Access the surveillance system to locate the creature and assess the current threat</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="story-chapter hidden" id="chapter-4c">
-    <div class="chapter-image">
-      <img src="/api/placeholder/400/250" alt="Damaged colony wall with strange markings">
-    </div>
-    <h2 class="chapter-title">Chapter 4: Breach Point</h2>
-    <div class="chapter-text">
-      <p>Your curiosity—perhaps morbid, certainly dangerous—draws you toward the damaged sections of the colony's exterior. The massive gouges in the prefabricated walls tell a story of violence and alien strength that sends shivers down your spine despite your suit's climate
+</body>
+</html>
