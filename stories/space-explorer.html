@@ -1,330 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Explorer | StoryVerse</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="dark-mode story-page">
-    <div class="theme-toggle">
-        <button id="theme-switch"><i class="fas fa-moon"></i></button>
-    </div>
-    
-    <header class="story-header">
-        <div class="logo-container">
-            <a href="index.html" class="logo">
-                <svg viewBox="0 0 200 60" class="logo-svg">
-                    <path d="M20,10 Q40,5 60,10 T100,10 T140,10 T180,10 Q190,30 180,50 T140,50 T100,50 T60,50 Q40,55 20,50 Q10,30 20,10" fill="none" stroke="currentColor" stroke-width="2"/>
-                    <text x="38" y="36" fill="currentColor" font-size="22" font-weight="bold">StoryVerse</text>
-                    <circle cx="30" cy="30" r="3" fill="currentColor" class="star star1"/>
-                    <circle cx="170" cy="20" r="2" fill="currentColor" class="star star2"/>
-                    <circle cx="150" cy="40" r="2" fill="currentColor" class="star star3"/>
-                    <circle cx="80" cy="15" r="1.5" fill="currentColor" class="star star4"/>
-                    <circle cx="120" cy="45" r="1.5" fill="currentColor" class="star star5"/>
-                </svg>
-            </a>
-        </div>
-        <div class="story-nav">
-            <button class="btn btn-icon" id="backBtn"><i class="fas fa-arrow-left"></i></button>
-            <div class="story-title">Space Explorer</div>
-            <div class="story-controls">
-                <button class="btn btn-icon" id="bookmarkBtn"><i class="far fa-bookmark"></i></button>
-                <button class="btn btn-icon" id="shareBtn"><i class="fas fa-share-alt"></i></button>
-                <button class="btn btn-icon" id="settingsBtn"><i class="fas fa-cog"></i></button>
-            </div>
-        </div>
-    </header>
-
-    <main class="story-container">
-        <div class="progress-bar">
-            <div class="progress" style="width: 25%"></div>
-        </div>
-        
-        <div class="story-content">
-            <div class="story-chapter" id="chapter-1">
-                <div class="chapter-image">
-                    <img src="images/stories/space-explorer/space-explorer-cover.png" alt="Space Explorer Chapter 1">
-                </div>
-                <h2 class="chapter-title">Chapter 1: The Discovery</h2>
-                <div class="chapter-text">
-                    <p>The abandoned space station loomed ahead, its angular silhouette stark against the backdrop of swirling cosmic dust. Captain Alex Zhang checked the radiation monitors one last time before giving the nod to his second-in-command.</p>
-                    
-                    <p>"All readings normal," Lieutenant Kai reported, her eyes flicking between holographic displays. "But there's something weird about the energy signature. It's... pulsing."</p>
-                    
-                    <p>Alex frowned. This wasn't in the mission briefing. The derelict station—Outpost Epsilon—had been abandoned for decades after the Resource Wars. It should be dead, powerless. Yet here it was, somehow active.</p>
-                    
-                    <p>"Could be automated systems," he suggested, though he didn't believe it himself. "Or scavengers."</p>
-                    
-                    <p>Kai shook her head. "No registered salvage operations in this sector. And this signal..." She manipulated the display, zooming in on a waveform pattern. "I've never seen anything like it."</p>
-                    
-                    <p>The ship's AI chimed in, its voice calm and measured. "Analysis indicates the energy signature contains embedded data patterns consistent with communication attempts."</p>
-                    
-                    <p>A chill ran down Alex's spine. "Communication? From whom?"</p>
-                    
-                    <p>"Unknown," the AI replied. "Pattern does not match any known human or allied species transmission protocols."</p>
-                    
-                    <p>The crew fell silent. First contact wasn't part of their mission parameters. They were here to salvage technology, not make history—or possibly get themselves killed by an unknown entity.</p>
-                    
-                    <p>Alex studied the station through the viewscreen. Their mission was clear: dock, retrieve valuable tech, and return to Earth. Simple. Safe. Profitable.</p>
-                    
-                    <p>But that was before they detected signs of intelligent activity.</p>
-                    
-                    <p>"Captain," Kai said quietly. "We need to make a decision."</p>
-                </div>
-                
-                <div class="story-choices">
-                    <h3>What will you do?</h3>
-                    <div class="choice-options">
-                        <button class="choice-btn" data-next="chapter-2a">
-                            Dock at the station and investigate the signal
-                        </button>
-                        <button class="choice-btn" data-next="chapter-2b">
-                            Keep your distance and attempt to communicate first
-                        </button>
-                        <button class="choice-btn" data-next="chapter-2c">
-                            Report back to Earth Command before proceeding
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Added content for choice 1 -->
-            <div class="story-chapter hidden" id="chapter-2a">
-                <div class="chapter-image">
-                    <img src="/api/placeholder/400/250" alt="Docking at the Station">
-                </div>
-                <h2 class="chapter-title">Chapter 2: First Contact</h2>
-                <div class="chapter-text">
-                    <p>"We're going in," Alex announced, decision made. "Prep the docking protocols."</p>
-                    
-                    <p>Kai nodded, though her expression betrayed concern. "Aye, Captain. Initiating docking sequence."</p>
-                    
-                    <p>The ship's engines hummed as they maneuvered closer to the derelict station. Through the viewports, Alex could see the station's exterior was pockmarked with micrometeorite impacts, but the main docking bay appeared intact.</p>
-                    
-                    <p>"Docking clamps engaged," Kai reported as the ship shuddered slightly. "Environmental seal looks good. Internal atmosphere readings... unusual, but within human tolerance."</p>
-                    
-                    <p>Alex nodded. "Gear up. Standard exploration protocol. Weapons hot but holstered."</p>
-                    
-                    <p>Twenty minutes later, they stepped through the airlock into the station. Emergency lighting flickered weakly, casting long shadows down curved corridors. The air smelled stale but breathable.</p>
-                    
-                    <p>"Signal's stronger here," Kai said, checking her scanner. "Coming from the central hub."</p>
-                    
-                    <p>They moved cautiously through the station, passing abandoned workstations and personal quarters. Everything appeared to have been left in a hurry—meals half-eaten, personal effects scattered.</p>
-                    
-                    <p>As they approached the central hub, the lighting changed, taking on a bluish tint. The pulsing energy signature was now audible—a rhythmic humming that seemed to vibrate through the deck plates.</p>
-                    
-                    <p>"Captain," the comms specialist whispered, "I think it's... responding to our presence."</p>
-                    
-                    <p>The doors to the central hub slid open unbidden, revealing a sight none of them were prepared for. In the center of the room hovered a swirling mass of luminescent particles, forming shapes that were almost, but not quite, recognizable.</p>
-                    
-                    <p>"My God," someone whispered.</p>
-                    
-                    <p>The entity—for lack of a better term—pulsed brighter as they entered, and the humming intensified. Patterns of light coalesced and shifted, forming intricate geometric shapes.</p>
-                    
-                    <p>"It's trying to communicate," Kai said, her voice barely audible.</p>
-                    
-                    <p>Alex felt a pressure building in his mind, like a presence trying to make contact. The entity's light patterns were becoming more organized, more deliberate.</p>
-                </div>
-                
-                <div class="story-choices">
-                    <h3>What will you do?</h3>
-                    <div class="choice-options">
-                        <button class="choice-btn" data-next="chapter-3a">
-                            Attempt direct mental contact with the entity
-                        </button>
-                        <button class="choice-btn" data-next="chapter-3b">
-                            Use the ship's AI to analyze and respond to the patterns
-                        </button>
-                        <button class="choice-btn" data-next="chapter-3c">
-                            Retreat to the ship and establish a safe distance
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Added content for choice 2 -->
-            <div class="story-chapter hidden" id="chapter-2b">
-                <div class="chapter-image">
-                    <img src="/api/placeholder/400/250" alt="Attempting Communication">
-                </div>
-                <h2 class="chapter-title">Chapter 2: Signals Across the Void</h2>
-                <div class="chapter-text">
-                    <p>"Let's not rush in," Alex decided. "Keep our distance and try to establish communication first."</p>
-                    
-                    <p>Kai nodded with visible relief. "I'll prep the comms array for a wide-spectrum broadcast."</p>
-                    
-                    <p>The ship maintained a safe distance of five kilometers from the station as the communications officer worked. The pulsing energy signature continued its rhythmic pattern, unchanged by their presence.</p>
-                    
-                    <p>"We'll start with standard first-contact protocols," Alex instructed. "Mathematical sequences first, then basic linguistic patterns."</p>
-                    
-                    <p>The comms array beamed the first message—a simple sequence of prime numbers, the universal language of mathematics. For several minutes, there was no response.</p>
-                    
-                    <p>Then, the energy signature from the station changed. Its pulses accelerated, matching the exact timing of their mathematical sequence.</p>
-                    
-                    <p>"It's responding!" the comms officer exclaimed.</p>
-                    
-                    <p>They sent more complex mathematical concepts—the value of pi, the Fibonacci sequence. Each time, the station's energy signature shifted to mirror their transmission, then added something new—variations and extensions to the patterns they couldn't immediately interpret.</p>
-                    
-                    <p>"It's not just mimicking," Kai said, studying the readouts. "It's... conversing. Building on what we send."</p>
-                    
-                    <p>For hours, they continued this strange dialogue of mathematical patterns. The ship's AI worked furiously to interpret the increasingly complex responses.</p>
-                    
-                    <p>"Captain," the AI finally announced, "I believe I've established a rudimentary translation matrix. The entity is requesting... permission."</p>
-                    
-                    <p>"Permission for what?" Alex asked.</p>
-                    
-                    <p>"To establish a more direct form of communication. It appears to be offering to interface with our systems."</p>
-                    
-                    <p>A tense silence fell over the bridge as the crew considered the implications.</p>
-                </div>
-                
-                <div class="story-choices">
-                    <h3>What will you do?</h3>
-                    <div class="choice-options">
-                        <button class="choice-btn" data-next="chapter-3d">
-                            Allow limited access to a quarantined communication system
-                        </button>
-                        <button class="choice-btn" data-next="chapter-3e">
-                            Refuse and continue with mathematical communication
-                        </button>
-                        <button class="choice-btn" data-next="chapter-3f">
-                            Offer to dock and meet in person instead
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Added content for choice 3 -->
-            <div class="story-chapter hidden" id="chapter-2c">
-                <div class="chapter-image">
-                    <img src="/api/placeholder/400/250" alt="Reporting to Earth Command">
-                </div>
-                <h2 class="chapter-title">Chapter 2: Chain of Command</h2>
-                <div class="chapter-text">
-                    <p>"This is beyond our mission parameters," Alex decided. "We need to report back to Earth Command before proceeding."</p>
-                    
-                    <p>He turned to the communications officer. "Establish a secure quantum link to Command. Priority Alpha."</p>
-                    
-                    <p>The officer nodded, fingers flying over his console. "This far out, there will be a delay of approximately forty-three minutes each way, sir."</p>
-                    
-                    <p>"Then we'd better get started," Alex replied grimly.</p>
-                    
-                    <p>They compiled their sensor data and observations into a comprehensive report, along with Alex's preliminary assessment and request for instructions. The quantum transmission was sent, and the waiting began.</p>
-                    
-                    <p>Alex ordered regular sensor sweeps of the station while they waited, maintaining their distance. The energy signature continued its rhythmic pulsing, unchanging.</p>
-                    
-                    <p>"It's just... waiting," Kai observed after an hour of monitoring. "Almost like it knows we're deliberating."</p>
-                    
-                    <p>Finally, after nearly ninety minutes, the quantum receiver chimed. Earth Command's response had arrived.</p>
-                    
-                    <p>Alex opened the message and read it aloud to the bridge crew:</p>
-                    
-                    <p>"Captain Zhang, your discovery has been classified Priority One. The possibility of first contact with a non-human intelligence must be handled with utmost caution. Your new orders are as follows:</p>
-                    
-                    <p>1. You are to establish non-invasive communication if possible.<br>
-                    2. Under no circumstances are you to dock with the station until specialized personnel arrive.<br>
-                    3. The heavy cruiser UNS Horizon has been dispatched to your location with a xenobiology and first contact team. ETA 72 hours.<br>
-                    4. You are to maintain observation and collect all possible data without endangering your vessel or crew."</p>
-                    
-                    <p>Alex looked up from the message. "Well, there we have it. We wait for the experts." He couldn't completely hide his disappointment.</p>
-                    
-                    <p>Just then, an alarm blared across the bridge. "Captain!" the sensor officer called out, "The energy signature—it's changing! Something's happening on the station!"</p>
-                    
-                    <p>On the viewscreen, they watched as the entire station began to glow with the same pulsing blue light they'd detected earlier. The pulse rate was increasing rapidly.</p>
-                    
-                    <p>"It appears to be... powering up," the AI reported. "Detecting massive energy buildup."</p>
-                </div>
-                
-                <div class="story-choices">
-                    <h3>What will you do?</h3>
-                    <div class="choice-options">
-                        <button class="choice-btn" data-next="chapter-3g">
-                            Follow orders and maintain safe distance
-                        </button>
-                        <button class="choice-btn" data-next="chapter-3h">
-                            Attempt emergency communication with the entity
-                        </button>
-                        <button class="choice-btn" data-next="chapter-3i">
-                            Prepare for emergency departure from the area
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Level 3 chapters would go here in the same pattern -->
-            <div class="story-chapter hidden" id="chapter-3a">
-                <!-- Content for chapter 3a -->
-                <div class="chapter-image">
-                    <img src="/api/placeholder/400/250" alt="Mental Contact">
-                </div>
-                <h2 class="chapter-title">Chapter 3: Mind to Mind</h2>
-                <div class="chapter-text">
-                    <p>Alex made his decision. The pressure in his mind wasn't painful—more like a gentle knock on a door. Whatever this entity was, it seemed to be offering a connection.</p>
-                    
-                    <p>"I'm going to try to communicate with it directly," he told the team, his voice steady despite his racing heart.</p>
-                    
-                    <p>"Captain, that's not advisable—" Kai began, but Alex had already taken a step forward.</p>
-                    
-                    <p>He focused his thoughts, trying to project openness, curiosity, and peaceful intentions. The pressure in his mind intensified, and suddenly—</p>
-                    
-                    <p>Light. Endless light. Not blinding but clarifying. Alex felt his consciousness expand beyond the confines of his body, beyond the station, beyond...</p>
-                    
-                    <p>Images flooded his mind: vast networks of energy spanning galaxies; civilizations rising and falling across billions of years; forms of life so alien he could barely comprehend them.</p>
-                    
-                    <p>And then, understanding. Not through words, but through concepts that unfurled in his mind like blossoming flowers.</p>
-                    
-                    <p>The entity was ancient—part of a distributed network of energy-based intelligences that spanned the cosmos. It had been drawn to this abandoned human outpost by the unique technology left behind—quantum computers that resonated with its own energy patterns.</p>
-                    
-                    <p>It hadn't expected humans to return. It was... curious. Intrigued. It had been observing humanity from afar for millennia, but this was its first direct contact.</p>
-                    
-                    <p>With startling clarity, Alex understood what it was offering: knowledge. Access to a cosmic network of information beyond human comprehension. But there would be a price—the entity needed a conduit, a biological interface to help it understand human experience.</p>
-                    
-                    <p>It wanted Alex.</p>
-                    
-                    <p>He gasped, stumbling backward as the connection lessened. He found himself on his knees, his crew surrounding him with concerned faces.</p>
-                    
-                    <p>"Captain! Are you alright?" Kai was gripping his shoulder.</p>
-                    
-                    <p>"I... I understand now," Alex whispered. "I know what it wants."</p>
-                </div>
-                
-                <!-- End of story branch - restart option -->
-                <div class="story-end">
-                    <h3>You've reached the end of this path.</h3>
-                    <button class="btn btn-primary restart-btn">Start Over</button>
-                    <button class="btn btn-secondary share-btn">Share Your Journey</button>
-                </div>
-            </div>
-            
-            <!-- Additional Level 3 chapters would continue here -->
-        </div>
-    </main>
-    
-    <div class="story-stats">
-        <div class="stat-item">
-            <i class="fas fa-book-open"></i>
-            <span id="chapter-counter">Chapter 1/12</span>
-        </div>
-        <div class="stat-item">
-            <i class="fas fa-clock"></i>
-            <span id="read-time">5 min read</span>
-        </div>
-        <div class="stat-item">
-            <i class="fas fa-route"></i>
-            <span id="paths-available">3 paths available</span>
-        </div>
-    </div>
-    
-    <script src="enhanced-story-viewer.js"></script>
-    <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const viewer = new EnhancedStoryViewer('space-explorer');
-            viewer.loadStory();
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stellar Horizons: A Space Adventure</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Show the first chapter initially
+      document.getElementById('chapter-1').classList.remove('hidden');
+      
+      // Add click event listeners to all choice buttons
+      document.querySelectorAll('.choice-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          // Hide all chapters
+          document.querySelectorAll('.story-chapter').forEach(chapter => {
+            chapter.classList.add('hidden');
+          });
+          
+          // Show the selected chapter
+          const nextChapterId = this.getAttribute('data-next');
+          document.getElementById(nextChapterId).classList.remove('hidden');
+          
+          // Scroll to top of new chapter
+          window.scrollTo(0, 0);
         });
-    </script>
-    
-</body>
-</html>
+      });
+    });
+  </script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f0f5ff;
+    }
+    .hidden {
+      display: none;
+    }
+    .story-chapter {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .chapter-image {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .chapter-image img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+    .chapter-title {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+      margin-top: 10px;
+    }
+    .chapter-text {
+      margin-bottom: 30px;
+    }
+    .chapter-text p {
+      margin-bottom: 15px;
+    }
+    .story-choices h3 {
+      color: #3498db;
+      font-style: italic;
+    }
+    .choice-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .choice-btn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    .choice-btn:hover {
+      background-color: #2980b9;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Stellar Horizons: A Space Adventure</h1>
+
+  <div class="story-chapter hidden" id="chapter-1">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Spacecraft interior with pilot seat and control panels">
+    </div>
+    <h2 class="chapter-title">Chapter 1: The Distress Call</h2>
+    <div class="chapter-text">
+      <p>The soft hum of the Arcturus' engines had become as familiar to you as your own heartbeat. Six months into your solo survey mission of the Kepler-452 system, the routine had settled into comfortable predictability—until today. The emergency beacon blared through your cabin, jolting you from a light sleep.</p>
+      
+      <p>"Incoming distress signal," announced ARIA, your ship's AI. "Origin: Prospero Mining Colony, Kepler-452b. Signal strength deteriorating. Message follows."</p>
+      
+      <p>The holographic display flickered to life, revealing the face of a woman whose features were twisted with urgency. Static interrupted her transmission, fragmenting her words: "...unknown lifeform...miners trapped in sector seven...communication blackout...need immediate...not what we thought..." Before she could finish, the transmission cut out completely.</p>
+      
+      <p>You checked your navigation system. Prospero Colony was a three-day journey at maximum thrust, nestled in the northern hemisphere of Kepler-452b—humanity's most ambitious extrasolar mining operation to date. The facility had been operational for just over a year, extracting rare minerals crucial for the next generation of quantum drives.</p>
+      
+      <p>"ARIA, any other vessels responding to the distress call?" you asked, already calculating fuel reserves and plotting the course adjustment in your head.</p>
+      
+      <p>"Negative, Captain. We are the only registered Alliance vessel within a twelve-day radius of Kepler-452b."</p>
+      
+      <p>You drummed your fingers against the cold metal of the control panel. The Arcturus was a survey vessel, not a rescue ship. Your supplies were limited, your weapons systems minimal. But those colonists needed help, and apparently, you were their only hope.</p>
+      
+      <p>"ARIA, prepare for course change," you instructed, strapping yourself into the pilot's seat. "And give me everything we have on Prospero Colony—personnel records, facility maps, geological surveys, the works."</p>
+    </div>
+    <div class="story-choices">
+      <h3>How will you approach this situation?</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-2a">Push engines to maximum and rush to the colony immediately</button>
+        <button class="choice-btn" data-next="chapter-2b">Proceed at standard speed while thoroughly analyzing all available data</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="story-chapter hidden" id="chapter-2a">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Spaceship with glowing engines at maximum power">
+    </div>
+    <h2 class="chapter-title">Chapter 2: Against the Clock</h2>
+    <div class="chapter-text">
+      <p>"ARIA, divert all non-essential power to engines. We're going in hot," you command, your fingers flying across the control panel. Warning indicators flash as the Arcturus' fusion drive spools up beyond recommended parameters.</p>
+      
+      <p>"Warning: Sustaining maximum thrust will reduce engine efficiency by 19% and increase risk of thruster burnout by 27%," ARIA's synthetic voice is eerily calm despite the red warnings flashing across your monitors.</p>
+      
+      <p>"Noted. Proceed anyway." The gravitational compensators struggle to keep up with your acceleration, and you feel the uncomfortable pressure pushing you back into your seat. The stars outside your viewport stretch into streaks of light as the Arcturus achieves its maximum velocity.</p>
+      
+      <p>Just thirty hours into your desperate journey, the primary coolant system fails. Alarms blare throughout the ship as temperatures in the engine core climb dangerously. You're forced to manually reroute secondary cooling systems, crawling through maintenance tubes filled with scalding steam as ARIA guides you through the emergency procedures.</p>
+
+      <p>Your hands are blistered and your lungs burn from the superheated air, but you manage to stabilize the engines. The detour costs you precious time, but you still make it to Kepler-452b in just under fifty hours—almost a full day faster than a standard approach would have allowed.</p>
+      
+      <p>As you enter orbit around the eerily beautiful blue-green planet, your sensors detect scattered energy signatures from the northern continent where Prospero Colony should be. The comms remain silent despite your repeated hails.</p>
+      
+      <p>"ARIA, any response from the colony?" you ask, scanning the surface with the ship's limited sensory array.</p>
+      
+      <p>"Negative, Captain. However, I am detecting multiple heat signatures consistent with human life forms, concentrated in what appears to be the colony's central hub and scattered throughout mining sector seven. There are also several unidentified thermal patterns unlike anything in my database."</p>
+      
+      <p>Through the viewport, you can see lights still functioning in parts of the colony, but large sections appear to be running on emergency power or completely dark. Something has gone terribly wrong down there.</p>
+    </div>
+    <div class="story-choices">
+      <h3>How will you make your approach?</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-3a">Land directly at the colony's main landing pad</button>
+        <button class="choice-btn" data-next="chapter-3b">Land at a distance and approach on foot for stealth</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="story-chapter hidden" id="chapter-2b">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Character studying holographic data displays">
+    </div>
+    <h2 class="chapter-title">Chapter 2: Knowledge is Power</h2>
+    <div class="chapter-text">
+      <p>"Let's not rush in blind," you tell ARIA as you set a course for Kepler-452b at standard cruising speed. "Show me everything we have on Prospero Colony, and enhance that transmission. I want to know exactly what we're dealing with."</p>
+      
+      <p>For the next seventy-two hours, you immerse yourself in data about the mining operation. Prospero was established eighteen months ago with a crew of 122 specialists—engineers, geologists, medical staff, and security personnel. The facility was built to harvest rare elements like yttrium and praseodymium from deep within the planet's crust, materials essential for the next generation of quantum computers and FTL drives.</p>
+      
+      <p>ARIA manages to clean up portions of the distress signal. "...unknown lifeform encountered in deep shaft 7B...exhibits signs of intelligence...miners trapped in sector seven after cave-in...colony-wide communication blackout...need immediate evacuation...the mineral deposits are not what we thought..." The woman's face becomes clearer—Dr. Eleanor Chen, the colony's chief science officer.</p>
+      
+      <p>You study the colony's blueprints meticulously, memorizing the layout of the main facility, the locations of backup generators, and the network of mining tunnels that stretch beneath the surface. You also review the geological surveys, noting with concern that sector seven—where the miners are reportedly trapped—sits directly above an unusual formation that had puzzled the initial survey team.</p>
+
+      <p>The facility's security protocols indicate several safe rooms designed to withstand seismic events, and the location of the armory is clearly marked in the central hub. If things have gone as badly as the message suggests, that information could prove invaluable.</p>
+      
+      <p>Your caution pays dividends in another way too—on the second day of your journey, long-range sensors detect a peculiar energy disturbance between you and the planet. Had you been traveling at maximum speed, you might have plowed straight into it. Instead, you're able to adjust your course to give the anomaly a wide berth.</p>
+      
+      <p>As you finally enter orbit around Kepler-452b, you have a comprehensive understanding of what you're dealing with—at least on paper. The colony below is partially illuminated, some sections operating on backup power, others completely dark.</p>
+      
+      <p>"I've detected multiple human life signs," ARIA reports. "Most are concentrated in the central hub and throughout sector seven. There are also several unidentified thermal signatures that don't match any known pattern."</p>
+    </div>
+    <div class="story-choices">
+      <h3>What's your next move?</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-3c">Attempt to establish communication with the colony before landing</button>
+        <button class="choice-btn" data-next="chapter-3d">Deploy your survey drone to scout the area first</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="story-chapter hidden" id="chapter-3a">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Spacecraft landing on a damaged colony landing pad">
+    </div>
+    <h2 class="chapter-title">Chapter 3: Into the Unknown</h2>
+    <div class="chapter-text">
+      <p>You guide the Arcturus toward the colony's main landing pad, the engines kicking up swirls of dust as you make your final approach. The landing zone is eerily vacant—no ground crew, no blinking guidance lights, just the automated landing beacons still functioning on minimal power.</p>
+      
+      <p>"ARIA, continue broadcasting on all emergency channels," you order as the landing struts touch down with a metallic groan. Through the viewport, you can see the colony's main structures—prefabricated modules arranged in a circular pattern around a central hub. Several buildings show signs of damage, and the normally bright perimeter lights flicker sporadically.</p>
+      
+      <p>You don your EVA suit, not taking any chances with the atmosphere despite the colony's terraforming systems supposedly making the air breathable. Your helmet seals with a hiss, and you check your equipment one last time: oxygen supply, emergency medical kit, plasma cutter that could double as a weapon in a pinch, and a portable scanner.</p>
+      
+      <p>"I'll maintain the ship's systems at ready status," ARIA informs you. "Emergency launch protocols are primed should you need immediate extraction."</p>
+
+      <p>As the airlock cycles and the exterior door slides open, the reality of your situation hits you. You're alone on an alien world, stepping into a colony that has gone silent under mysterious circumstances. The ramp extends, and you take your first cautious steps onto the landing pad.</p>
+      
+      <p>The air is thick with an acrid, metallic smell that penetrates even your suit's filters. Your boots crunch on gravel and something else—fragments of shattered safety glass. The main entrance to the colony hub stands twenty meters away, its heavy doors slightly ajar. No movement, no signs of life.</p>
+      
+      <p>You approach the entrance slowly, scanner sweeping the area. It detects human life signs deeper inside the complex, but also registers unusual energy patterns emanating from somewhere beneath the colony. As you reach the doors, you notice deep gouges in the metal—not from tools or machinery, but something that seems to have clawed its way through.</p>
+      
+      <p>With considerable effort, you push the damaged door open wide enough to slip through. Emergency lighting bathes the entrance hall in a dim red glow. The floor is littered with abandoned personal items—a datapad here, a half-empty cup of coffee there—suggesting a hasty evacuation.</p>
+    </div>
+    <div class="story-choices">
+      <h3>Where will you head first?</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-4a">Follow the life signs to find survivors</button>
+        <button class="choice-btn" data-next="chapter-4b">Head to the security station to access colony logs</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="story-chapter hidden" id="chapter-3b">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Barren landscape with distant colony lights">
+    </div>
+    <h2 class="chapter-title">Chapter 3: The Silent Approach</h2>
+    <div class="chapter-text">
+      <p>You pilot the Arcturus to a landing site three kilometers from the colony perimeter, settling down in a shallow valley that should shield your ship from immediate detection. The decision feels prudent—something has gone terribly wrong at Prospero Colony, and announcing your arrival might expose you to the same danger.</p>
+      
+      <p>"ARIA, initiate security protocol Delta. Keep the engines warm and be ready for emergency takeoff," you instruct as you don your EVA suit. The helmet's heads-up display flickers to life, interfacing with ARIA's systems to provide constant environmental readings.</p>
+      
+      <p>"Security protocol Delta initiated," ARIA confirms. "Be advised: local atmospheric conditions show higher than expected methane levels and unusual particulate matter. Suit filtration is advised even in terraformed areas."</p>
+      
+      <p>You step out onto alien soil, the landscape bathed in the orange-tinged light of Kepler-452. Rocky formations jut from the ground like the spines of some enormous creature, casting long shadows across your path. In the distance, the colony's structures rise against the horizon—a monument to human determination and, perhaps, hubris.</p>
+
+      <p>The trek to the colony perimeter takes nearly an hour. You move cautiously, using the natural terrain for cover whenever possible. Your scanner occasionally picks up strange energy fluctuations beneath the planet's surface, but nothing definitive.</p>
+      
+      <p>As you approach the colony's outer boundary, you notice the perimeter fence has been compromised in several places—not cut or blasted, but appeared to be melted through, the metal twisted and warped by some intense heat source.</p>
+      
+      <p>You slip through one of these gaps, entering the colony's agricultural sector. Rows of hydroponics units stretch before you, many still functioning but untended. The plants have grown wild, some species thriving in their neglect while others have withered and died. The air circulators hum quietly, maintaining the artificial ecosystem on automatic protocols.</p>
+      
+      <p>Moving between the rows of overgrown vegetation provides excellent cover as you make your way toward the main colony buildings. Through gaps in the foliage, you catch glimpses of the central hub—parts of it still illuminated, other sections completely dark. Most concerning are the massive gouges visible in the outer walls of some structures, as if something enormous had tried to claw its way inside.</p>
+    </div>
+    <div class="story-choices">
+      <h3>How will you proceed?</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-4c">Investigate the damaged sections first</button>
+        <button class="choice-btn" data-next="chapter-4d">Sneak into the colony through the maintenance tunnels</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="story-chapter hidden" id="chapter-3c">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Communications array attempting to contact colony">
+    </div>
+    <h2 class="chapter-title">Chapter 3: Breaking the Silence</h2>
+    <div class="chapter-text">
+      <p>"ARIA, boost our comm array to maximum power and cycle through all emergency frequencies," you order, leaning forward in your seat. "Let's see if anyone's listening down there before we commit to a landing."</p>
+      
+      <p>The AI complies, and the ship's communication system begins broadcasting a standard Alliance emergency hail. Minutes pass with no response, the silence weighing heavily in the cabin. You're about to give up when a burst of static erupts from the speakers.</p>
+      
+      <p>"...is Dr. Eleanor Chen...survivors in central hub...security lockdown...don't land at main pad...compromised..." The transmission is weak and fragmented, but unmistakably human.</p>
+      
+      <p>"Dr. Chen, this is Captain of the survey vessel Arcturus responding to your distress call. Please advise on safe landing coordinates," you respond, adjusting the frequency to strengthen the signal.</p>
+
+      <p>The reply comes through clearer this time: "Captain, thank God... We have twenty-three survivors secured in the central hub's emergency shelter. The colony's been compromised by... something we encountered in the deep mines. It reacts to electrical systems... drawn to power sources. Main landing pad automated systems will attract it. Use the secondary pad near the hydroponics section—coordinates following."</p>
+      
+      <p>Your navigation system pings as it receives the landing coordinates. The secondary pad is smaller, designed for maintenance vessels rather than a ship of the Arcturus' size, but it should be manageable. More importantly, according to Dr. Chen, it's currently powered down and shouldn't attract whatever threat has overtaken the colony.</p>
+      
+      <p>"We're processing your coordinates now, Dr. Chen," you confirm. "What's the nature of the threat we're dealing with? What should we prepare for?"</p>
+      
+      <p>The response is interrupted by bursts of static: "...silicon-based lifeform...absorbs energy...highly adaptive...conventional weapons ineffective...brought it up with mineral samples...grows larger with each...seven miners still trapped in lower levels...hurry, our power reserves..." The transmission cuts out completely.</p>
+      
+      <p>"I've lost the signal, Captain," ARIA reports. "But I've analyzed Dr. Chen's transmission alongside colony records. The hydroponics landing pad is approximately 400 meters from the central hub, connected by maintenance tunnels that should allow for covered transit."</p>
+    </div>
+    <div class="story-choices">
+      <h3>What's your next move?</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-4e">Land at the hydroponics pad as suggested</button>
+        <button class="choice-btn" data-next="chapter-4f">Perform a flyover reconnaissance before committing to land</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="story-chapter hidden" id="chapter-3d">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Small scout drone launching from spacecraft">
+    </div>
+    <h2 class="chapter-title">Chapter 3: Eyes in the Sky</h2>
+    <div class="chapter-text">
+      <p>"Let's get a closer look before we commit," you decide, activating the ship's survey drone bay. "ARIA, prep the Hawkeye for immediate launch. Full spectrum scanning, maximum stealth protocols."</p>
+      
+      <p>The Hawkeye drone—a compact, maneuverable craft equipped with advanced sensors—detaches from the Arcturus with barely a sound. You watch through its visual feed as it descends through the atmosphere, its thermal dampeners and reflective coating making it nearly invisible to conventional detection.</p>
+      
+      <p>"Deploying sensor array," ARIA announces as the drone reaches optimal altitude. The Hawkeye begins its systematic scan of the colony below, building a comprehensive picture of the situation through layered data streams.</p>
+      
+      <p>The drone's thermal imaging reveals clusters of human heat signatures in the central hub and scattered throughout the mining tunnels of sector seven. But what catches your attention are the unusual energy patterns emanating from the deepest mine shaft—fluctuating waves of power unlike anything you've encountered before.</p>
+
+      <p>"ARIA, analyze those energy signatures," you command, zooming the visual feed onto the main mining complex. The structure appears largely intact, but the entrance has been sealed with makeshift barricades. Several vehicles lie abandoned around the perimeter, some partially melted or crushed.</p>
+      
+      <p>"Energy pattern analysis complete," ARIA responds after a moment. "Signatures indicate a silicon-based organism with apparent electromagnetic properties. It appears to be absorbing energy from the colony's power grid and growing in mass. Current size estimate based on thermal displacement: approximately 40 meters in length, with multiple extending appendages."</p>
+      
+      <p>The Hawkeye continues its silent circuit of the colony, revealing more disturbing details. The main landing pad shows signs of recent violence—scorch marks, structural damage, and what appear to be massive footprints melted into the reinforced concrete. The hydroponics section remains largely untouched, its automated systems still functioning on an isolated power grid.</p>
+      
+      <p>"I've detected an active communication relay in the central hub," ARIA informs you. "Attempting to establish contact."</p>
+      
+      <p>Moments later, a frantic voice comes through: "This is Dr. Eleanor Chen, who's there? Please tell me you've come to help us." When you identify yourself and confirm your rescue mission, her relief is palpable. She quickly briefs you on their situation—the creature from the mines, the failed attempts to contain it, the dwindling power reserves in their shelter, and the miners still trapped below.</p>
+    </div>
+    <div class="story-choices">
+      <h3>Based on your reconnaissance, where will you land?</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-4g">Land at the untouched hydroponics pad</button>
+        <button class="choice-btn" data-next="chapter-4h">Keep the ship in orbit and use the Hawkeye to deliver emergency supplies first</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="story-chapter hidden" id="chapter-4a">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Dark corridor with emergency lighting">
+    </div>
+    <h2 class="chapter-title">Chapter 4: Signs of Life</h2>
+    <div class="chapter-text">
+      <p>Your scanner pulses steadily, guiding you deeper into the colony complex. The main corridor branches off in multiple directions, but you follow the strongest concentration of life signs toward what should be the central hub. Emergency lighting flickers overhead, casting moving shadows that play tricks on your already tense nerves.</p>
+      
+      <p>The walls bear strange marks—not just the expected wear and tear of an industrial facility, but long, sinuous patterns that seem to have been etched into the metal by something corrosive. In places, the floor is discolored with an unfamiliar crystalline residue that crunches beneath your boots.</p>
+      
+      <p>"ARIA, analyze this substance," you say, kneeling to collect a sample with a sterile probe from your kit. You hold it up to your helmet camera for transmission back to the ship.</p>
+      
+      <p>"Analysis indicates a silicon-based crystalline structure with unusual conductive properties," ARIA reports after a moment. "Composition does not match any known natural formation in the database. Caution advised—sample exhibits mild radioactive properties."</p>
+
+      <p>You carefully store the sample and continue forward. The corridor opens into a large communal area—what was once the colony's mess hall. Tables are overturned, personal belongings scattered across the floor. A half-eaten meal sits on one table, now fossilized by time. Whatever happened here, it happened fast.</p>
+      
+      <p>Your scanner beeps more urgently as you approach a sealed door at the far end of the mess hall. The control panel beside it is dark, but a manual override has been engaged—someone barricaded themselves inside. A message has been hastily scrawled on the wall beside the door: "SURVIVORS INSIDE. POWER ATTRACTS IT."</p>
+      
+      <p>As you examine the door for a way to open it, you hear something moving behind you—a soft, sliding sound like metal being dragged across the floor. You turn slowly, plasma cutter raised defensively.</p>
+      
+      <p>A figure emerges from the shadows of an adjoining corridor—human, but barely recognizable as such. It's a man in a tattered mining uniform, his movements jerky and uncoordinated. His skin has a grayish pallor, and veins of crystalline material similar to what you found earlier protrude from his exposed skin. His eyes reflect the emergency lights with an unnatural glow.</p>
+      
+      <p>"Help... us..." he rasps, his voice distorted as if speaking through gravel. "It's... in the... mines... changing us..." He takes a stumbling step toward you, one arm outstretched imploringly, the other hanging limp at his side, partially covered in the same crystalline growth.</p>
+    </div>
+    <div class="story-choices">
+      <h3>How do you respond to this unexpected encounter?</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-5a">Try to communicate with the transformed miner</button>
+        <button class="choice-btn" data-next="chapter-5b">Back away and focus on opening the sealed door to reach the survivors</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="story-chapter hidden" id="chapter-4b">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Security monitoring station with multiple screens">
+    </div>
+    <h2 class="chapter-title">Chapter 4: The Observatory</h2>
+    <div class="chapter-text">
+      <p>You decide that information will be your best weapon in this uncertain situation. According to the colony layouts you studied during your approach, the security station should be located on the second level of the central hub—a fortified room with access to all surveillance systems and colony logs.</p>
+      
+      <p>The main stairwell has been blocked by fallen debris, forcing you to find an alternative route. A maintenance ladder provides access to the upper level, though the climb is made awkward by your EVA suit. As you ascend, you notice more of those strange scratch marks on the walls, some deep enough to have penetrated multiple layers of reinforced metal.</p>
+      
+      <p>The second level is cast in near-total darkness, your helmet lights providing the only illumination. The beam catches reflective surfaces—broken glass, toppled equipment, and more of that crystalline residue, here forming in larger clusters that seem to pulse with a faint internal light.</p>
+      
+      <p>You locate the security station at the end of a curving corridor. The reinforced door stands partially open, jammed by a fallen support beam. Squeezing through the gap requires some effort, but you manage to slip inside without removing your suit—a precaution that feels increasingly necessary.</p>
+
+      <p>The security station is in remarkably good condition compared to the rest of the facility. Emergency power has kept the essential systems running, including several monitoring stations and a central server core. A body slumps in the corner—a security officer, judging by the uniform, dead for at least several days. The cause isn't immediately obvious, but crystalline growths protrude from the corpse's exposed skin.</p>
+      
+      <p>You approach the main console, relieved to find it still operational. "ARIA, I'm connecting to the colony's security system. Prepare to receive and decrypt any protected files," you say, plugging a data link from your suit into the console's universal port.</p>
+      
+      <p>The screens flicker to life, displaying a login prompt. A quick bypass using standard Alliance emergency protocols grants you access to the system. The security logs begin to tell the story of Prospero Colony's downfall.</p>
+      
+      <p>It started three weeks ago when miners in shaft 7B broke through into an unmapped cavern. Initial excitement over mineral deposits quickly turned to concern when several miners reported strange symptoms after handling the crystalline formations found there. Security footage shows the rapid progression: miners becoming disoriented, developing growths similar to those you've observed, becoming increasingly aggressive and then... changing. The final logs describe a desperate evacuation as the affected miners—now transformed into something not entirely human—began attacking others.</p>
+      
+      <p>Dr. Eleanor Chen's final security update, timestamped just two days ago, confirms that twenty-three survivors have barricaded themselves in the emergency shelter beneath the central hub. She also mentions seven miners still trapped in a collapsed section of sector seven, their fate unknown. Most alarmingly, she reports that the crystalline entity they inadvertently awakened is growing, feeding on the colony's power systems and incorporating metal and organic matter into its structure.</p>
+    </div>
+    <div class="story-choices">
+      <h3>With this new information, what's your next move?</h3>
+      <div class="choice-options">
+        <button class="choice-btn" data-next="chapter-5c">Download the colony maps and head to the emergency shelter to rescue the survivors</button>
+        <button class="choice-btn" data-next="chapter-5d">Access the surveillance system to locate the creature and assess the current threat</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="story-chapter hidden" id="chapter-4c">
+    <div class="chapter-image">
+      <img src="/api/placeholder/400/250" alt="Damaged colony wall with strange markings">
+    </div>
+    <h2 class="chapter-title">Chapter 4: Breach Point</h2>
+    <div class="chapter-text">
+      <p>Your curiosity—perhaps morbid, certainly dangerous—draws you toward the damaged sections of the colony's exterior. The massive gouges in the prefabricated walls tell a story of violence and alien strength that sends shivers down your spine despite your suit's climate
