@@ -955,6 +955,22 @@ The mysteries of the universe are vast, but today, we've taken our first real st
      
   <script>
     // This would normally be included in an external JS file
+    document.addEventListener("DOMContentLoaded", () => {
+  const firstChapter = document.querySelector(".story-chapter");
+  if (firstChapter) {
+    firstChapter.classList.remove("hidden");
+    firstChapter.classList.add("active");
+  }
+
+  setupChoices(); // Attach button listeners
+});
+document.querySelectorAll('.choice-btn').forEach(btn => {
+  btn.addEventListener('click', function () {
+    const nextId = this.getAttribute('data-next');
+    showChapter(nextId);
+  });
+});
+
     function showChapter(chapterId) {
       // Hide all chapters
       const chapters = document.querySelectorAll('.story-chapter');
