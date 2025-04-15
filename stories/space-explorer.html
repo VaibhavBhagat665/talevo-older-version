@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Space Explorer | StoryVerse</title>
   <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="space-styles.css"/>
   <link rel="stylesheet" href="space-explorer-styles.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
@@ -950,14 +951,9 @@ The mysteries of the universe are vast, but today, we've taken our first real st
 </style>
 <script src="image-loader.js"></script>
 <script src="script.js"></script>
+<script src="space.js"></script>
 <script src="enhanced-story-viewer.js"></script>
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const viewer = new EnhancedStoryViewer('ghost-town');
-            viewer.loadStory();
-            
-        });
-    </script>
+     
   <script>
     // This would normally be included in an external JS file
     function showChapter(chapterId) {
@@ -990,7 +986,27 @@ The mysteries of the universe are vast, but today, we've taken our first real st
         button.addEventListener('click', function() {
           const nextChapter = this.getAttribute('data-next');
           showChapter(nextChapter);
-        });
+  // Create star particles
+  const particlesContainer = document.createElement('div');
+  particlesContainer.className = 'space-particles';
+  document.body.appendChild(particlesContainer);
+  
+  for (let i = 0; i < 100; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.top = Math.random() * 100 + 'vh';
+    particle.style.left = Math.random() * 100 + 'vw';
+    particle.style.animationDelay = Math.random() * 5 + 's';
+    particle.style.animationDuration = 3 + Math.random() * 10 + 's';
+    particlesContainer.appendChild(particle);
+  }
+  
+  // Add star effects to certain elements
+  const titles = document.querySelectorAll('.chapter-title');
+  titles.forEach(title => {
+    title.classList.add('star-effect');
+  });
+});
       });
     });
   </script>
