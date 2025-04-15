@@ -18,7 +18,43 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Add hover effects to buttons
   addButtonHoverEffects();
+  setupPrevNextButtons();
+
 });
+
+function setupPrevNextButtons() {
+  document.querySelectorAll('.next-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      const nextId = this.getAttribute('data-next');
+      navigateToChapter(nextId);
+    });
+  });
+
+  document.querySelectorAll('.prev-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      const prevId = this.getAttribute('data-prev');
+      navigateToChapter(prevId);
+    });
+  });
+}
+
+function navigateToChapter(chapterId) {
+  const allChapters = document.querySelectorAll('.story-chapter');
+  allChapters.forEach(chapter => {
+    chapter.classList.add('hidden');
+    chapter.classList.remove('active');
+  });
+
+  const target = document.getElementById(chapterId);
+  if (target) {
+    target.classList.remove('hidden');
+    setTimeout(() => {
+      target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  }
+}
+
 
 // Create starfield background
 function createStarfield() {
