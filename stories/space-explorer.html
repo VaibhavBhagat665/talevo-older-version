@@ -1183,13 +1183,34 @@
 <script src="image-loader.js"></script>
 <script src="script.js"></script>
 <script src="enhanced-story-viewer.js"></script>
-      <script>
+<!--       <script>
         document.addEventListener('DOMContentLoaded', () => {
             const viewer = new EnhancedStoryViewer('ghost-town');
             viewer.loadStory();
             
         });
-    </script>
+    </script> -->
+      <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const chapters = document.querySelectorAll('.story-chapter');
+    const choiceButtons = document.querySelectorAll('.choice-btn');
+
+    choiceButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const nextChapterId = button.getAttribute('data-next');
+        chapters.forEach(ch => ch.classList.add('hidden'));
+        const nextChapter = document.getElementById(nextChapterId);
+        if (nextChapter) {
+          nextChapter.classList.remove('hidden');
+          window.scrollTo(0, 0);
+        } else {
+          alert('Oops! That chapter was not found: ' + nextChapterId);
+        }
+      });
+    });
+  });
+</script>
+
    
   </main>
 </body>
