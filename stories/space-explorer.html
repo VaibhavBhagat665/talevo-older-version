@@ -1209,6 +1209,42 @@
       });
     });
   });
+    
+  document.querySelectorAll('.choice-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      const nextId = this.getAttribute('data-next');
+      const nextSection = document.getElementById(nextId);
+
+      if (!nextSection) {
+        console.error(`No section found with ID: ${nextId}`);
+        return;
+      }
+
+      // Hide all chapters and endings
+      document.querySelectorAll('.story-chapter').forEach(section => {
+        section.classList.add('hidden');
+      });
+
+      // Show the next one
+      nextSection.classList.remove('hidden');
+
+      // Optional: scroll to top for better UX
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // Restart button logic
+  document.querySelectorAll('.restart-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('.story-chapter').forEach(section => {
+        section.classList.add('hidden');
+      });
+      const start = document.getElementById('chapter-1');
+      if (start) start.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
 </script>
 
    
