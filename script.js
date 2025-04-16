@@ -134,7 +134,11 @@ function initStoryInteractions() {
     const startReadingBtn = document.querySelector('.cta-button');
     if (startReadingBtn) {
         startReadingBtn.addEventListener('click', function () {
-            const featuredSection = document.querySelector('.featured-stories');
+            // const featuredSection = document.querySelector('.featured-stories');
+            // if (featuredSection) {
+            //     featuredSection.scrollIntoView({ behavior: 'smooth' });
+            // }
+            const featuredSection = document.querySelector('.till');
             if (featuredSection) {
                 featuredSection.scrollIntoView({ behavior: 'smooth' });
             }
