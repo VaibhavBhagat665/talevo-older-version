@@ -367,6 +367,15 @@ box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 .light-mode .story-card:hover {
 box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
+/* edit */
+.story-card:hover,
+.category-card:hover {
+  box-shadow: 0 0 0 2px transparent, 0 0 20px rgba(99, 102, 241, 0.4);
+}
+.light-mode .story-card:hover,
+.light-mode .category-card:hover {
+  box-shadow: 0 0 0 2px transparent, 0 0 15px rgba(79, 70, 229, 0.3);
+}
 
 .story-image {
 height: 180px;
