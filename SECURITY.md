@@ -4,7 +4,7 @@
 
 If you discover a bug or security issue in **Talevo**, please do not share it publicly. Instead, report it privately to:
 
-📧 vaibhav@example.com
+📧 vaibhavbhagat7461@gmail.com
 
 I will review and respond promptly.
 
