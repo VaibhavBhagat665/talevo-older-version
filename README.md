@@ -21,3 +21,9 @@ This project is licensed under the **Talevo Proprietary License**. See `LICENSE.
 
 **Vaibhav Bhagat**  
 1st Year B.Tech student at IIIT Sonepat
+
+## Note
+
+> ⚠️ Parts of this project such as chapter images and enhancements of story content were created or enhanced using AI tools. 
+> Final implementation, integration, and design are original work by Vaibhav Bhagat.
+
