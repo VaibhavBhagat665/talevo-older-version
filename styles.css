@@ -367,74 +367,7 @@ box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 .light-mode .story-card:hover {
 box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
-/* edit */
-.story-card:hover,
-.category-card:hover {
-  box-shadow: 0 0 0 2px transparent, 0 0 20px rgba(99, 102, 241, 0.4);
-}
-.light-mode .story-card:hover,
-.light-mode .category-card:hover {
-  box-shadow: 0 0 0 2px transparent, 0 0 15px rgba(79, 70, 229, 0.3);
-}
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-.hero h1 {
-  background: linear-gradient(270deg, #6366f1, #8b5cf6, #06b6d4);
-  background-size: 600% 600%;
-  animation: gradientShift 6s ease infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-  100% { transform: scale(1); }
-}
-
-.btn-primary:hover {
-  animation: pulse 0.4s ease-in-out;
-}
-
-.star {
-  animation: twinkle 3s infinite ease-in-out, starGlow 5s infinite alternate;
-}
-
-@keyframes starGlow {
-  from { filter: drop-shadow(0 0 2px rgba(255,255,255,0.4)); }
-  to { filter: drop-shadow(0 0 6px rgba(255,255,255,0.9)); }
-}
-
-.modal-content {
-  background: rgba(30, 41, 59, 0.6); /* fallback for dark mode */
-  backdrop-filter: blur(20px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.light-mode .modal-content {
-  background: rgba(255, 255, 255, 0.5);
-}
-
-.story-card:hover h3 {
-  transform: scale(1.03);
-  transition: transform 0.3s ease;
-}
-
-.see-all:hover {
-  text-decoration: underline;
-  color: var(--dark-accent-hover);
-}
-.light-mode .see-all:hover {
-  color: var(--light-accent-hover);
-}
-
-
-/* edit */
 
 .story-image {
 height: 180px;
