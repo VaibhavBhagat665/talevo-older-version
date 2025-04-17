@@ -57,8 +57,9 @@ body {
     color: var(--light-text);
 }
 
-  Theme Toggle  
+/* Theme Toggle */
 .theme-toggle {
+    position: fixed;
     top: 28px;
     right: 130px;
     z-index: 1000;
@@ -86,7 +87,7 @@ body {
     background: rgba(0, 0, 0, 0.1);
 }
 
-  Buttons  
+/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -137,7 +138,7 @@ body {
     width: 100%;
 }
 
-  Header  
+/* Header */
 header {
     display: flex;
     align-items: center;
@@ -185,7 +186,7 @@ header {
     width: 140px;
 }
 
-  Star animation  
+/* Star animation */
 @keyframes twinkle {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.3; }
@@ -201,7 +202,7 @@ header {
 .star4 { animation-delay: 1.5s; }
 .star5 { animation-delay: 2s; }
 
-  Navigation  
+/* Navigation */
 nav ul {
     display: flex;
     list-style: none;
@@ -238,7 +239,7 @@ nav a.active:after {
     gap: 1rem;
 }
 
-  Hero Section  
+/* Hero Section */
 .hero {
     position: relative;
     height: 70vh;
@@ -303,7 +304,7 @@ font-size: 1.1rem;
 padding: 12px 30px;
 }
 
-  Main Content  
+/* Main Content */
 main {
 padding: 2rem 4rem;
 }
@@ -330,7 +331,7 @@ font-weight: 500;
 color: var(--light-accent);
 }
 
-  Story Cards  
+/* Story Cards */
 .story-grid {
 display: grid;
 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -435,7 +436,7 @@ color: var(--dark-accent);
 color: var(--light-accent);
 }
 
-  Story Slider  
+/* Story Slider */
 .story-slider {
 display: grid;
 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -446,7 +447,7 @@ padding-bottom: 1rem;
 scrollbar-width: thin;
 }
 
-  Categories  
+/* Categories */
 .category-grid {
 display: grid;
 grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -512,7 +513,7 @@ background-clip: text;
 text-fill-color: transparent;
 }
 
-  Footer  
+/* Footer */
 footer {
 margin-top: 2rem;
 border-top: 1px solid var(--dark-border);
@@ -617,7 +618,7 @@ opacity: 0.7;
 border-top: 1px solid var(--light-border);
 }
 
-  Modal  
+/* Modal */
 .modal {
 display: none;
 position: fixed;
@@ -659,7 +660,7 @@ cursor: pointer;
 z-index: 10;
 }
 
-  Auth Container  
+/* Auth Container */
 .auth-container {
 border-radius: var(--radius-lg);
 overflow: hidden;
@@ -795,7 +796,7 @@ text-decoration: none;
 color: var(--light-accent);
 }
 
-  Story Page Specific Styles  
+/* Story Page Specific Styles */
 .story-page {
 background-color: var(--dark-bg);
 }
@@ -862,7 +863,7 @@ to { opacity: 1; }
 
 .chapter-image {
 width: 100%;
-max-height: 400px;
+max-height: 550px;
 overflow: hidden;
 border-radius: var(--radius-lg);
 margin-bottom: 2rem;
@@ -966,7 +967,7 @@ color: var(--dark-accent);
 color: var(--light-accent);
 }
 
-  Responsive Styles  
+/* Responsive Styles */
 @media (max-width: 992px) {
 .hero h1 {
     font-size: 2.75rem;
@@ -1042,7 +1043,7 @@ nav ul {
 }
 }
 
-  Dark Sky Background with Stars  
+/* Dark Sky Background with Stars */
 body.dark-mode:before {
 content: '';
 position: fixed;
@@ -1070,10 +1071,10 @@ opacity: 0.3;
 .chapter-image::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
-    background-size: 20px 20px;
-    animation: starFade 6s infinite;
+/*     top: 0; left: 0; right: 0; bottom: 0; */
+/*     background: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);  */
+/*     background-size: 20px 20px; */
+/*     animation: starFade 6s infinite; */
     z-index: 1;
     pointer-events: none;
 }
