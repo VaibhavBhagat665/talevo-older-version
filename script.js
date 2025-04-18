@@ -1,49 +1,36 @@
-// Main initialization
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize application elements
     initializeApp();
 });
 
-// Initialize application
 function initializeApp() {
-    // Initialize theme toggle
     initThemeToggle();
     
-    // Initialize modals
     initModals();
     
-    // Initialize auth tabs if they exist
     initAuthTabs();
     
-    // Initialize story interactions
     initStoryInteractions();
     
-    // Animation on scroll
     initializeScrollAnimations();
 }
 
-// Theme handling
 function initThemeToggle() {
-    // Set initial theme based on user preference or saved setting
     const savedDarkMode = localStorage.getItem('darkMode');
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     if (savedDarkMode !== null) {
-        // Use saved setting if available
         const isDarkMode = savedDarkMode === 'true';
         document.body.classList.toggle('dark-mode', isDarkMode);
         document.body.classList.toggle('light-mode', !isDarkMode);
     } else if (!prefersDarkMode) {
-        // Use system preference as fallback
         document.body.classList.remove('dark-mode');
         document.body.classList.add('light-mode');
     }
     
-    // Add event listener to theme switch button
     const themeSwitch = document.getElementById('theme-switch');
     if (themeSwitch) {
         themeSwitch.addEventListener('click', toggleTheme);
-        updateThemeIcon(); // Set initial icon state
+        updateThemeIcon(); 
     }
 }
 
@@ -58,7 +45,6 @@ function toggleTheme() {
         body.classList.add('dark-mode');
     }
     
-    // Save preference to localStorage
     const isDarkMode = body.classList.contains('dark-mode');
     localStorage.setItem('darkMode', isDarkMode);
     
@@ -76,9 +62,7 @@ function updateThemeIcon() {
     }
 }
 
-// Modal handling
 function initModals() {
-    // Login modal
     const loginBtn = document.getElementById('loginBtn');
     const loginModal = document.getElementById('loginModal');
     
@@ -95,7 +79,6 @@ function initModals() {
             document.body.style.overflow = 'auto';
         });
         
-        // Close when clicking outside the modal
         window.addEventListener('click', function(event) {
             if (event.target === loginModal) {
                 loginModal.style.display = 'none';
@@ -105,7 +88,6 @@ function initModals() {
     }
 }
 
-// Auth tab handling
 function initAuthTabs() {
     const authTabs = document.querySelectorAll('.auth-tab');
     const authForms = document.querySelectorAll('.auth-form');
@@ -113,14 +95,11 @@ function initAuthTabs() {
     if (authTabs.length > 0 && authForms.length > 0) {
         authTabs.forEach(tab => {
             tab.addEventListener('click', function() {
-                // Remove active class from all tabs and forms
                 authTabs.forEach(t => t.classList.remove('active'));
                 authForms.forEach(f => f.classList.remove('active'));
                 
-                // Add active class to the clicked tab
                 this.classList.add('active');
                 
-                // Show corresponding form
                 const formId = this.getAttribute('data-tab') + '-form';
                 document.getElementById(formId).classList.add('active');
             });
@@ -128,9 +107,7 @@ function initAuthTabs() {
     }
 }
 
-// Story interactions
 function initStoryInteractions() {
-    // Set up "Start Reading" button
     const startReadingBtn = document.querySelector('.cta-button');
     if (startReadingBtn) {
         startReadingBtn.addEventListener('click', function () {
@@ -146,20 +123,16 @@ function initStoryInteractions() {
     }
 
 
-    // Make story cards clickable
     const storyCards = document.querySelectorAll('.story-card');
     storyCards.forEach(card => {
         card.addEventListener('click', function() {
             const storyTitle = this.querySelector('h3').textContent.trim();
-            // Convert the title to a kebab-case filename
             const storyId = storyTitle.toLowerCase().replace(/\s+/g, '-');
             
-            // Navigate to the story page
             window.location.href = `stories/${storyId}.html`;
         });
     });
     
-    // Story Choice Buttons - if we're on a story page
     initStoryChoiceButtons();
 }
 
@@ -170,12 +143,10 @@ function initStoryChoiceButtons() {
             button.addEventListener('click', function() {
                 const nextChapter = this.getAttribute('data-next');
                 
-                // Hide current chapter
                 const currentChapter = document.querySelector('.story-chapter:not(.hidden)');
                 if (currentChapter) {
                     currentChapter.classList.add('hidden');
                 
-                    // Show next chapter
                     const nextChapterElement = document.getElementById(nextChapter);
                     if (nextChapterElement) {
                         nextChapterElement.classList.remove('hidden');
@@ -184,7 +155,6 @@ function initStoryChoiceButtons() {
                             behavior: 'smooth'
                         });
                         
-                        // Update stats
                         updateStoryStats();
                     }
                 }
@@ -193,19 +163,16 @@ function initStoryChoiceButtons() {
     }
 }
 
-// Update story statistics
 function updateStoryStats() {
     const chapters = document.querySelectorAll('.story-chapter');
     const visibleChapterIndex = Array.from(chapters).findIndex(chapter => !chapter.classList.contains('hidden'));
     
     if (visibleChapterIndex !== -1) {
-        // Update chapter counter
         const chapterCounter = document.getElementById('chapter-counter');
         if (chapterCounter) {
             chapterCounter.textContent = `Chapter ${visibleChapterIndex + 1}/${chapters.length}`;
         }
         
-        // Update paths available
         const pathsAvailable = document.getElementById('paths-available');
         const currentChapter = chapters[visibleChapterIndex];
         const choiceOptions = currentChapter.querySelectorAll('.choice-btn');
@@ -218,13 +185,10 @@ function updateStoryStats() {
     }
 }
 
-// Animations
 function initializeScrollAnimations() {
-    // Only for devices that can handle it
     if (window.innerWidth >= 768) {
         const storyCards = document.querySelectorAll('.story-card');
         
-        // Simple appearance animation on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -234,7 +198,6 @@ function initializeScrollAnimations() {
             });
         }, { threshold: 0.1 });
         
-        // Set initial styles and observe
         storyCards.forEach((card, index) => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
@@ -246,14 +209,11 @@ function initializeScrollAnimations() {
     }
 }
 
-// Helper functions
 function showNotification(message) {
-    // Create notification element
     const notification = document.createElement('div');
     notification.className = 'notification';
     notification.textContent = message;
     
-    // Style the notification
     notification.style.position = 'fixed';
     notification.style.bottom = '20px';
     notification.style.left = '50%';
@@ -267,10 +227,8 @@ function showNotification(message) {
     notification.style.transition = 'all 0.3s ease';
     notification.style.opacity = '0';
     
-    // Add to the DOM
     document.body.appendChild(notification);
     
-    // Show and hide with animation
     setTimeout(() => {
         notification.style.opacity = '1';
     }, 10);
@@ -282,7 +240,6 @@ function showNotification(message) {
         }, 300);
     }, 3000);
 }
-// Story navigation: Next / Prev / Start Over / Map
 document.addEventListener('DOMContentLoaded', function () {
     const chapters = Array.from(document.querySelectorAll('.story-chapter'));
     const nextBtn = document.getElementById('nextBtn');
@@ -331,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     restartBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            showChapter(0); // Go to chapter-1
+            showChapter(0); 
         });
     });
 });
@@ -345,7 +302,6 @@ function handleSignup() {
         return;
     }
 
-    // Save to localStorage
     localStorage.setItem(`user_${username}`, password);
     alert("Account created! You can now sign in.");
 }
@@ -358,14 +314,12 @@ function handleSignin() {
 
     if (savedPassword === password) {
         alert("Login successful!");
-        // Redirect to homepage or dashboard
         window.location.href = "index.html";
     } else {
         alert("Invalid username or password.");
     }
 }
 
-// Check if user is already logged in
 function checkLoginStatus() {
     const loggedInUser = localStorage.getItem("loggedInUser");
     const welcomeUser = document.getElementById("welcomeUser");
@@ -388,13 +342,10 @@ function checkLoginStatus() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Initialize application elements
     initializeApp();
     
-    // Check login status
     checkLoginStatus();
 
-    // Sign Up
     const createAccountBtn = document.getElementById("createAccountBtn");
     if (createAccountBtn) {
         createAccountBtn.addEventListener("click", function() {
@@ -407,11 +358,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 return;
             }
 
-            // Save to localStorage
             localStorage.setItem(`user_${email}`, JSON.stringify({ name, password }));
             showNotification("Account created! You can now sign in.");
             
-            // Switch to login tab
             const loginTab = document.querySelector('.auth-tab[data-tab="login"]');
             if (loginTab) {
                 loginTab.click();
@@ -419,7 +368,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Sign In
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
         const signinButton = loginForm.querySelector('.btn');
@@ -440,6 +388,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
 
                 const parsed = JSON.parse(userData);
+                // if (parsed.password === password) {
+                //     localStorage.setItem("loggedInUser", JSON.stringify({ name: parsed.name, email }));
+                //     showNotification(`Welcome back, ${parsed.name}!`);
+                //     document.getElementById('loginModal').style.display = 'none';
+                //     document.body.style.overflow = 'auto';
+                //     checkLoginStatus();
                 if (parsed.password === password) {
                     localStorage.setItem("loggedInUser", JSON.stringify({ name: parsed.name, email }));
                     showNotification(`Welcome back, ${parsed.name}!`);
@@ -453,7 +407,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Logout
     const logoutBtn = document.getElementById("logoutBtn");
     if (logoutBtn) {
         logoutBtn.addEventListener("click", function() {
@@ -467,7 +420,6 @@ document.addEventListener("DOMContentLoaded", function() {
 let storyHistory = [];
 let currentChapter = document.querySelector('.story-chapter:not(.hidden)');
 
-// CHOICE NAVIGATION
 document.querySelectorAll('.choice-btn').forEach(button => {
   button.addEventListener('click', () => {
     if (currentChapter) {
@@ -484,7 +436,6 @@ document.querySelectorAll('.choice-btn').forEach(button => {
   });
 });
 
-// PREV LOGIC
 document.getElementById('prev-btn')?.addEventListener('click', () => {
   const prevId = storyHistory.pop();
   const prev = document.getElementById(prevId);
@@ -496,7 +447,6 @@ document.getElementById('prev-btn')?.addEventListener('click', () => {
   }
 });
 
-// NEXT LOGIC (follows first available choice)
 document.getElementById('next-btn')?.addEventListener('click', () => {
   const firstChoice = currentChapter?.querySelector('.choice-btn');
   if (firstChoice) {
@@ -504,7 +454,6 @@ document.getElementById('next-btn')?.addEventListener('click', () => {
   }
 });
 
-// BUTTON VISIBILITY CONTROL
 function updateNavButtons() {
   const isFirst = currentChapter?.id === 'chapter-1';
   const isEnding = currentChapter?.classList.contains('story-ending');
