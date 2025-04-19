@@ -57,12 +57,10 @@ body {
     color: var(--light-text);
 }
 
-/* Theme Toggle */
 .theme-toggle {
-    position: fixed;
-    top: 28px;
-    right: 130px;
-    z-index: 1000;
+    position: relative; 
+    margin-right: 10px;
+    z-index: 1; 
 }
 
 #theme-switch {
