@@ -233,13 +233,45 @@ nav a.active:after {
     width: 100%;
 }
 
-.user-controls {
+/* .user-controls {
     display: flex;
     align-items: center;
     gap: 1rem;
+} */
+
+.user-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px; 
 }
 
-/* Hero Section */
+#welcomeUser {
+  margin-right: 10px;
+  white-space: nowrap; 
+}
+
+.theme-toggle {
+  margin-right: 10px;
+}
+
+.user-controls .btn {
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .user-controls {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  
+  #welcomeUser {
+    order: -1; 
+    width: 100%;
+    margin-bottom: 8px;
+    text-align: right;
+  }
+}
+
 .hero {
     position: relative;
     height: 70vh;
