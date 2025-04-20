@@ -193,6 +193,6 @@
   }
   .ghost-theme .container {
     flex-direction: column;
-    transform: scale(0.5,2);
+    transform: scale(1,2);
   }
 }
