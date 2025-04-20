@@ -181,9 +181,9 @@
 }
 
 @media (max-width: 768px) {
-  .ghost-theme .story-chapter {
+/*   .ghost-theme .story-chapter {
     padding: 2rem 1rem;
-  }
+  } */
 
   .ghost-theme .chapter-title {
     font-size: 1.5rem;
