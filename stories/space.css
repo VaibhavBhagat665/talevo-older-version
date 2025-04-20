@@ -202,6 +202,9 @@
   .ghost-theme .chapter-text {
     transform: scale(0.77,1);
   } 
+  .ghost-theme .story-chapter {
+    padding: 0.5rem 0.5rem;
+  }
   
 /*   .ghost-theme .story-container {
     transform: scale(0.77,1);
