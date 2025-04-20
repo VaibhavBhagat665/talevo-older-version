@@ -195,13 +195,14 @@
   .ghost-theme .container {
     flex-direction: column;
     transform: scale(1.3,1);
-    padding: 1rem 1rem;
   }
   .ghost-theme .chapter-title {
     transform: scale(0.77,1);
+    padding: 1rem 1rem;
   }
   .ghost-theme .chapter-text {
     transform: scale(0.77,1);
+    padding: 1rem 1rem;
   } 
 /*   .ghost-theme .story-container {
     transform: scale(0.77,1);
