@@ -199,9 +199,11 @@
   }
    .ghost-theme .chapter-title {
     transform: scale(0.77,1);
+     padding: 0.2rem 0.2rem;
   }
   .ghost-theme .chapter-text {
     transform: scale(0.77,1);
+    padding: 0.2rem 0.2rem;
   }  
 /*   .ghost-theme .story-chapter {
     padding: 1rem 1rem;
