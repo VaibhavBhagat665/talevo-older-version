@@ -194,7 +194,7 @@
   }
   .ghost-theme .container {
     flex-direction: column;
-    transform: scale(1.3,1);
+    transform: scale(1.2,1);
     padding: 1rem 1rem;
   }
    .ghost-theme .chapter-title {
