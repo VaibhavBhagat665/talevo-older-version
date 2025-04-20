@@ -31,6 +31,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .ghost-theme .story-title {
@@ -193,6 +194,6 @@
   }
   .ghost-theme .container {
     flex-direction: column;
-    transform: scale(1,2);
+    transform: scale(1,1);
   }
 }
