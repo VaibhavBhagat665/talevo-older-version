@@ -1152,3 +1152,9 @@ opacity: 0.3;
 .hidden {
   display: none;
 }
+
+.clickable-div {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none; 
+  user-select: none;           
+}
