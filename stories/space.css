@@ -189,8 +189,8 @@
   }
   .ghost-theme .container {
     flex-direction: column;
-    width: 130%; /* Instead of transform scale, use width to match title width */
-    margin-left: -15%; /* Center the wider container */
+    width: 120%; /* Reduced from 130% to 120% */
+    margin-left: -10%; /* Adjusted margin to match the new width */
     padding: 0.75rem;
   }
   /* Fix text to prevent stretching */
