@@ -25,8 +25,6 @@
   align-items: center;
   box-shadow: var(--shadow);
   border-bottom: 1px solid #2a2a2e;
-  width: 130%; /* Reduced from 120% to 110% */
-  margin-left: -15%;
 }
 
 .ghost-theme .story-container {
