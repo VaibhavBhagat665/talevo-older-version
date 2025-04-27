@@ -463,7 +463,6 @@ function updateNavButtons() {
 }
 
 
-<script>
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
@@ -479,7 +478,6 @@ document.addEventListener('keydown', function(e) {
         e.preventDefault();
     }
 });
-</script>
 
 
 
