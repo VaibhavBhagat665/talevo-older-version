@@ -463,6 +463,11 @@ function updateNavButtons() {
 }
 
 
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+
 
 
 
