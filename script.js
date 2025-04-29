@@ -658,8 +658,12 @@ function initializeCategoryFilters() {
       const category = this.querySelector('h3').textContent.trim();
       const storyCards = document.querySelectorAll('.story-card');
       
-      // Update category section title
-      categorySection.querySelector('h2').textContent = category + ' Stories';
+      // Update category section title with animation
+      const categoryTitle = categorySection.querySelector('h2');
+      categoryTitle.textContent = category + ' Stories';
+      categoryTitle.style.animation = 'none';
+      categoryTitle.offsetHeight; // Trigger reflow
+      categoryTitle.style.animation = 'fadeIn 0.5s ease';
       
       // Filter stories by category
       const filteredStories = Array.from(storyCards).filter(story => {
@@ -672,8 +676,14 @@ function initializeCategoryFilters() {
       storyGrid.innerHTML = '';
       
       if (filteredStories.length > 0) {
-        filteredStories.forEach(story => {
+        filteredStories.forEach((story, index) => {
           const clonedStory = story.cloneNode(true);
+          
+          // Add animation delay based on index
+          clonedStory.style.opacity = '0';
+          clonedStory.style.transform = 'translateY(20px)';
+          clonedStory.style.animation = `fadeIn 0.5s ease forwards ${index * 0.1}s`;
+          
           storyGrid.appendChild(clonedStory);
           
           // Add click event to the cloned story
@@ -687,11 +697,18 @@ function initializeCategoryFilters() {
         const noResults = document.createElement('div');
         noResults.className = 'no-results';
         noResults.textContent = 'No stories found in this category.';
+        noResults.style.padding = '40px 20px';
+        noResults.style.textAlign = 'center';
+        noResults.style.color = '#9370DB';
+        noResults.style.fontSize = '18px';
         storyGrid.appendChild(noResults);
       }
       
-      // Make sure the section is visible
+      // Make sure the section is visible with smooth animation
       categorySection.classList.remove('hidden');
+      categorySection.style.animation = 'none';
+      categorySection.offsetHeight; // Trigger reflow
+      categorySection.style.animation = 'fadeIn 0.5s ease';
       
       // Scroll to category section with an offset for the header
       const headerHeight = document.querySelector('header').offsetHeight;
@@ -710,7 +727,7 @@ function initializeCategoryFilters() {
       <div class="section-header">
         <h2>Category Stories</h2>
         <button class="back-to-all" id="back-to-all">
-          <i class="fas fa-arrow-left"></i> Back to All
+          <i class="fas fa-arrow-left"></i> Back to All Categories
         </button>
       </div>
       <div class="story-grid"></div>
@@ -719,14 +736,19 @@ function initializeCategoryFilters() {
     main.appendChild(section);
     
     document.getElementById('back-to-all').addEventListener('click', function() {
-      section.classList.add('hidden');
-      scrollToSection('.categories');
+      // Hide with animation
+      section.style.animation = 'fadeOut 0.3s ease forwards';
+      
+      // After animation completes, hide the section
+      setTimeout(() => {
+        section.classList.add('hidden');
+        scrollToSection('.categories');
+      }, 300);
     });
     
     return section;
   }
 }
-
 // Improved scrolling function
 function scrollToSection(selector) {
   const section = document.querySelector(selector);
