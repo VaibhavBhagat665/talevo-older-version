@@ -1881,334 +1881,118 @@ main {
   }
 }
 
-/* Mobile Responsive Styles for Talevo Website */
-
-/* Base Mobile Styles */
+/* Mobile Responsive CSS */
 @media screen and (max-width: 768px) {
-  /* Header restructuring */
+  /* Header layout adjustments */
   header {
     flex-direction: column;
-    padding: 12px 15px;
-    gap: 10px;
+    padding: 10px;
   }
   
-  /* Logo sizing and positioning */
+  /* Logo positioning */
   .logo-container {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
   
-  .logo {
-    width: 180px;
-    height: auto;
+  /* Rearranging elements in the desired order */
+  .user-controls {
+    width: 100%;
+    order: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
   }
   
-  /* Navigation bar */
+  .search-container {
+    width: 100%;
+    order: 2;
+    margin-bottom: 10px;
+  }
+  
   nav {
     width: 100%;
     order: 3;
-    margin-top: 10px;
   }
   
+  /* Adjusting navigation */
   nav ul {
-    display: flex;
     justify-content: space-between;
-    padding: 0;
-    margin: 0;
+    width: 100%;
   }
   
   nav ul li {
     margin: 0;
   }
   
-  nav ul li a {
-    padding: 8px 12px;
-    font-size: 14px;
-    font-weight: 600;
-    text-align: center;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.08);
-  }
-  
-  nav ul li a.active {
-    background-color: var(--primary-color);
-    color: var(--text-on-primary);
-  }
-  
-  /* User controls and search container */
-  .user-controls {
-    width: 100%;
-    order: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
-  }
-  
-  #welcomeUser {
-    font-size: 14px;
-    margin-right: auto;
-  }
-  
-  .search-container {
-    width: 100%;
-    order: 2;
-  }
-  
+  /* Search box styling */
   .search-input-wrapper {
     width: 100%;
   }
   
   #search-input {
     width: 100%;
-    padding: 12px 45px 12px 15px;
-    border-radius: 25px;
-    font-size: 14px;
   }
   
-  .search-input-wrapper button {
-    height: 100%;
-    width: 45px;
-  }
-  
-  /* Buttons styling */
+  /* Button sizing */
   .btn {
     padding: 10px 16px;
     font-size: 14px;
-    border-radius: 25px;
-    font-weight: 600;
-    transition: all 0.3s ease;
   }
   
-  .btn-primary {
-    background-color: var(--primary-color);
-    color: var(--text-on-primary);
-    border: none;
+  /* Welcome user message */
+  #welcomeUser {
+    margin-right: auto;
   }
   
-  .btn-primary:hover {
-    background-color: var(--primary-color-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .btn-secondary {
-    background-color: transparent;
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
-  }
-  
-  .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-  }
-  
-  /* Theme toggle button */
+  /* Making sure theme toggle has space */
   .theme-toggle {
     margin-right: 10px;
   }
   
-  #theme-switch {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border: none;
-    color: var(--text-color);
-  }
-  
-  #theme-switch:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-  
-  /* Hero section */
-  .hero {
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .hero-content h1 {
-    font-size: 28px;
-    margin-bottom: 15px;
-  }
-  
-  .hero-content p {
-    font-size: 16px;
-    margin-bottom: 25px;
-  }
-  
-  .cta-button {
-    padding: 12px 24px;
-    font-size: 16px;
-  }
-  
-  /* Story cards and grids */
+  /* Story grid adjustments */
   .story-grid, .story-slider {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
   }
   
-  .section-header {
-    margin-bottom: 20px;
-  }
-  
-  .story-card {
-    border-radius: 15px;
-  }
-  
-  .story-image img {
-    border-radius: 15px 15px 0 0;
-  }
-  
-  /* Categories */
+  /* Category grid adjustments */
   .category-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
   
-  .category-card {
-    padding: 20px 15px;
-  }
-  
-  /* Footer */
+  /* Footer adjustments */
   .footer-content {
     flex-direction: column;
-    padding: 30px 20px;
-  }
-  
-  .footer-logo {
-    margin-bottom: 25px;
   }
   
   .footer-links {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-  
-  .footer-bottom {
-    font-size: 12px;
-    padding: 15px;
-  }
 }
 
-/* Small Mobile Screens */
+/* Extra small devices */
 @media screen and (max-width: 480px) {
-  /* Further optimizations for very small screens */
-  header {
-    padding: 10px;
+  /* Further refinements for very small screens */
+  .category-grid {
+    grid-template-columns: 1fr;
   }
   
-  .logo {
-    width: 150px;
+  .footer-links {
+    grid-template-columns: 1fr;
   }
   
-  nav ul li a {
-    padding: 6px 10px;
-    font-size: 13px;
-  }
-  
-  .btn {
-    padding: 8px 14px;
-    font-size: 13px;
-  }
-  
-  #welcomeUser {
-    font-size: 13px;
-  }
-  
+  /* Fixing text overflow */
   #userName {
     max-width: 80px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     display: inline-block;
-    vertical-align: bottom;
-  }
-  
-  .hero-content h1 {
-    font-size: 24px;
-  }
-  
-  .hero-content p {
-    font-size: 14px;
-  }
-  
-  .category-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .footer-links {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Refinements for login modal on mobile */
-@media screen and (max-width: 768px) {
-  .modal-content {
-    width: 90%;
-    max-width: 350px;
-    padding: 20px;
-  }
-  
-  .auth-header h2 {
-    font-size: 22px;
-  }
-  
-  .auth-header p {
-    font-size: 14px;
-  }
-  
-  .auth-tabs button {
-    font-size: 14px;
-    padding: 8px 0;
-  }
-  
-  .form-group label {
-    font-size: 14px;
-  }
-  
-  .form-group input {
-    padding: 10px 15px;
-    font-size: 14px;
-  }
-  
-  .form-footer {
-    font-size: 12px;
-  }
-}
-
-/* Additional styles to ensure proper layout */
-.hidden {
-  display: none !important;
-}
-
-/* Custom styles for search results */
-@media screen and (max-width: 768px) {
-  #search-results {
-    width: 100%;
-    top: 100%;
-    max-height: 200px;
-  }
-}
-
-/* Animation for smoother transitions */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Apply animations to relevant elements */
-@media screen and (max-width: 768px) {
-  nav ul li a,
-  .btn,
-  .story-card,
-  .category-card {
-    animation: fadeIn 0.3s ease-out;
   }
 }
