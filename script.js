@@ -1,19 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
-    initializeApp();
-    initializeSearch();
-    initializeCategoryFilters();
-});
+  // Add the style first
+  addSearchResultsStyles();
 
+  // Initialize all components
+  initializeApp();
+  initializeSearch();
+  initializeCategoryFilters();
+  initializeNavigation();
+});
+// Overwrites the initializeApp to use our new function
 function initializeApp() {
-    initThemeToggle();
-    
-    initModals();
-    
-    initAuthTabs();
-    
-    initStoryInteractions();
-    
-    initializeScrollAnimations();
+  initThemeToggle();
+  initModals();
+  initAuthTabs();
+  initStoryInteractions();
+  initializeScrollAnimations();
 }
 
 function initThemeToggle() {
@@ -1131,23 +1132,5 @@ function addSearchResultsStyles() {
   document.head.appendChild(styleEl);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Add the style first
-  addSearchResultsStyles();
-  
-  // Initialize all components
-  initializeApp();
-  initializeSearch();
-  initializeCategoryFilters();
-  initializeNavigation();
-});
 
-// Overwrites the initializeApp to use our new function
-function initializeApp() {
-  initThemeToggle();
-  initModals();
-  initAuthTabs();
-  initStoryInteractions();
-  initializeScrollAnimations();
-}
 
