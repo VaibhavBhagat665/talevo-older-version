@@ -645,79 +645,284 @@ function initializeCategoryFilters() {
 function initializeCategoryFilters() {
   const categoryCards = document.querySelectorAll('.category-card');
   
-  // Check if category results section exists or create it once
-  let categorySection = document.getElementById('category-results');
-  if (!categorySection) {
-    categorySection = createCategoryResultsSection();
-  }
+  // Create modal once and reuse it
+  createCategoryModal();
   
   categoryCards.forEach(card => {
     card.addEventListener('click', function(e) {
       e.preventDefault();
       
       const category = this.querySelector('h3').textContent.trim();
-      const storyCards = document.querySelectorAll('.story-card');
-      
-      // Update category section title with animation
-      const categoryTitle = categorySection.querySelector('h2');
-      categoryTitle.textContent = category + ' Stories';
-      categoryTitle.style.animation = 'none';
-      categoryTitle.offsetHeight; // Trigger reflow
-      categoryTitle.style.animation = 'fadeIn 0.5s ease';
-      
-      // Filter stories by category
-      const filteredStories = Array.from(storyCards).filter(story => {
-        const storyCategory = story.querySelector('.story-meta span:last-child').textContent.trim();
-        return storyCategory.includes(category);
-      });
-      
-      // Clear previous stories before adding new ones
-      const storyGrid = categorySection.querySelector('.story-grid');
-      storyGrid.innerHTML = '';
-      
-      if (filteredStories.length > 0) {
-        filteredStories.forEach((story, index) => {
-          const clonedStory = story.cloneNode(true);
-          
-          // Add animation delay based on index
-          clonedStory.style.opacity = '0';
-          clonedStory.style.transform = 'translateY(20px)';
-          clonedStory.style.animation = `fadeIn 0.5s ease forwards ${index * 0.1}s`;
-          
-          storyGrid.appendChild(clonedStory);
-          
-          // Add click event to the cloned story
-          clonedStory.addEventListener('click', function() {
-            const storyTitle = this.querySelector('h3').textContent.trim();
-            const storyId = storyTitle.toLowerCase().replace(/\s+/g, '-');
-            window.location.href = `stories/${storyId}.html`;
-          });
-        });
-      } else {
-        const noResults = document.createElement('div');
-        noResults.className = 'no-results';
-        noResults.textContent = 'No stories found in this category.';
-        noResults.style.padding = '40px 20px';
-        noResults.style.textAlign = 'center';
-        noResults.style.color = '#9370DB';
-        noResults.style.fontSize = '18px';
-        storyGrid.appendChild(noResults);
-      }
-      
-      // Make sure the section is visible with smooth animation
-      categorySection.classList.remove('hidden');
-      categorySection.style.animation = 'none';
-      categorySection.offsetHeight; // Trigger reflow
-      categorySection.style.animation = 'fadeIn 0.5s ease';
-      
-      // Scroll to category section with an offset for the header
-      const headerHeight = document.querySelector('header').offsetHeight;
-      const sectionTop = categorySection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
-      window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+      showCategoryModal(category);
     });
   });
+}
+
+function createCategoryModal() {
+  // Remove any existing modal first to avoid duplicates
+  const existingModal = document.getElementById('category-modal');
+  if (existingModal) {
+    existingModal.remove();
+  }
+
+  // Create the modal structure
+  const modal = document.createElement('div');
+  modal.id = 'category-modal';
+  modal.className = 'modal category-modal';
   
-  function createCategoryResultsSection() {
+  modal.innerHTML = `
+    <div class="modal-content category-modal-content">
+      <div class="modal-header">
+        <h2 id="category-modal-title">Category Stories</h2>
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="story-grid" id="category-stories-grid"></div>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(modal);
+  
+  // Add event listeners
+  const closeBtn = modal.querySelector('.close');
+  closeBtn.addEventListener('click', function() {
+    closeModal(modal);
+  });
+  
+  // Close modal when clicking outside content
+  window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      closeModal(modal);
+    }
+  });
+  
+  // Add ESC key support
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal(modal);
+    }
+  });
+}
+
+function showCategoryModal(category) {
+  const modal = document.getElementById('category-modal');
+  const modalTitle = document.getElementById('category-modal-title');
+  const storiesGrid = document.getElementById('category-stories-grid');
+  
+  // Clear previous content
+  storiesGrid.innerHTML = '';
+  
+  // Set the title
+  modalTitle.textContent = category + ' Stories';
+  
+  // Get all stories matching the category
+  const allStories = Array.from(document.querySelectorAll('.story-card'));
+  const filteredStories = allStories.filter(story => {
+    const storyCategory = story.querySelector('.story-meta span:last-child').textContent.trim();
+    return storyCategory.includes(category);
+  });
+  
+  // Add matching stories to the modal
+  if (filteredStories.length > 0) {
+    filteredStories.forEach((story, index) => {
+      const clonedStory = story.cloneNode(true);
+      
+      // Add animation delay based on index
+      clonedStory.style.opacity = '0';
+      clonedStory.style.transform = 'translateY(20px)';
+      clonedStory.style.animation = `fadeIn 0.5s ease forwards ${index * 0.1}s`;
+      
+      storiesGrid.appendChild(clonedStory);
+      
+      // Add click event to the cloned story
+      clonedStory.addEventListener('click', function() {
+        const storyTitle = this.querySelector('h3').textContent.trim();
+        const storyId = storyTitle.toLowerCase().replace(/\s+/g, '-');
+        window.location.href = `stories/${storyId}.html`;
+      });
+    });
+  } else {
+    const noResults = document.createElement('div');
+    noResults.className = 'no-results';
+    noResults.textContent = 'No stories found in this category.';
+    noResults.style.padding = '40px 20px';
+    noResults.style.textAlign = 'center';
+    noResults.style.color = '#9370DB';
+    noResults.style.fontSize = '18px';
+    storiesGrid.appendChild(noResults);
+  }
+  
+  // Show the modal with animation
+  document.body.classList.add('modal-open');
+  modal.style.display = 'block';
+  
+  // Force reflow then animate
+  modal.offsetHeight;
+  modal.classList.add('show');
+}
+
+function closeModal(modal) {
+  document.body.classList.remove('modal-open');
+  modal.classList.remove('show');
+  
+  // Wait for animation to complete before hiding
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 300);
+}
+
+// Override the existing initializeNavigation function to include our modal
+function initializeNavigation() {
+  // Handle 'Categories' link
+  const categoryLink = document.querySelector('nav ul li:nth-child(2) a');
+  if (categoryLink) {
+    categoryLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      scrollToSection('.categories');
+    });
+  }
+  
+  // Handle 'New Releases' link
+  const newReleasesLink = document.querySelector('nav ul li:nth-child(3) a');
+  if (newReleasesLink) {
+    newReleasesLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      scrollToSection('.trending-now');
+    });
+  }
+  
+  // Handle 'See All' links
+  const seeAllLinks = document.querySelectorAll('.see-all');
+  seeAllLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      // Find parent section to determine which "See All" was clicked
+      const parentSection = this.closest('section');
+      
+      if (parentSection.classList.contains('featured-stories')) {
+        // You could show all featured stories in a modal here
+        showNotification('Showing all featured stories');
+      } else if (parentSection.classList.contains('trending-now')) {
+        // You could show all trending stories in a modal here
+        showNotification('Showing all trending stories');
+      }
+    });
+  });
+}
+
+// Make sure to initialize everything properly
+document.addEventListener('DOMContentLoaded', function() {
+  // Add styles for the category modal
+  addCategoryModalStyles();
+  
+  // Initialize all components
+  initializeApp();
+  initializeSearch();
+  initializeCategoryFilters();
+  initializeNavigation();
+});
+
+function addCategoryModalStyles() {
+  const styleEl = document.createElement('style');
+  styleEl.textContent = `
+    /* Modal background */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+    
+    .modal.show {
+      opacity: 1;
+    }
+    
+    /* Modal Content */
+    .category-modal-content {
+      background-color: var(--card-bg);
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      width: 90%;
+      max-width: 1200px;
+      transform: translateY(-20px);
+      transition: transform 0.3s ease;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    
+    .modal.show .modal-content {
+      transform: translateY(0);
+    }
+    
+    /* Modal Header */
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .modal-header h2 {
+      margin: 0;
+      color: var(--text-color);
+      font-size: 24px;
+    }
+    
+    /* Close Button */
+    .modal .close {
+      color: var(--text-secondary);
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    
+    .modal .close:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Modal Body */
+    .modal-body {
+      padding: 10px 0;
+      max-height: calc(90vh - 100px);
+      overflow-y: auto;
+    }
+    
+    /* Body lock when modal is open */
+    body.modal-open {
+      overflow: hidden;
+    }
+    
+    /* Animation for story cards */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  `;
+  document.head.appendChild(styleEl);
+}  
+
+function createCategoryResultsSection() {
     const main = document.querySelector('main');
     const section = document.createElement('section');
     section.id = 'category-results';
