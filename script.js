@@ -756,7 +756,7 @@ function initializeCategoryFilters() {
 function scrollToSection(selector) {
   const section = document.querySelector(selector);
   if (section) {
-    const headerHeight = document.querySelector('header').offsetHeight;
+    const headerHeight = document.querySelector('header')?.offsetHeight || 0;
     const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
     window.scrollTo({ top: sectionTop, behavior: 'smooth' });
   }
