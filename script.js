@@ -652,9 +652,8 @@ function initializeCategoryFilters() {
     categorySection.classList.add('hidden'); // Start hidden
   }
   
-  // Store original state of categories section
+  // Store reference to categories section
   const categoriesSection = document.querySelector('.categories');
-  const originalCategoriesDisplay = getComputedStyle(categoriesSection).display;
   
   categoryCards.forEach(card => {
     card.addEventListener('click', function(e) {
@@ -707,6 +706,11 @@ function initializeCategoryFilters() {
         storyGrid.appendChild(noResults);
       }
       
+      // Important: Reset any previous animations or styles
+      categorySection.style.animation = '';
+      categorySection.style.opacity = '1';
+      categorySection.style.transform = 'translateY(0)';
+      
       // Hide categories section and show filtered results
       categoriesSection.style.display = 'none';
       categorySection.classList.remove('hidden');
@@ -737,19 +741,30 @@ function initializeCategoryFilters() {
     main.appendChild(section);
     
     // Handle "Back to All" button
-    document.getElementById('back-to-all').addEventListener('click', function() {
-      // Hide results with animation
-      section.style.animation = 'fadeOut 0.3s ease forwards';
-      
-      // After animation, reset the view
-      setTimeout(() => {
-        section.classList.add('hidden');
-        categoriesSection.style.display = originalCategoriesDisplay;
-        scrollToSection('.categories');
-      }, 300);
-    });
+    const backBtn = document.createElement('button');
+    backBtn.className = 'back-to-all';
+    backBtn.id = 'back-to-all';
+    backBtn.innerHTML = '<i class="fas fa-arrow-left"></i> Back to All Categories';
+    
+    backBtn.addEventListener('click', handleBackToAll);
+    section.querySelector('.section-header').appendChild(backBtn);
     
     return section;
+  }
+  
+  // Separate function to handle the back button click
+  function handleBackToAll() {
+    // Clear the animation first
+    categorySection.style.animation = '';
+    
+    // Hide results
+    categorySection.classList.add('hidden');
+    
+    // Show categories
+    categoriesSection.style.display = 'block';
+    
+    // Scroll to categories
+    scrollToSection('.categories');
   }
 }
 
