@@ -313,15 +313,18 @@ z-index: 1;
 }
 
 .hero h1 {
-font-size: 3.5rem;
-font-weight: 800;
-margin-bottom: 1rem;
-background: var(--gradient-1); 
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-text-shadow: 2px 2px 4px gray;
-text-fill-color: transparent;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  
+  background: var(--gradient-1); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+  /* Add text shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .hero p {
