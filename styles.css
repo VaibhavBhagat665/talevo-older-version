@@ -1788,3 +1788,129 @@ main {
     max-width: 80px;
   }
 }
+
+/* Mobile Header Improvements */
+@media screen and (max-width: 768px) {
+  /* Make header more stylish and better aligned */
+  header {
+    display: grid;
+    grid-template-areas: 
+      "logo user"
+      "nav nav"
+      "search search";
+    padding: 12px 15px;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  /* Logo positioning */
+  .logo-container {
+    grid-area: logo;
+    justify-self: start;
+  }
+  
+  .logo-svg {
+    width: 130px;
+    height: auto;
+  }
+  
+  /* User controls and welcome message styling */
+  .user-controls {
+    grid-area: user;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+  
+  /* Ensure welcome message is fully visible */
+  #welcomeUser {
+    font-size: 0.95rem;
+    white-space: nowrap;
+    margin-right: 5px;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  /* Style buttons */
+  .user-controls .btn {
+    padding: 7px 14px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+  }
+  
+  /* Theme toggle button */
+  .theme-toggle {
+    margin-left: 3px;
+  }
+  
+  /* Full width search bar */
+  .search-container {
+    grid-area: search;
+    width: 100%;
+  }
+  
+  .search-input-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  /* Navigation styling */
+  nav {
+    grid-area: nav;
+    width: 100%;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+  }
+  
+  nav ul li a {
+    padding: 6px 10px;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* For even smaller screens - more refined adjustments */
+@media screen and (max-width: 480px) {
+  header {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  
+  .logo-svg {
+    width: 110px;
+  }
+  
+  /* Keep full welcome message visible */
+  #welcomeUser {
+    font-size: 0.9rem;
+  }
+  
+  #welcomeUser strong {
+    display: inline-block;
+    font-weight: 600;
+  }
+  
+  /* Make buttons more stylish */
+  .user-controls .btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+  
+  /* Navigation adjustments */
+  nav ul li a {
+    padding: 5px 8px;
+    font-size: 0.9rem;
+  }
+}
