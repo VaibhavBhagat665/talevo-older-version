@@ -1959,3 +1959,42 @@ body.dark .themed-background,
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Category results section */
+.category-results {
+  margin: 40px 0;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.category-results.hidden {
+  display: none;
+}
+
+/* Fix for category section transitions */
+.categories {
+  transition: display 0.3s ease;
+}
