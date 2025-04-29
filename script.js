@@ -739,9 +739,166 @@ function addSearchResultsStyles() {
     document.head.appendChild(styleEl);
 }
 
-// Disable right-click and F12 in production only
-// Commented out for debugging purposes
-/*
+// Search functionality for Talevo
+
+// Define stories database for search
+const storiesDatabase = [
+  {
+    id: 'space-explorer',
+    title: 'Space Explorer',
+    description: 'Navigate the unknown cosmos and discover alien civilizations.',
+    category: 'Sci-Fi',
+    rating: 4.8
+  },
+  {
+    id: 'midnight-chronicles',
+    title: 'Midnight Chronicles',
+    description: 'Supernatural mysteries await in this thrilling adventure.',
+    category: 'Mystery',
+    rating: 4.6
+  },
+  {
+    id: 'digital-dreamscape',
+    title: 'Digital Dreamscape',
+    description: 'Enter a virtual world where reality and fantasy blur.',
+    category: 'Cyberpunk',
+    rating: 4.9
+  },
+  {
+    id: 'last-kingdom',
+    title: 'Last Kingdom',
+    description: 'A medieval fantasy where your choices determine the fate of kingdoms.',
+    category: 'Fantasy',
+    rating: 4.7
+  },
+  {
+    id: 'ocean-depths',
+    title: 'Ocean Depths',
+    description: 'Explore underwater civilizations and ancient secrets.',
+    category: 'Adventure',
+    rating: 4.5
+  },
+  {
+    id: 'ghost-town',
+    title: 'Ghost Town',
+    description: 'Unravel the mysteries of an abandoned city with a dark past.',
+    category: 'Horror',
+    rating: 4.8
+  },
+  {
+    id: 'time-travelers',
+    title: 'Time Travelers',
+    description: 'Journey through different eras and change the course of history.',
+    category: 'Sci-Fi',
+    rating: 4.7
+  }
+];
+
+// Initialize search functionality
+document.addEventListener('DOMContentLoaded', function() {
+  initSearchFunctionality();
+});
+
+function initSearchFunctionality() {
+  const searchForm = document.getElementById('search-form');
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  
+  // Show results when user types in search
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length >= 2) {
+      // Filter stories that match the query
+      const results = storiesDatabase.filter(story => {
+        return story.title.toLowerCase().includes(query) || 
+               story.description.toLowerCase().includes(query) ||
+               story.category.toLowerCase().includes(query);
+      });
+      
+      displaySearchResults(results, searchResults);
+      searchResults.classList.remove('hidden');
+    } else {
+      searchResults.innerHTML = '';
+      searchResults.classList.add('hidden');
+    }
+  });
+  
+  // Handle form submission (prevent default)
+  searchForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const query = searchInput.value.toLowerCase().trim();
+    
+    if (query.length >= 2) {
+      // Filter stories that match the query
+      const results = storiesDatabase.filter(story => {
+        return story.title.toLowerCase().includes(query) || 
+               story.description.toLowerCase().includes(query) ||
+               story.category.toLowerCase().includes(query);
+      });
+      
+      displaySearchResults(results, searchResults);
+      searchResults.classList.remove('hidden');
+    }
+  });
+  
+  // Close search results when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!searchForm.contains(e.target)) {
+      searchResults.classList.add('hidden');
+    }
+  });
+  
+  // Focus back on search input when clicking on the search container
+  searchForm.addEventListener('click', function(e) {
+    if (e.target.closest('.search-input-wrapper')) {
+      searchInput.focus();
+      if (searchInput.value.length >= 2) {
+        searchResults.classList.remove('hidden');
+      }
+    }
+  });
+}
+
+// Display search results
+function displaySearchResults(results, container) {
+  container.innerHTML = '';
+  
+  if (results.length === 0) {
+    container.innerHTML = '<div class="no-results">No stories found</div>';
+    return;
+  }
+  
+  results.forEach(story => {
+    const resultItem = document.createElement('div');
+    resultItem.className = 'search-result-item';
+    
+    resultItem.innerHTML = `
+      <h4>${story.title}</h4>
+      <p>${story.description.substring(0, 60)}${story.description.length > 60 ? '...' : ''}</p>
+      <div class="result-meta">
+        <span><i class="fas fa-book-open"></i> ${story.category}</span>
+        <span><i class="fas fa-star"></i> ${story.rating}</span>
+      </div>
+    `;
+    
+    // Add click event to navigate to story page
+    resultItem.addEventListener('click', function() {
+      window.location.href = `${story.id}.html`;
+    });
+    
+    container.appendChild(resultItem);
+  });
+}
+
+// Add this function to existing initialization
+document.addEventListener('DOMContentLoaded', function() {
+  // Existing init code...
+  
+  // Initialize search functionality
+  initSearchFunctionality();
+});
+
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
@@ -757,4 +914,4 @@ document.addEventListener('keydown', function(e) {
         e.preventDefault();
     }
 });
-*/
+
