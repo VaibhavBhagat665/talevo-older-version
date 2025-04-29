@@ -1881,4 +1881,72 @@ main {
   }
 }
 
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .user-controls {
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  #welcomeUser {
+    order: 1;
+    width: auto;
+    font-size: 0.9rem;
+    margin-right: auto;
+    padding-left: 10px;
+    white-space: nowrap;
+  }
+
+  #loginBtn,
+  #logoutBtn {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+    margin: 0 5px;
+  }
+
+  nav {
+    width: 100%;
+    order: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav ul {
+    flex: 1;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .search-container {
+    width: 100%;
+    order: 3;
+    margin-top: 8px;
+  }
+
+  .search-input-wrapper {
+    height: 40px;
+  }
+
+  #search-input {
+    font-size: 14px;
+  }
+
+  .search-input-wrapper button {
+    font-size: 16px;
+  }
+}
 
