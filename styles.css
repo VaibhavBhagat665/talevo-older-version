@@ -272,7 +272,7 @@ nav a.active:after {
 
 .hero {
     position: relative;
-    height: 50vh;
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1049,7 +1049,7 @@ nav ul {
 }
 
 .hero {
-    height: 30vh;
+    height: 45vh;
 }
 
 .hero h1 {
