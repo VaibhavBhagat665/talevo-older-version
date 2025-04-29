@@ -1617,6 +1617,18 @@ body.modal-open {
   outline: none;
 }
 
+#search-input {
+  background: var(--is-light-mode, white);
+  color: var(--text-color, #333);
+  border: none;
+  border-radius: 0;
+  padding: 10px 16px;
+  flex-grow: 1;
+  font-size: 14px;
+  outline: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
 .search-input-wrapper button {
   background: #8A2BE2;
   border: none;
