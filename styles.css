@@ -1160,6 +1160,7 @@ opacity: 0.3;
 }
 
 /* Search Bar Styles */
+/* Enhanced Search Bar Styles */
 .search-container {
   position: relative;
   margin-right: 20px;
@@ -1167,436 +1168,12 @@ opacity: 0.3;
 }
 
 .search-input-wrapper {
-  display: flex;
-  position: relative;
-  height: 40px;
-}
-
-#search-input {
-  flex: 1;
-  height: 100%;
-  border-radius: 20px;
-  padding: 0 40px 0 15px;
-  border: 1px solid var(--border-color);
-  background-color: var(--bg-secondary);
-  color: var(--text-primary);
-  font-size: 14px;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-#search-form button {
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  background: none;
-  border: none;
-  color: var(--text-secondary);
-  font-size: 16px;
-  cursor: pointer;
-  height: 30px;
-  width: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-#search-form button:hover {
-  background-color: var(--bg-hover);
-  color: var(--text-primary);
-}
-
-.search-results {
-  position: absolute;
-  top: 45px;
-  left: 0;
-  width: 300px;
-  max-height: 400px;
-  overflow-y: auto;
-  background-color: var(--bg-secondary);
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 100;
-  opacity: 100%;
-  padding: 10px;
-}
-
-.search-result-item {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.search-result-item:hover {
-  background-color: var(--bg-hover);
-}
-
-.search-result-item img {
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  object-fit: cover;
-  margin-right: 10px;
-}
-
-.search-result-info {
-  flex: 1;
-}
-
-.search-result-info h4 {
-  margin: 0 0 5px;
-  font-size: 14px;
-  color: var(--text-primary);
-}
-
-.search-result-info span {
-  font-size: 12px;
-  color: var(--text-secondary);
-}
-
-.no-results {
-  padding: 15px;
-  text-align: center;
-  color: var(--text-secondary);
-  font-size: 14px;
-}
-
-/* Category Results Section */
-.category-results {
-  margin-top: 40px;
-  padding: 20px 0;
-  border-top: 1px solid var(--border-color);
-}
-
-.back-to-all {
-  background: none;
-  border: none;
-  color: var(--primary-color);
-  font-size: 14px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: all 0.3s ease;
-}
-
-.back-to-all:hover {
-  text-decoration: underline;
-}
-
-/* Make category cards more interactive */
-.category-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.category-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .search-container {
-    width: 200px;
-  }
-}
-
-@media (max-width: 768px) {
-  .search-container {
-    order: 3;
-    width: 100%;
-    margin: 10px 0;
-  }
-  
-  .search-results {
-    width: 100%;
-  }
-  
-  header {
-    flex-wrap: wrap;
-  }
-}
-
-/* CSS fixes for the Talevo website */
-
-/* Fix for header overlapping on sections when using anchor navigation */
-html {
-  scroll-padding-top: 80px; /* Adjust based on your header height */
-}
-
-/* Fix for search results display */
-.search-results {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: var(--card-bg, #ffffff);
-  background-color: rgba(var(--theme-bg-color, 255, 255, 255), 0.95); /* Higher opacity theme-based background */
-  backdrop-filter: blur(10px); /* Added blur effect for modern look */
-  border-radius: 0 0 4px 4px;
-  box-shadow: 0 8px 20px rgba(147, 112, 219, 0.6); /* Increased shadow opacity */
-  z-index: 100;
-  max-height: 400px;
-  overflow-y: auto;
-  margin-top: 5px;
-  border-top: 3px solid #9370DB;
-  padding: 10px; /* Added padding as in your reference */
-}
-
-.search-container {
-  position: relative;
-}
-
-.search-input-wrapper {
-  position: relative;
-  z-index: 101;
-}
-
-/* Styles for category results section */
-.category-results {
-  padding: 20px 0;
-  margin-top: 20px;
-  border-top: 1px solid var(--border-color);
-}
-
-.category-results .section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.category-results .back-to-all {
-  background: none;
-  border: none;
-  color: var(--accent-color);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-weight: 500;
-}
-
-.category-results .back-to-all:hover {
-  text-decoration: underline;
-}
-
-.category-results .no-results {
-  width: 100%;
-  text-align: center;
-  padding: 30px;
-  color: var(--text-muted);
-  font-style: italic;
-}
-
-/* Improved style for search result items */
-.search-result-item {
-  display: flex;
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.search-result-item:hover {
-  background-color: var(--hover-color);
-}
-
-.search-result-item img {
-  width: 50px;
-  height: 50px;
-  border-radius: 6px;
-  object-fit: cover;
-}
-
-.search-result-info {
-  margin-left: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.search-result-info h4 {
-  margin: 0 0 5px 0;
-  font-size: 14px;
-}
-
-.search-result-info span {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-
-/* Ensure space at the bottom of the page for scrolling to the last section */
-main {
-  padding-bottom: 40px;
-}
-
-/* Animation for category results appearance */
-.category-results {
-  transition: opacity 0.3s ease-in-out;
-}
-
-.category-results.hidden {
-  display: none;
-  opacity: 0;
-}
-
-/* Fix for the "till" anchor point */
-.till {
-  position: relative;
-  top: -80px; /* Adjust based on your header height */
-  display: block;
-  visibility: hidden;
-  height: 0;
-}
-
-/* Category Modal Styles */
-.category-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  overflow-y: auto;
-}
-
-.category-modal.active {
-  display: flex;
-}
-
-.category-modal-content {
-  background: var(--card-bg);
-  border-radius: 16px;
-  width: 90%;
-  max-width: 1200px;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  animation: modalFadeIn 0.3s ease-out;
-}
-
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 30px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.modal-header h2 {
-  margin: 0;
-  font-size: 1.8rem;
-  color: var(--text-color);
-}
-
-.close-modal {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: var(--text-color);
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s;
-}
-
-.close-modal:hover {
-  background-color: var(--hover-color);
-}
-
-.category-modal .story-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 25px;
-  padding: 30px;
-}
-
-/* For small screens, adjust the grid */
-@media (max-width: 768px) {
-  .category-modal-content {
-    width: 95%;
-    max-height: 80vh;
-  }
-  
-  .category-modal .story-grid {
-    grid-template-columns: 1fr;
-    padding: 20px;
-  }
-}
-
-/* Add this to your styles to handle the body when modal is open */
-body.modal-open {
-  overflow: hidden;
-}
-
-/* Make sure the story cards inside the modal look good */
-.category-modal .story-card {
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  background: var(--card-bg);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.category-modal .story-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* No results style */
-.category-modal .no-results {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 40px;
-  color: var(--text-secondary);
-  font-size: 1.2rem;
-}
-
-/* Enhanced Search Bar Styles */
-.search-container {
-  position: relative;
-  margin-right: 20px;
-}
-
-.search-input-wrapper {
   position: relative;
   z-index: 101;
   display: flex;
+  height: 40px;
   background: linear-gradient(to right, #9370DB, #8A2BE2);
-  border-radius: 4px; /* Changed from 24px to 4px for rectangular shape */
+  border-radius: 4px;
   padding: 4px;
   box-shadow: 0 0 15px rgba(147, 112, 219, 0.3);
   transition: all 0.3s ease;
@@ -1607,6 +1184,7 @@ body.modal-open {
   transform: translateY(-2px);
 }
 
+/* Search input styling with theme variables */
 :root {
   --search-bg-light: white;
   --search-text-light: #333;
@@ -1614,7 +1192,6 @@ body.modal-open {
   --search-text-dark: #fff;
 }
 
-/* Default state - light mode */
 #search-input {
   background: var(--search-bg-light);
   color: var(--search-text-light);
@@ -1627,7 +1204,7 @@ body.modal-open {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Dark mode override - use multiple possible selectors for compatibility */
+/* Dark mode override */
 .dark-mode #search-input,
 .dark-theme #search-input,
 [data-theme="dark"] #search-input,
@@ -1637,42 +1214,65 @@ body.dark #search-input,
   color: var(--search-text-dark) !important;
 }
 
-.search-input-wrapper button {
+/* Search button styling */
+.search-input-wrapper button,
+#search-form button {
   background: #8A2BE2;
   border: none;
-  border-radius: 0; /* Changed from 0 20px 20px 0 to 0 for rectangular shape */
+  border-radius: 0;
   padding: 0 16px;
   color: white;
   cursor: pointer;
   transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.search-input-wrapper button:hover {
+.search-input-wrapper button:hover,
+#search-form button:hover {
   background: #9370DB;
 }
 
-/* Search Results Styles */
+/* Search Results - FIXED OPACITY */
 .search-results {
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  background: var(--card-bg);
-  border-radius: 0 0 4px 4px; /* Changed from 12px to match new rectangular style */
-  box-shadow: 0 8px 20px rgba(147, 112, 219, 0.4);
-  z-index: 100;
   max-height: 400px;
   overflow-y: auto;
   margin-top: 5px;
+  z-index: 100;
+  padding: 10px;
+  
+  /* Fixed opacity background */
+  background-color: var(--card-bg, #ffffff);
+  background-color: rgba(255, 255, 255, 0.95); /* Light mode - more opaque */
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 8px 20px rgba(147, 112, 219, 0.6);
   border-top: 3px solid #9370DB;
+  backdrop-filter: blur(10px);
 }
 
+/* Dark mode search results */
+.dark-mode .search-results,
+.dark-theme .search-results,
+[data-theme="dark"] .search-results,
+body.dark .search-results,
+.darkTheme .search-results {
+  background-color: rgba(26, 32, 44, 0.95); /* Dark mode - more opaque */
+}
+
+/* Search result items */
 .search-result-item {
   display: flex;
   padding: 12px;
-  border-bottom: 1px solid rgba(147, 112, 219, 0.2);
+  border-radius: 6px;
+  margin-bottom: 8px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid rgba(147, 112, 219, 0.2);
 }
 
 .search-result-item:hover {
@@ -1683,8 +1283,16 @@ body.dark #search-input,
   width: 60px;
   height: 60px;
   object-fit: cover;
-  border-radius: 4px; /* Changed from 8px to match rectangular theme */
+  border-radius: 4px;
   margin-right: 12px;
+}
+
+.search-result-info {
+  flex: 1;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .search-result-info h4 {
@@ -1703,15 +1311,17 @@ body.dark #search-input,
   color: #8A2BE2;
 }
 
-/* Enhanced Category Results Section */
+/* Category Results Section */
 .category-results {
   background: var(--card-bg);
-  border-radius: 4px; /* Changed from 12px to match rectangular theme */
+  border-radius: 4px;
   padding: 24px;
   margin: 20px 0;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(147, 112, 219, 0.3);
   animation: fadeIn 0.5s ease;
+  border-top: 1px solid var(--border-color);
+  margin-top: 40px;
 }
 
 .category-results .section-header {
@@ -1734,7 +1344,7 @@ body.dark #search-input,
   border: 1px solid #9370DB;
   color: #9370DB;
   padding: 8px 16px;
-  border-radius: 4px; /* Changed from 20px to match rectangular theme */
+  border-radius: 4px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1745,9 +1355,10 @@ body.dark #search-input,
 .back-to-all:hover {
   background: rgba(147, 112, 219, 0.1);
   transform: translateX(-5px);
+  text-decoration: underline;
 }
 
-/* Enhanced Category Cards */
+/* Category Cards */
 .category-card {
   position: relative;
   overflow: hidden;
@@ -1785,55 +1396,39 @@ body.dark #search-input,
   transition: all 0.3s ease;
 }
 
-/* Animation for the category results section */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.category-results.hidden {
-  display: none;
-}
-
-.themed-background {
-  /* Common properties for both modes */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: background-image 0.3s ease; /* Smooth transition between themes */
-  
-  /* Light mode background image (default) */
-  background-image: url('talevobgl.webp');
-}
-
-/* Dark mode background image - using multiple selector patterns for compatibility */
-.dark-mode .themed-background,
-.dark-theme .themed-background,
-[data-theme="dark"] .themed-background,
-body.dark .themed-background,
-.darkTheme .themed-background {
-  background-image: url('talevobgd.webp');
-}
-
-/* Optional: Add a fallback color in case the image fails to load */
-.themed-background {
-  background-color: #f5f5f5; /* Light mode fallback */
-}
-
-.dark-mode .themed-background,
-.dark-theme .themed-background,
-[data-theme="dark"] .themed-background,
-body.dark .themed-background,
-.darkTheme .themed-background {
-  background-color: #121212; 
-}
-
-/* Updated modal styles with dark/light mode support */
+/* Category Modal Styles */
 .category-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
   z-index: 1010;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto;
 }
 
-/* Adapts to theme */
+.category-modal.active,
+.category-modal.show {
+  display: flex;
+}
+
+.category-modal-content {
+  border-radius: 16px;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  animation: modalSlideIn 0.3s ease forwards;
+}
+
+/* Theme-specific modal content */
 .dark-mode .category-modal-content {
   background-color: #1e293b;
   color: #e2e8f0;
@@ -1846,23 +1441,47 @@ body.dark .themed-background,
   border: 1px solid #e2e8f0;
 }
 
-/* Improved animation */
-.category-modal.show .category-modal-content {
-  animation: modalSlideIn 0.3s ease forwards;
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 1px solid var(--border-color);
 }
 
-@keyframes modalSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--text-color);
 }
 
-/* Better scrolling inside modal */
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.close-modal:hover {
+  background-color: var(--hover-color);
+}
+
+.category-modal .story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Modal scrollbar styling */
 .category-modal .modal-body {
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color) transparent;
@@ -1881,18 +1500,17 @@ body.dark .themed-background,
   border-radius: 20px;
 }
 
-/* Fixes for story cards inside the modal */
-.category-modal .story-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 10px;
-}
-
-/* Ensure proper card styling in modal */
+/* Category modal story cards */
 .category-modal .story-card {
   height: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card-bg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .category-modal .story-card:hover {
@@ -1900,7 +1518,6 @@ body.dark .themed-background,
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Add subtle scale effect to images */
 .category-modal .story-card .story-image img {
   transition: transform 0.3s ease;
 }
@@ -1909,37 +1526,32 @@ body.dark .themed-background,
   transform: scale(1.05);
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .category-modal-content {
-    width: 95%;
-    margin: 10% auto;
-  }
-  
-  .category-modal .story-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-  }
-  
-  .modal-header h2 {
-    font-size: 20px;
-  }
-}
-
-/* No results message styling */
-.category-modal .no-results {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 50px 0;
-  color: var(--text-secondary);
-  font-style: italic;
-  background: rgba(0,0,0,0.05);
-  border-radius: 10px;
-}
-
-/* Add pulsing animation to the "New" and "Hot" badges when in modal */
+/* Badge animations */
 .category-modal .story-badge {
   animation: pulse 2s infinite;
+}
+
+/* Animations */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes pulse {
@@ -1952,12 +1564,6 @@ body.dark .themed-background,
   100% {
     transform: scale(1);
   }
-}
-
-/* Add backdrop blur effect for better visual aesthetics */
-.category-modal {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 
 @keyframes fadeIn {
@@ -1982,19 +1588,90 @@ body.dark .themed-background,
   }
 }
 
-/* Category results section */
-.category-results {
-  margin: 40px 0;
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.3s ease;
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .search-container {
+    width: 200px;
+  }
 }
 
-.category-results.hidden {
+@media (max-width: 768px) {
+  .search-container {
+    order: 3;
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .search-results {
+    width: 100%;
+  }
+  
+  header {
+    flex-wrap: wrap;
+  }
+  
+  .category-modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+  
+  .category-modal .story-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .modal-header h2 {
+    font-size: 20px;
+  }
+}
+
+/* Fix for header overlapping */
+html {
+  scroll-padding-top: 80px;
+}
+
+/* Category results visibility control */
+.category-results.hidden,
+.categories.hidden {
   display: none;
+  opacity: 0;
 }
 
-/* Fix for category section transitions */
-.categories {
-  transition: display 0.3s ease;
+/* Body style when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Themed background */
+.themed-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease;
+  background-image: url('talevobgl.webp');
+  background-color: #f5f5f5; /* Light mode fallback */
+}
+
+/* Dark mode background */
+.dark-mode .themed-background,
+.dark-theme .themed-background,
+[data-theme="dark"] .themed-background,
+body.dark .themed-background,
+.darkTheme .themed-background {
+  background-image: url('talevobgd.webp');
+  background-color: #121212;
+}
+
+/* Fix for the "till" anchor point */
+.till {
+  position: relative;
+  top: -80px;
+  display: block;
+  visibility: hidden;
+  height: 0;
+}
+
+/* Main content spacing */
+main {
+  padding-bottom: 40px;
 }
