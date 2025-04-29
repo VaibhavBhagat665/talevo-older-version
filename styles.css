@@ -1685,3 +1685,106 @@ body.dark .themed-background,
 main {
   padding-bottom: 40px;
 }
+
+@media screen and (max-width: 768px) {
+  /* Make header more compact and properly aligned */
+  header {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  /* Logo sizing and positioning */
+  .logo-container {
+    flex: 0 0 auto;
+    margin-right: 10px;
+  }
+  
+  .logo-svg {
+    width: 120px;
+    height: auto;
+  }
+  
+  /* User controls and welcome message positioning */
+  .user-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    order: 2;
+    gap: 8px;
+    margin-left: auto;
+  }
+  
+  /* Ensure welcome message stays compact */
+  #welcomeUser {
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+  }
+  
+  /* Make buttons more compact */
+  .user-controls .btn {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+  
+  /* Full width search bar positioning */
+  .search-container {
+    flex: 1 0 100%;
+    order: 3;
+    margin-top: 8px;
+  }
+  
+  /* Navigation positioning */
+  nav {
+    order: 1;
+    margin-right: auto;
+  }
+  
+  nav ul {
+    gap: 10px;
+  }
+  
+  nav ul li a {
+    padding: 5px 8px;
+    font-size: 0.9rem;
+  }
+}
+
+/* For even smaller screens - further adjustments */
+@media screen and (max-width: 480px) {
+  header {
+    padding: 8px 10px;
+  }
+  
+  /* Make logo slightly smaller */
+  .logo-svg {
+    width: 100px;
+  }
+  
+  /* Further compact user controls */
+  .user-controls .btn {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+  
+  /* Adjust navigation for smaller screens */
+  nav ul {
+    gap: 5px;
+  }
+  
+  nav ul li a {
+    padding: 4px 6px;
+    font-size: 0.8rem;
+  }
+  
+  /* Limit welcome message size */
+  #welcomeUser {
+    max-width: 80px;
+  }
+}
