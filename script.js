@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
+    initializeSearch();
+    initializeCategoryFilters();
 });
 
 function initializeApp() {
@@ -480,7 +482,163 @@ document.addEventListener('keydown', function(e) {
 });
 
 
+// New functions to add to your script.js file
 
+function initializeSearch() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const searchForm = document.getElementById('search-form');
+  
+  if (!searchInput || !searchResults || !searchForm) return;
+
+  searchForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    performSearch();
+  });
+  
+  searchInput.addEventListener('input', function() {
+    if (searchInput.value.length > 2) {
+      performSearch();
+    } else {
+      searchResults.innerHTML = '';
+      searchResults.classList.add('hidden');
+    }
+  });
+  
+  document.addEventListener('click', function(e) {
+    if (!searchForm.contains(e.target)) {
+      searchResults.classList.add('hidden');
+    }
+  });
+  
+  function performSearch() {
+    const query = searchInput.value.toLowerCase().trim();
+    if (!query) {
+      searchResults.innerHTML = '';
+      searchResults.classList.add('hidden');
+      return;
+    }
+    
+    // Get all stories from the page
+    const allStories = Array.from(document.querySelectorAll('.story-card'));
+    const matchingStories = allStories.filter(story => {
+      const title = story.querySelector('h3').textContent.toLowerCase();
+      const description = story.querySelector('p').textContent.toLowerCase();
+      const category = story.querySelector('.story-meta span:last-child').textContent.toLowerCase();
+      
+      return title.includes(query) || description.includes(query) || category.includes(query);
+    });
+    
+    // Display results
+    searchResults.innerHTML = '';
+    if (matchingStories.length > 0) {
+      matchingStories.forEach(story => {
+        const title = story.querySelector('h3').textContent;
+        const image = story.querySelector('img').src;
+        const category = story.querySelector('.story-meta span:last-child').textContent.trim();
+        
+        const resultItem = document.createElement('div');
+        resultItem.className = 'search-result-item';
+        resultItem.innerHTML = `
+          <img src="${image}" alt="${title}">
+          <div class="search-result-info">
+            <h4>${title}</h4>
+            <span>${category}</span>
+          </div>
+        `;
+        
+        resultItem.addEventListener('click', function() {
+          story.click(); // Trigger the same behavior as clicking the story card
+        });
+        
+        searchResults.appendChild(resultItem);
+      });
+      searchResults.classList.remove('hidden');
+    } else {
+      const noResults = document.createElement('div');
+      noResults.className = 'no-results';
+      noResults.textContent = 'No stories found matching your search.';
+      searchResults.appendChild(noResults);
+      searchResults.classList.remove('hidden');
+    }
+  }
+}
+
+function initializeCategoryFilters() {
+  const categoryCards = document.querySelectorAll('.category-card');
+  
+  categoryCards.forEach(card => {
+    card.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const category = this.querySelector('h3').textContent.trim();
+      const storyCards = document.querySelectorAll('.story-card');
+      const categorySection = document.getElementById('category-results') || createCategoryResultsSection();
+      
+      // Update category section title
+      categorySection.querySelector('h2').textContent = category + ' Stories';
+      
+      // Filter stories by category
+      const filteredStories = Array.from(storyCards).filter(story => {
+        const storyCategory = story.querySelector('.story-meta span:last-child').textContent.trim();
+        return storyCategory.includes(category);
+      });
+      
+      // Update story grid
+      const storyGrid = categorySection.querySelector('.story-grid');
+      storyGrid.innerHTML = '';
+      
+      if (filteredStories.length > 0) {
+        filteredStories.forEach(story => {
+          storyGrid.appendChild(story.cloneNode(true));
+        });
+      } else {
+        const noResults = document.createElement('div');
+        noResults.className = 'no-results';
+        noResults.textContent = 'No stories found in this category.';
+        storyGrid.appendChild(noResults);
+      }
+      
+      // Scroll to category section
+      categorySection.scrollIntoView({ behavior: 'smooth' });
+      
+      // Initialize click events for the cloned story cards
+      categorySection.querySelectorAll('.story-card').forEach(card => {
+        card.addEventListener('click', function() {
+          const storyTitle = this.querySelector('h3').textContent.trim();
+          const storyId = storyTitle.toLowerCase().replace(/\\s+/g, '-');
+          window.location.href = `stories/${storyId}.html`;
+        });
+      });
+    });
+  });
+  
+  function createCategoryResultsSection() {
+    const main = document.querySelector('main');
+    const section = document.createElement('section');
+    section.id = 'category-results';
+    section.className = 'category-results';
+    
+    section.innerHTML = `
+      <div class="section-header">
+        <h2>Category Stories</h2>
+        <button class="back-to-all" id="back-to-all">
+          <i class="fas fa-arrow-left"></i> Back to All
+        </button>
+      </div>
+      <div class="story-grid"></div>
+    `;
+    
+    main.appendChild(section);
+    
+    document.getElementById('back-to-all').addEventListener('click', function() {
+      section.classList.add('hidden');
+      document.querySelector('.featured-stories').scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    return section;
+  }
+}
 
 
 
