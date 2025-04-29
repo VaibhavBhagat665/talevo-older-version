@@ -323,8 +323,8 @@ z-index: 1;
   background-clip: text;
   color: transparent;
 
-  /* Add text shadow */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  /* Pink text shadow */
+  text-shadow: 2px 2px 6px rgba(255, 105, 180, 0.8); /* hot pink */
 }
 
 .hero p {
