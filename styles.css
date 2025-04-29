@@ -320,6 +320,7 @@ background: var(--gradient-1);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-clip: text;
+text-shadow: 2px 2px 4px gray;
 text-fill-color: transparent;
 }
 
