@@ -645,25 +645,31 @@ function initializeSearch() {
 function initializeCategoryFilters() {
   const categoryCards = document.querySelectorAll('.category-card');
   
-  // Check if category results section exists or create it once
+  // Get or create category results section
   let categorySection = document.getElementById('category-results');
   if (!categorySection) {
     categorySection = createCategoryResultsSection();
+    categorySection.classList.add('hidden'); // Start hidden
   }
+  
+  // Store original state of categories section
+  const categoriesSection = document.querySelector('.categories');
+  const originalCategoriesDisplay = getComputedStyle(categoriesSection).display;
   
   categoryCards.forEach(card => {
     card.addEventListener('click', function(e) {
       e.preventDefault();
       
       const category = this.querySelector('h3').textContent.trim();
-      const storyCards = document.querySelectorAll('.story-card');
+      const storyCards = document.querySelectorAll('.featured-stories .story-card, .trending-now .story-card');
       
-      // Update category section title with animation
+      // Update category section title
       const categoryTitle = categorySection.querySelector('h2');
       categoryTitle.textContent = category + ' Stories';
-      categoryTitle.style.animation = 'none';
-      categoryTitle.offsetHeight; // Trigger reflow
-      categoryTitle.style.animation = 'fadeIn 0.5s ease';
+      
+      // Clear previous stories
+      const storyGrid = categorySection.querySelector('.story-grid');
+      storyGrid.innerHTML = '';
       
       // Filter stories by category
       const filteredStories = Array.from(storyCards).filter(story => {
@@ -671,25 +677,22 @@ function initializeCategoryFilters() {
         return storyCategory.includes(category);
       });
       
-      // Clear previous stories before adding new ones
-      const storyGrid = categorySection.querySelector('.story-grid');
-      storyGrid.innerHTML = '';
-      
+      // Add filtered stories
       if (filteredStories.length > 0) {
         filteredStories.forEach((story, index) => {
           const clonedStory = story.cloneNode(true);
           
-          // Add animation delay based on index
+          // Add animation 
           clonedStory.style.opacity = '0';
           clonedStory.style.transform = 'translateY(20px)';
           clonedStory.style.animation = `fadeIn 0.5s ease forwards ${index * 0.1}s`;
           
           storyGrid.appendChild(clonedStory);
           
-          // Add click event to the cloned story
+          // Add click event to cloned story
           clonedStory.addEventListener('click', function() {
             const storyTitle = this.querySelector('h3').textContent.trim();
-            const storyId = storyTitle.toLowerCase().replace(/\s+/g, '-');
+            const storyId = storyTitle.toLowerCase().replace(/\\s+/g, '-');
             window.location.href = `stories/${storyId}.html`;
           });
         });
@@ -704,14 +707,12 @@ function initializeCategoryFilters() {
         storyGrid.appendChild(noResults);
       }
       
-      // Make sure the section is visible with smooth animation
+      // Hide categories section and show filtered results
+      categoriesSection.style.display = 'none';
       categorySection.classList.remove('hidden');
-      categorySection.style.animation = 'none';
-      categorySection.offsetHeight; // Trigger reflow
-      categorySection.style.animation = 'fadeIn 0.5s ease';
       
-      // Scroll to category section with an offset for the header
-      const headerHeight = document.querySelector('header').offsetHeight;
+      // Scroll to category section with header offset
+      const headerHeight = document.querySelector('header')?.offsetHeight || 0;
       const sectionTop = categorySection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
       window.scrollTo({ top: sectionTop, behavior: 'smooth' });
     });
@@ -735,13 +736,15 @@ function initializeCategoryFilters() {
     
     main.appendChild(section);
     
+    // Handle "Back to All" button
     document.getElementById('back-to-all').addEventListener('click', function() {
-      // Hide with animation
+      // Hide results with animation
       section.style.animation = 'fadeOut 0.3s ease forwards';
       
-      // After animation completes, hide the section
+      // After animation, reset the view
       setTimeout(() => {
         section.classList.add('hidden');
+        categoriesSection.style.display = originalCategoriesDisplay;
         scrollToSection('.categories');
       }, 300);
     });
@@ -749,7 +752,7 @@ function initializeCategoryFilters() {
     return section;
   }
 }
-// Improved scrolling function
+
 function scrollToSection(selector) {
   const section = document.querySelector(selector);
   if (section) {
