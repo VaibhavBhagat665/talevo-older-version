@@ -1802,7 +1802,7 @@ body.dark #search-input,
   transition: background-image 0.3s ease; /* Smooth transition between themes */
   
   /* Light mode background image (default) */
-  background-image: url('images/talevobgl.webp');
+  background-image: url('talevobgl.webp');
 }
 
 /* Dark mode background image - using multiple selector patterns for compatibility */
@@ -1811,7 +1811,7 @@ body.dark #search-input,
 [data-theme="dark"] .themed-background,
 body.dark .themed-background,
 .darkTheme .themed-background {
-  background-image: url('images/talevobgd.webp');
+  background-image: url('talevobgd.webp');
 }
 
 /* Optional: Add a fallback color in case the image fails to load */
