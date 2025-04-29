@@ -731,9 +731,6 @@ function initializeCategoryFilters() {
     section.innerHTML = `
       <div class="section-header">
         <h2>Category Stories</h2>
-        <button class="back-to-all" id="back-to-all">
-          <i class="fas fa-arrow-left"></i> Back to All Categories
-        </button>
       </div>
       <div class="story-grid"></div>
     `;
