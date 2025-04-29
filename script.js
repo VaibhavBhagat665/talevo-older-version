@@ -961,26 +961,3 @@ function initializeApp() {
   initializeScrollAnimations();
 }
 
-// Add this to your script.js file
-document.addEventListener('DOMContentLoaded', function() {
-  if (window.innerWidth <= 768) {
-    const header = document.querySelector('header');
-    const nav = document.querySelector('nav');
-    const searchContainer = document.querySelector('.search-container');
-    
-    // Create wrapper
-    const wrapper = document.createElement('div');
-    wrapper.className = 'nav-search-wrapper';
-    
-    // Remove elements from their current position
-    header.removeChild(nav);
-    header.removeChild(searchContainer);
-    
-    // Add them to the wrapper
-    wrapper.appendChild(nav);
-    wrapper.appendChild(searchContainer);
-    
-    // Add the wrapper to the header
-    header.appendChild(wrapper);
-  }
-});
