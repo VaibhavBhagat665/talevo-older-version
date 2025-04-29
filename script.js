@@ -642,15 +642,100 @@ function initializeCategoryFilters() {
 
 // Fix for category filters, scrolling, and search results
 
+// function initializeCategoryFilters() {
+//   const categoryCards = document.querySelectorAll('.category-card');
+  
+//   // Check if category results section exists or create it once
+//   let categorySection = document.getElementById('category-results');
+//   if (!categorySection) {
+//     categorySection = createCategoryResultsSection();
+//   }
+  
+//   categoryCards.forEach(card => {
+//     card.addEventListener('click', function(e) {
+//       e.preventDefault();
+      
+//       const category = this.querySelector('h3').textContent.trim();
+//       const storyCards = document.querySelectorAll('.story-card');
+      
+//       // Update category section title
+//       categorySection.querySelector('h2').textContent = category + ' Stories';
+      
+//       // Filter stories by category
+//       const filteredStories = Array.from(storyCards).filter(story => {
+//         const storyCategory = story.querySelector('.story-meta span:last-child').textContent.trim();
+//         return storyCategory.includes(category);
+//       });
+      
+//       // Clear previous stories before adding new ones
+//       const storyGrid = categorySection.querySelector('.story-grid');
+//       storyGrid.innerHTML = '';
+      
+//       if (filteredStories.length > 0) {
+//         filteredStories.forEach(story => {
+//           const clonedStory = story.cloneNode(true);
+//           storyGrid.appendChild(clonedStory);
+          
+//           // Add click event to the cloned story
+//           clonedStory.addEventListener('click', function() {
+//             const storyTitle = this.querySelector('h3').textContent.trim();
+//             const storyId = storyTitle.toLowerCase().replace(/\s+/g, '-');
+//             window.location.href = `stories/${storyId}.html`;
+//           });
+//         });
+//       } else {
+//         const noResults = document.createElement('div');
+//         noResults.className = 'no-results';
+//         noResults.textContent = 'No stories found in this category.';
+//         storyGrid.appendChild(noResults);
+//       }
+      
+//       // Make sure the section is visible
+//       categorySection.classList.remove('hidden');
+      
+//       // Scroll to category section with an offset for the header
+//       const headerHeight = document.querySelector('header').offsetHeight;
+//       const sectionTop = categorySection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+//       window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+//     });
+//   });
+
 function initializeCategoryFilters() {
   const categoryCards = document.querySelectorAll('.category-card');
   
-  // Check if category results section exists or create it once
-  let categorySection = document.getElementById('category-results');
-  if (!categorySection) {
-    categorySection = createCategoryResultsSection();
-  }
+  // Create the modal overlay for category results
+  const categoryModal = document.createElement('div');
+  categoryModal.id = 'category-modal';
+  categoryModal.className = 'category-modal';
+  categoryModal.innerHTML = `
+    <div class="category-modal-content">
+      <div class="modal-header">
+        <h2>Category Stories</h2>
+        <button class="close-modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="story-grid"></div>
+    </div>
+  `;
+  document.body.appendChild(categoryModal);
   
+  // Close modal when clicking the close button
+  const closeModalBtn = categoryModal.querySelector('.close-modal');
+  closeModalBtn.addEventListener('click', function() {
+    categoryModal.classList.remove('active');
+    document.body.classList.remove('modal-open');
+  });
+  
+  // Close modal when clicking outside the content
+  categoryModal.addEventListener('click', function(e) {
+    if (e.target === categoryModal) {
+      categoryModal.classList.remove('active');
+      document.body.classList.remove('modal-open');
+    }
+  });
+  
+  // Add event listeners to category cards
   categoryCards.forEach(card => {
     card.addEventListener('click', function(e) {
       e.preventDefault();
@@ -658,8 +743,8 @@ function initializeCategoryFilters() {
       const category = this.querySelector('h3').textContent.trim();
       const storyCards = document.querySelectorAll('.story-card');
       
-      // Update category section title
-      categorySection.querySelector('h2').textContent = category + ' Stories';
+      // Update modal title
+      categoryModal.querySelector('h2').textContent = category + ' Stories';
       
       // Filter stories by category
       const filteredStories = Array.from(storyCards).filter(story => {
@@ -667,8 +752,8 @@ function initializeCategoryFilters() {
         return storyCategory.includes(category);
       });
       
-      // Clear previous stories before adding new ones
-      const storyGrid = categorySection.querySelector('.story-grid');
+      // Update story grid
+      const storyGrid = categoryModal.querySelector('.story-grid');
       storyGrid.innerHTML = '';
       
       if (filteredStories.length > 0) {
@@ -690,16 +775,12 @@ function initializeCategoryFilters() {
         storyGrid.appendChild(noResults);
       }
       
-      // Make sure the section is visible
-      categorySection.classList.remove('hidden');
-      
-      // Scroll to category section with an offset for the header
-      const headerHeight = document.querySelector('header').offsetHeight;
-      const sectionTop = categorySection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
-      window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+      // Show the modal
+      categoryModal.classList.add('active');
+      document.body.classList.add('modal-open');
     });
   });
-  
+}
   function createCategoryResultsSection() {
     const main = document.querySelector('main');
     const section = document.createElement('section');
