@@ -1607,19 +1607,8 @@ body.modal-open {
 }
 
 #search-input {
-  background: rgba(26, 32, 44, 0.8);
-  color: #fff;
-  border: none;
-  border-radius: 0; /* Changed from 20px 0 0 20px to 0 for rectangular shape */
-  padding: 10px 16px;
-  flex-grow: 1;
-  font-size: 14px;
-  outline: none;
-}
-
-#search-input {
-  background: var(--is-light-mode, white);
-  color: var(--text-color, #333);
+  background: white;
+  color: #333;
   border: none;
   border-radius: 0;
   padding: 10px 16px;
@@ -1627,6 +1616,18 @@ body.modal-open {
   font-size: 14px;
   outline: none;
   transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode styles using .dark-theme class */
+.dark-theme #search-input {
+  background: rgba(26, 32, 44, 0.8);
+  color: #fff;
+}
+
+/* Alternative dark mode selector if .dark-theme isn't used */
+[data-theme="dark"] #search-input {
+  background: rgba(26, 32, 44, 0.8);
+  color: #fff;
 }
 
 .search-input-wrapper button {
