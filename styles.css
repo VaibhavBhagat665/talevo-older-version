@@ -1897,13 +1897,18 @@ main {
     margin-bottom: 10px;
   }
   
+  /* Hide welcome message on mobile */
+  #welcomeUser {
+    display: none !important;
+  }
+  
   /* Rearranging elements in the desired order */
   .user-controls {
     width: 100%;
     order: 1;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-bottom: 10px;
   }
   
@@ -1928,24 +1933,24 @@ main {
     margin: 0;
   }
   
-  /* Search box styling */
+  /* Search box styling - making it rectangular */
   .search-input-wrapper {
     width: 100%;
   }
   
   #search-input {
     width: 100%;
+    border-radius: 4px;
+  }
+  
+  .search-input-wrapper button {
+    border-radius: 0 4px 4px 0;
   }
   
   /* Button sizing */
   .btn {
     padding: 10px 16px;
     font-size: 14px;
-  }
-  
-  /* Welcome user message */
-  #welcomeUser {
-    margin-right: auto;
   }
   
   /* Making sure theme toggle has space */
@@ -1985,14 +1990,5 @@ main {
   
   .footer-links {
     grid-template-columns: 1fr;
-  }
-  
-  /* Fixing text overflow */
-  #userName {
-    max-width: 80px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    display: inline-block;
   }
 }
