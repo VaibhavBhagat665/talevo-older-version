@@ -1591,7 +1591,7 @@ body.modal-open {
   z-index: 101;
   display: flex;
   background: linear-gradient(to right, #9370DB, #8A2BE2);
-  border-radius: 24px;
+  border-radius: 4px; /* Changed from 24px to 4px for rectangular shape */
   padding: 4px;
   box-shadow: 0 0 15px rgba(147, 112, 219, 0.3);
   transition: all 0.3s ease;
@@ -1606,7 +1606,7 @@ body.modal-open {
   background: rgba(26, 32, 44, 0.8);
   color: #fff;
   border: none;
-  border-radius: 20px 0 0 20px;
+  border-radius: 0; /* Changed from 20px 0 0 20px to 0 for rectangular shape */
   padding: 10px 16px;
   flex-grow: 1;
   font-size: 14px;
@@ -1616,7 +1616,7 @@ body.modal-open {
 .search-input-wrapper button {
   background: #8A2BE2;
   border: none;
-  border-radius: 0 20px 20px 0;
+  border-radius: 0; /* Changed from 0 20px 20px 0 to 0 for rectangular shape */
   padding: 0 16px;
   color: white;
   cursor: pointer;
@@ -1634,7 +1634,7 @@ body.modal-open {
   left: 0;
   width: 100%;
   background: var(--card-bg);
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 4px 4px; /* Changed from 12px to match new rectangular style */
   box-shadow: 0 8px 20px rgba(147, 112, 219, 0.4);
   z-index: 100;
   max-height: 400px;
@@ -1659,7 +1659,7 @@ body.modal-open {
   width: 60px;
   height: 60px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 4px; /* Changed from 8px to match rectangular theme */
   margin-right: 12px;
 }
 
@@ -1682,7 +1682,7 @@ body.modal-open {
 /* Enhanced Category Results Section */
 .category-results {
   background: var(--card-bg);
-  border-radius: 12px;
+  border-radius: 4px; /* Changed from 12px to match rectangular theme */
   padding: 24px;
   margin: 20px 0;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
@@ -1710,7 +1710,7 @@ body.modal-open {
   border: 1px solid #9370DB;
   color: #9370DB;
   padding: 8px 16px;
-  border-radius: 20px;
+  border-radius: 4px; /* Changed from 20px to match rectangular theme */
   cursor: pointer;
   display: flex;
   align-items: center;
