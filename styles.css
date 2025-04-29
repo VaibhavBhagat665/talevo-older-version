@@ -324,6 +324,13 @@ z-index: 1;
   color: transparent;
 }
 
+body.light-mode .search-results,
+.light-mode .search-results {
+  background-color: rgba(255, 255, 255, 0.97); /* nearly solid white */
+  color: #1e293b; /* ensure text is readable */
+  border: 1px solid #ccc;
+}
+
 .hero p {
 font-size: 1.25rem;
 margin-bottom: 2rem;
@@ -1940,11 +1947,15 @@ main {
   
   #search-input {
     width: 100%;
-    border-radius: 4px;
+    border-radius: 0;
   }
   
   .search-input-wrapper button {
-    border-radius: 0 4px 4px 0;
+    border-radius: 0;
+  }
+  
+  .search-input-wrapper {
+    border-radius: 0;
   }
   
   /* Button sizing */
