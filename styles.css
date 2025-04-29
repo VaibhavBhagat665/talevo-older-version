@@ -1826,3 +1826,135 @@ body.dark .themed-background,
 .darkTheme .themed-background {
   background-color: #121212; 
 }
+
+/* Updated modal styles with dark/light mode support */
+.category-modal {
+  z-index: 1010;
+}
+
+/* Adapts to theme */
+.dark-mode .category-modal-content {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+}
+
+.light-mode .category-modal-content {
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+}
+
+/* Improved animation */
+.category-modal.show .category-modal-content {
+  animation: modalSlideIn 0.3s ease forwards;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Better scrolling inside modal */
+.category-modal .modal-body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) transparent;
+}
+
+.category-modal .modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.category-modal .modal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.category-modal .modal-body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 20px;
+}
+
+/* Fixes for story cards inside the modal */
+.category-modal .story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Ensure proper card styling in modal */
+.category-modal .story-card {
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-modal .story-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Add subtle scale effect to images */
+.category-modal .story-card .story-image img {
+  transition: transform 0.3s ease;
+}
+
+.category-modal .story-card:hover .story-image img {
+  transform: scale(1.05);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .category-modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+  
+  .category-modal .story-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .modal-header h2 {
+    font-size: 20px;
+  }
+}
+
+/* No results message styling */
+.category-modal .no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 50px 0;
+  color: var(--text-secondary);
+  font-style: italic;
+  background: rgba(0,0,0,0.05);
+  border-radius: 10px;
+}
+
+/* Add pulsing animation to the "New" and "Hot" badges when in modal */
+.category-modal .story-badge {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Add backdrop blur effect for better visual aesthetics */
+.category-modal {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
