@@ -1794,3 +1794,35 @@ body.dark #search-input,
   display: none;
 }
 
+.themed-background {
+  /* Common properties for both modes */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease; /* Smooth transition between themes */
+  
+  /* Light mode background image (default) */
+  background-image: url('images/talevobgl.webp');
+}
+
+/* Dark mode background image - using multiple selector patterns for compatibility */
+.dark-mode .themed-background,
+.dark-theme .themed-background,
+[data-theme="dark"] .themed-background,
+body.dark .themed-background,
+.darkTheme .themed-background {
+  background-image: url('images/talevobgd.webp');
+}
+
+/* Optional: Add a fallback color in case the image fails to load */
+.themed-background {
+  background-color: #f5f5f5; /* Light mode fallback */
+}
+
+.dark-mode .themed-background,
+.dark-theme .themed-background,
+[data-theme="dark"] .themed-background,
+body.dark .themed-background,
+.darkTheme .themed-background {
+  background-color: #121212; 
+}
