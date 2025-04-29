@@ -1197,8 +1197,9 @@ opacity: 0.3;
   color: var(--search-text-light);
   border: none;
   border-radius: 0;
-  padding: 10px 16px;
+  padding: 0 16px;
   flex-grow: 1;
+  height: 32px;  
   font-size: 14px;
   outline: none;
   transition: background 0.3s ease, color 0.3s ease;
@@ -1220,18 +1221,26 @@ body.dark #search-input,
   background: #8A2BE2;
   border: none;
   border-radius: 0;
-  padding: 0 16px;
   color: white;
   cursor: pointer;
   transition: background 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+   width: 40px;       /* Set a fixed width */
+  height: 32px;      /* Match height with input */
+  padding: 0;        /* Remove padding that was causing overflow */
+  margin: 4px 4px 4px 0; /* Add margin to keep inside container */
+  font-size: 14px; 
 }
 
 .search-input-wrapper button:hover,
 #search-form button:hover {
   background: #9370DB;
+}
+
+.search-input-wrapper {
+  align-items: center; /* Center items vertically */
 }
 
 /* Search Results - FIXED OPACITY */
