@@ -1606,9 +1606,17 @@ body.modal-open {
   transform: translateY(-2px);
 }
 
+:root {
+  --search-bg-light: white;
+  --search-text-light: #333;
+  --search-bg-dark: rgba(26, 32, 44, 0.8);
+  --search-text-dark: #fff;
+}
+
+/* Default state - light mode */
 #search-input {
-  background: white;
-  color: #333;
+  background: var(--search-bg-light);
+  color: var(--search-text-light);
   border: none;
   border-radius: 0;
   padding: 10px 16px;
@@ -1618,16 +1626,14 @@ body.modal-open {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Dark mode styles using .dark-theme class */
-.dark-theme #search-input {
-  background: rgba(26, 32, 44, 0.8);
-  color: #fff;
-}
-
-/* Alternative dark mode selector if .dark-theme isn't used */
-[data-theme="dark"] #search-input {
-  background: rgba(26, 32, 44, 0.8);
-  color: #fff;
+/* Dark mode override - use multiple possible selectors for compatibility */
+.dark-mode #search-input,
+.dark-theme #search-input,
+[data-theme="dark"] #search-input,
+body.dark #search-input,
+.darkTheme #search-input {
+  background: var(--search-bg-dark) !important;
+  color: var(--search-text-dark) !important;
 }
 
 .search-input-wrapper button {
