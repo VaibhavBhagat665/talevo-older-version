@@ -1889,6 +1889,7 @@ main {
 }
 
 /* Mobile Responsive CSS */
+/* Mobile Responsive CSS */
 @media screen and (max-width: 768px) {
   /* Header layout adjustments */
   header {
@@ -1904,98 +1905,69 @@ main {
     margin-bottom: 10px;
   }
   
-  /* User controls styling */
+  /* Hide welcome message on mobile */
+  #welcomeUser {
+    display: none !important;
+  }
+  
+  /* Rearranging elements in the desired order */
   .user-controls {
     width: 100%;
+    order: 1;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-bottom: 10px;
-    order: 1;
-  }
-  
-  /* Welcome message styling */
-  #welcomeUser {
-    order: 2;
-    margin: 0 15px;
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 40%;
-  }
-  
-  /* Theme toggle positioning */
-  .theme-toggle {
-    order: 3;
-    margin-left: auto;
-  }
-  
-  /* Login/logout button positioning */
-  #loginBtn, #logoutBtn {
-    order: 1;
-  }
-  
-  /* Nav and search - create a flex container for navigation and search */
-  .nav-search-wrapper {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 5px;
-    order: 2;
-  }
-  
-  nav {
-    width: 60%;
   }
   
   .search-container {
-    width: 38%;
+    width: 100%;
+    order: 2;
+    margin-bottom: 10px;
   }
   
-  /* Navigation styling */
+  nav {
+    width: 100%;
+    order: 3;
+  }
+  
+  /* Adjusting navigation */
   nav ul {
-    display: flex;
     justify-content: space-between;
-    padding: 0;
-    margin: 0;
+    width: 100%;
   }
   
   nav ul li {
     margin: 0;
   }
   
-  nav ul li a {
-    padding: 8px 5px;
-    font-size: 12px;
-    white-space: nowrap;
-  }
-  
   /* Search box styling - making it rectangular */
   .search-input-wrapper {
     width: 100%;
-    height: 36px;
   }
   
   #search-input {
     width: 100%;
     border-radius: 0;
-    height: 36px;
-    padding: 0 8px;
-    font-size: 12px;
   }
   
   .search-input-wrapper button {
     border-radius: 0;
-    width: 36px;
-    height: 36px;
   }
   
-  /* Button styling */
+  .search-input-wrapper {
+    border-radius: 0;
+  }
+  
+  /* Button sizing */
   .btn {
-    padding: 8px 12px;
+    padding: 10px 16px;
     font-size: 14px;
+  }
+  
+  /* Making sure theme toggle has space */
+  .theme-toggle {
+    margin-right: 10px;
   }
   
   /* Story grid adjustments */
@@ -2030,17 +2002,5 @@ main {
   
   .footer-links {
     grid-template-columns: 1fr;
-  }
-  
-  /* Smaller font size for navigation */
-  nav ul li a {
-    padding: 6px 4px;
-    font-size: 11px;
-  }
-  
-  /* Smaller search bar */
-  #search-input {
-    font-size: 11px;
-    padding: 0 6px;
   }
 }
