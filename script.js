@@ -564,81 +564,81 @@ function initializeSearch() {
   }
 }
 
-function initializeCategoryFilters() {
-  const categoryCards = document.querySelectorAll('.category-card');
+// function initializeCategoryFilters() {
+//   const categoryCards = document.querySelectorAll('.category-card');
   
-  categoryCards.forEach(card => {
-    card.addEventListener('click', function(e) {
-      e.preventDefault();
+//   categoryCards.forEach(card => {
+//     card.addEventListener('click', function(e) {
+//       e.preventDefault();
       
-      const category = this.querySelector('h3').textContent.trim();
-      const storyCards = document.querySelectorAll('.story-card');
-      const categorySection = document.getElementById('category-results') || createCategoryResultsSection();
+//       const category = this.querySelector('h3').textContent.trim();
+//       const storyCards = document.querySelectorAll('.story-card');
+//       const categorySection = document.getElementById('category-results') || createCategoryResultsSection();
       
-      // Update category section title
-      categorySection.querySelector('h2').textContent = category + ' Stories';
+//       // Update category section title
+//       categorySection.querySelector('h2').textContent = category + ' Stories';
       
-      // Filter stories by category
-      const filteredStories = Array.from(storyCards).filter(story => {
-        const storyCategory = story.querySelector('.story-meta span:last-child').textContent.trim();
-        return storyCategory.includes(category);
-      });
+//       // Filter stories by category
+//       const filteredStories = Array.from(storyCards).filter(story => {
+//         const storyCategory = story.querySelector('.story-meta span:last-child').textContent.trim();
+//         return storyCategory.includes(category);
+//       });
       
-      // Update story grid
-      const storyGrid = categorySection.querySelector('.story-grid');
-      storyGrid.innerHTML = '';
+//       // Update story grid
+//       const storyGrid = categorySection.querySelector('.story-grid');
+//       storyGrid.innerHTML = '';
       
-      if (filteredStories.length > 0) {
-        filteredStories.forEach(story => {
-          storyGrid.appendChild(story.cloneNode(true));
-        });
-      } else {
-        const noResults = document.createElement('div');
-        noResults.className = 'no-results';
-        noResults.textContent = 'No stories found in this category.';
-        storyGrid.appendChild(noResults);
-      }
+//       if (filteredStories.length > 0) {
+//         filteredStories.forEach(story => {
+//           storyGrid.appendChild(story.cloneNode(true));
+//         });
+//       } else {
+//         const noResults = document.createElement('div');
+//         noResults.className = 'no-results';
+//         noResults.textContent = 'No stories found in this category.';
+//         storyGrid.appendChild(noResults);
+//       }
       
-      // Scroll to category section
-      categorySection.scrollIntoView({ behavior: 'smooth' });
+//       // Scroll to category section
+//       categorySection.scrollIntoView({ behavior: 'smooth' });
       
-      // Initialize click events for the cloned story cards
-      categorySection.querySelectorAll('.story-card').forEach(card => {
-        card.addEventListener('click', function() {
-          const storyTitle = this.querySelector('h3').textContent.trim();
-          const storyId = storyTitle.toLowerCase().replace(/\\s+/g, '-');
-          window.location.href = `stories/${storyId}.html`;
-        });
-      });
-    });
-  });
+//       // Initialize click events for the cloned story cards
+//       categorySection.querySelectorAll('.story-card').forEach(card => {
+//         card.addEventListener('click', function() {
+//           const storyTitle = this.querySelector('h3').textContent.trim();
+//           const storyId = storyTitle.toLowerCase().replace(/\\s+/g, '-');
+//           window.location.href = `stories/${storyId}.html`;
+//         });
+//       });
+//     });
+//   });
   
-  function createCategoryResultsSection() {
-    const main = document.querySelector('main');
-    const section = document.createElement('section');
-    section.id = 'category-results';
-    section.className = 'category-results';
+//   function createCategoryResultsSection() {
+//     const main = document.querySelector('main');
+//     const section = document.createElement('section');
+//     section.id = 'category-results';
+//     section.className = 'category-results';
     
-    section.innerHTML = `
-      <div class="section-header">
-        <h2>Category Stories</h2>
-        <button class="back-to-all" id="back-to-all">
-          <i class="fas fa-arrow-left"></i> Back to All
-        </button>
-      </div>
-      <div class="story-grid"></div>
-    `;
+//     section.innerHTML = `
+//       <div class="section-header">
+//         <h2>Category Stories</h2>
+//         <button class="back-to-all" id="back-to-all">
+//           <i class="fas fa-arrow-left"></i> Back to All
+//         </button>
+//       </div>
+//       <div class="story-grid"></div>
+//     `;
     
-    main.appendChild(section);
+//     main.appendChild(section);
     
-    document.getElementById('back-to-all').addEventListener('click', function() {
-      section.classList.add('hidden');
-      document.querySelector('.featured-stories').scrollIntoView({ behavior: 'smooth' });
-    });
+//     document.getElementById('back-to-all').addEventListener('click', function() {
+//       section.classList.add('hidden');
+//       document.querySelector('.featured-stories').scrollIntoView({ behavior: 'smooth' });
+//     });
     
-    return section;
-  }
-}
+//     return section;
+//   }
+// }
 
 // Fix for category filters, scrolling, and search results
 
